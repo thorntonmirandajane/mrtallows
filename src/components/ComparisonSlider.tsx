@@ -191,13 +191,13 @@ export default function ComparisonSlider({ photo, sketch, notes, sizes, classNam
         aria-valuenow={Math.round(pos)}
         aria-valuetext={`${Math.round(pos)}% photograph`}
         onKeyDown={onKeyDown}
-        className={`absolute flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-walnut/25 bg-cream/90 text-walnut shadow-[0_8px_30px_-10px_rgba(58,42,32,0.45)] backdrop-blur-sm transition-[transform,box-shadow] duration-500 ease-[var(--ease-luxe)] hover:scale-105 ${
+        className={`absolute flex h-9 w-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-cream bg-cream text-walnut shadow-[0_2px_8px_-2px_rgba(58,42,32,0.35)] transition-transform duration-500 ease-[var(--ease-luxe)] before:absolute before:-inset-3 before:content-[''] hover:scale-110 ${
           dragging ? "scale-95" : ""
         }`}
         style={{ left: `${pos}%`, top: `${(textZone + (1 - textZone) / 2) * 100}%` }}
       >
-        <svg width="26" height="12" viewBox="0 0 26 12" fill="none" aria-hidden="true">
-          <path d="M6 1 1 6l5 5M20 1l5 5-5 5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+        <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true">
+          <path d="M4 1 1 4l3 3M12 1l3 3-3 3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </div>
     </div>

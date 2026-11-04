@@ -11,12 +11,10 @@ export default function Hero() {
   const copy = useRef<HTMLDivElement>(null);
 
   const common = { alt: hero.imageAlt, sizes: "100vw", priority: true, quality: 85 };
-  const {
-    props: { srcSet: desktop },
-  } = getImageProps({ ...common, src: "/images/hero-desktop.webp", width: 1672, height: 941 });
-  const {
-    props: { srcSet: mobile, ...img },
-  } = getImageProps({ ...common, src: "/images/hero-mobile.webp", width: 941, height: 1432 });
+  // images are served unoptimized, so each <source> points straight at its file
+  const desktop = "/images/hero-desktop.webp";
+  const mobile = "/images/hero-mobile.webp";
+  const { props: img } = getImageProps({ ...common, src: mobile, width: 941, height: 1432 });
 
   useEffect(() => {
     const t = setTimeout(() => setReady(true), 60);

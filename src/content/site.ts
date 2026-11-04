@@ -39,22 +39,22 @@ export const hero = {
 
 export const features = [
   {
-    icon: "/brand/icon-cow.png",
+    icon: "/brand/icon-cow.webp",
     title: "Cooked in Beef Tallow",
     copy: "Prepared using traditional cooking fats for exceptional flavor.",
   },
   {
-    icon: "/brand/icon-onion.png",
+    icon: "/brand/icon-onion.webp",
     title: "Real Ingredients",
     copy: "Simple, recognizable ingredients. Nothing unnecessarily complicated.",
   },
   {
-    icon: "/brand/icon-leaf.png",
+    icon: "/brand/icon-leaf.webp",
     title: "Intentional Sourcing",
     copy: "Thoughtfully selected ingredients with quality at the forefront.",
   },
   {
-    icon: "/brand/icon-light.png",
+    icon: "/brand/icon-light.webp",
     title: "A Welcoming Environment",
     copy: "Natural materials, warm lighting, and a space designed to feel good.",
   },

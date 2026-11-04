@@ -13,19 +13,23 @@ const fraunces = Fraunces({
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
 const caveat = Caveat({ variable: "--font-caveat", subsets: ["latin"], weight: ["500"], display: "swap" });
 
+// Share-preview links must resolve on the live host. Render provides its URL at build and run time;
+// once the custom domain is live, set SITE_URL on Render to it.
+const baseUrl = process.env.SITE_URL ?? process.env.RENDER_EXTERNAL_URL ?? site.url;
+
 export const metadata: Metadata = {
-  metadataBase: new URL(site.url),
+  metadataBase: new URL(baseUrl),
   title: {
-    default: "Mr. Tallow's | Fast Food, Reimagined",
+    default: "Mr. Tallow's | Rewriting American Fast Food",
     template: "%s | Mr. Tallow's",
   },
   description: site.description,
   openGraph: {
     type: "website",
     siteName: site.name,
-    title: "Mr. Tallow's | Fast Food, Reimagined",
+    title: "Mr. Tallow's | Rewriting American Fast Food",
     description: site.description,
-    images: [{ url: "/og.jpg", width: 1600, height: 900, alt: "A Mr. Tallow's cheeseburger and fries on a walnut board in a warmly lit dining room" }],
+    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "A Mr. Tallow's cheeseburger and fries on a walnut board in a warmly lit dining room" }],
   },
   twitter: { card: "summary_large_image" },
   icons: { icon: "/brand/icon.png", apple: "/brand/apple-icon.png" },

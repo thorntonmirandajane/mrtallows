@@ -2,8 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    formats: ["image/avif", "image/webp"],
-    qualities: [75, 85, 88, 90],
+    // Images are pre-sized, pre-compressed WebP in /public, served as-is.
+    // Runtime optimization was slow (and sometimes failed) on Render's small instances.
+    unoptimized: true,
   },
 };
 

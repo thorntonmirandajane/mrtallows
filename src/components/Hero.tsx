@@ -92,11 +92,11 @@ export default function Hero() {
           >
             {hero.copy}
           </p>
-          <div className="flex gap-2.5">
-            <a href={hero.primary.href} className="btn btn-solid btn-compact hero-fade" style={{ "--d": "1350ms" } as React.CSSProperties}>
+          <div className="grid grid-cols-2 gap-2.5 md:flex">
+            <a href={hero.primary.href} className="btn btn-solid btn-compact btn-split hero-fade" style={{ "--d": "1350ms" } as React.CSSProperties}>
               {hero.primary.label}
             </a>
-            <a href={hero.secondary.href} className="btn btn-outline btn-compact hero-fade" style={{ "--d": "1450ms" } as React.CSSProperties}>
+            <a href={hero.secondary.href} className="btn btn-outline btn-compact btn-split hero-fade" style={{ "--d": "1450ms" } as React.CSSProperties}>
               {hero.secondary.label}
             </a>
           </div>

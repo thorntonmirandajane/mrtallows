@@ -276,6 +276,20 @@
       letter-spacing: 0.1em;
     }
   }
+  /* phones: two buttons share one row evenly */
+  @media (max-width: 767px) {
+    .btn-split {
+      justify-content: center;
+      padding: 0 0.5rem;
+      font-size: 0.66rem;
+      letter-spacing: 0.1em;
+    }
+  @media (max-width: 359px) {
+    .btn-split {
+      grid-column: 1 / -1;
+    }
+  }
+  }
   .btn-solid {
     background: var(--color-forest);
     color: var(--color-cream);

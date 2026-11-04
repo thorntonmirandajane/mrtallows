@@ -129,7 +129,7 @@ export default function Header() {
                 <a
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="display block py-2 text-[2.9rem] text-ink transition-transform duration-[900ms] ease-[var(--ease-luxe)]"
+                  className="display block py-1.5 text-[2.1rem] text-ink transition-transform duration-[900ms] ease-[var(--ease-luxe)]"
                   style={{ transform: open ? "none" : "translateY(110%)", transitionDelay: open ? `${120 + i * 70}ms` : "0ms" }}
                 >
                   {item.label}

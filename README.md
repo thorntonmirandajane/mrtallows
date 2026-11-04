@@ -1,36 +1,22 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mr. Tallow's
 
-## Getting Started
+Homepage for Mr. Tallow's, a fast-casual restaurant launching in Florida.
 
-First, run the development server:
+Next.js 16 · React 19 · TypeScript · Tailwind CSS 4 · Lenis (smooth scroll)
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev   # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Editing content
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+All copy, menu items, hotspot positions, burger annotations, location and social links live in
+`src/content/site.ts`. Location fields are `null` until confirmed: fill in `street`, `cityState`,
+`hours` and `mapsUrl`, and set `status: "open"`, and the Visit section and Restaurant structured data update automatically.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Assets
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `public/brand/logo-mask.png`: the logo lockup as an alpha mask (lifted from the brand sheet, recolored via CSS). Replace with the vector master when available.
+- `public/brand/icon-*.png`: feature line illustrations.
+- `public/images/`: hero, slider pair (annotations removed and aligned so the burger registers across both), menu cutouts, packaging, interior and map imagery.

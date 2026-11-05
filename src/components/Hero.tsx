@@ -21,9 +21,11 @@ export default function Hero() {
     return () => clearTimeout(t);
   }, []);
 
-  // gentle parallax: image drifts slower than the page, copy lifts and fades
+  // gentle parallax: image drifts slower than the page, copy lifts and fades.
+  // Desktop only: on phones the copy sits below the image and the browser bar resizing
+  // the viewport mid-scroll makes scroll-linked motion jitter.
   useEffect(() => {
-    if (prefersReducedMotion()) return;
+    if (prefersReducedMotion() || !window.matchMedia("(min-width: 768px)").matches) return;
     let raf = 0;
     const update = () => {
       raf = 0;
@@ -48,7 +50,7 @@ export default function Hero() {
     <section
       id="top"
       aria-labelledby="hero-title"
-      className={`relative flex h-[calc(var(--header-h)+100vw*1432/941)] flex-col overflow-hidden bg-cream md:h-[min(86svh,44vw)] md:min-h-[420px] md:bg-[linear-gradient(180deg,#be9e80,#ccaf93_25%,#d0b296_50%,#caab8e_75%,#c2a487)] ${
+      className={`relative flex h-[calc(var(--header-h)+100vw*1432/941)] flex-col overflow-hidden bg-cream md:h-[min(86svh,44vw)] md:min-h-[420px] md:bg-[linear-gradient(180deg,#c1a081,#cfb092_25%,#d3b595_50%,#cdaf91_75%,#c4a687)] ${
         ready ? "hero-ready" : ""
       }`}
     >

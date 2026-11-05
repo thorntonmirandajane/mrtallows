@@ -95,7 +95,7 @@ export default function Header() {
 
         <div className="ml-auto flex items-center gap-3">
           <ContactIcons className="mr-2 hidden md:flex" />
-          <a href={order.href} className="btn btn-solid hidden !h-11 sm:inline-flex">
+          <a href={order.href} className="btn btn-blush hidden !h-11 sm:inline-flex">
             {order.label}
           </a>
           <button
@@ -143,7 +143,7 @@ export default function Header() {
               <p className="eyebrow text-muted">Opening soon in Florida</p>
               <ContactIcons size="h-11 w-11" />
             </div>
-            <a href={order.href} onClick={() => setOpen(false)} className="btn btn-solid w-full justify-between">
+            <a href={order.href} onClick={() => setOpen(false)} className="btn btn-blush w-full justify-between">
               {order.label}
             </a>
           </div>

@@ -297,6 +297,13 @@
   .btn-solid::before {
     background: var(--color-forest-deep);
   }
+  .btn-blush {
+    background: var(--color-blush);
+    color: var(--color-forest-deep);
+  }
+  .btn-blush::before {
+    background: #c98c78;
+  }
   .btn-outline {
     border: 1.5px solid currentColor;
     color: var(--color-ink);

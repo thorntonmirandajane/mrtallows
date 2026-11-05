@@ -62,24 +62,24 @@ export const features = [
 
 /**
  * Handwritten notes on the signature burger slider.
- * Coordinates are in the 1660 x 780 space of /images/slider-*.webp.
+ * Coordinates are in the 1928 x 683 space of /images/slider-*.webp.
  * `from` is where the arrow leaves the note, `to` is where it lands, `bend` curves it.
  */
 export const burgerNotes = [
-  { text: ["Toasted bun"], at: [1168, 100], from: [1150, 90], to: [1024, 152], bend: -34 },
-  { text: ["Quality beef"], at: [1306, 250], from: [1294, 240], to: [1132, 340], bend: -30 },
-  { text: ["Seared in", "beef tallow"], at: [1302, 382], from: [1290, 412], to: [1110, 424], bend: -18 },
-  { text: ["Real", "ingredients"], at: [1318, 552], from: [1302, 572], to: [1136, 574], bend: -12 },
-  { text: ["Crispy hand-cut", "fries in tallow"], at: [-300, 676], from: [-130, 640], to: [96, 590], bend: -26 },
+  { text: ["Toasted bun"], at: [1438, 170], from: [1421, 158], to: [1264, 225], bend: -30 },
+  { text: ["Quality beef"], at: [1486, 328], from: [1469, 315], to: [1327, 412], bend: -26 },
+  { text: ["Seared in", "beef tallow"], at: [1510, 448], from: [1494, 475], to: [1334, 479], bend: -10 },
+  { text: ["Simple, real", "ingredients"], at: [1486, 599], from: [1469, 587], to: [1320, 575], bend: 10 },
+  { text: ["Crispy hand-cut", "fries in tallow"], at: [470, 160], from: [610, 210], to: [640, 400], bend: -18 },
 ];
 
 /** Mobile callouts, in the 1540 x 1880 space of /images/slider-*-mobile.webp (copy sits in the top 1100). */
 export const burgerNotesMobile = [
-  { text: ["Toasted bun"], at: [960, 1096], from: [950, 1086], to: [884, 1152], bend: -30 },
-  { text: ["Quality beef"], at: [1090, 1250], from: [1080, 1238], to: [992, 1340], bend: -26 },
-  { text: ["Seared in", "beef tallow"], at: [1090, 1386], from: [1080, 1420], to: [970, 1424], bend: -16 },
-  { text: ["Real", "ingredients"], at: [1106, 1552], from: [1096, 1576], to: [996, 1574], bend: -10 },
-  { text: ["Crispy hand-cut", "fries in tallow"], at: [88, 1300], from: [190, 1378], to: [195, 1510], bend: 26 },
+  { text: ["Toasted bun"], at: [1090, 340], from: [1080, 330], to: [965, 420], bend: -28 },
+  { text: ["Quality beef"], at: [1110, 500], from: [1100, 510], to: [1020, 640], bend: -20 },
+  { text: ["Seared in", "beef tallow"], at: [1110, 630], from: [1100, 655], to: [1036, 712], bend: -10 },
+  { text: ["Simple, real", "ingredients"], at: [1110, 780], from: [1100, 790], to: [1040, 790], bend: 6 },
+  { text: ["Crispy hand-cut", "fries in tallow"], at: [40, 440], from: [190, 525], to: [235, 625], bend: 20 },
 ];
 
 export const signature = {
@@ -159,9 +159,9 @@ export const menu = {
     {
       id: "burger",
       name: "Signature Burger",
-      copy: "Beef patty, melted cheese, crisp lettuce and tomato on a toasted bun, seared in beef tallow.",
+      copy: "Beef seared in tallow and melted cheese on a toasted bun. Simple, the way it should be.",
       image: "/images/menu-burger.webp",
-      alt: "Signature cheeseburger with lettuce and tomato on a toasted bun",
+      alt: "Signature cheeseburger: a seared beef patty with melted cheese on a toasted brioche bun",
       price: null as string | null,
     },
     {
@@ -173,11 +173,11 @@ export const menu = {
       price: null as string | null,
     },
     {
-      id: "salad",
-      name: "Fresh Salad",
-      copy: "Seasonal greens with shaved cheese and a simple house dressing.",
-      image: "/images/menu-salad.webp",
-      alt: "Green salad with shaved cheese in a stoneware bowl",
+      id: "shake",
+      name: "Chocolate Milkshake",
+      copy: "Classic chocolate, blended thick and creamy.",
+      image: "/images/menu-shake.webp",
+      alt: "Chocolate milkshake in a tall glass with a green and white striped straw",
       price: null as string | null,
     },
     {

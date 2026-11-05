@@ -78,7 +78,7 @@ export default function LocationSection() {
                 href={directionsHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-10 items-center rounded-full bg-forest px-5 text-[0.8rem] font-medium text-cream transition-colors duration-500 hover:bg-forest-deep"
+                className="inline-flex h-10 items-center rounded-full bg-blush px-5 text-[0.8rem] font-medium text-forest-deep transition-colors duration-500 hover:bg-[#c98c78]"
               >
                 Get Directions
               </a>

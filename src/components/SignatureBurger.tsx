@@ -24,21 +24,21 @@ export default function SignatureBurger() {
   );
 
   return (
-    <section aria-labelledby="signature-title" className="surface-limestone relative overflow-hidden !bg-[#e6d1b9]">
+    <section aria-labelledby="signature-title" className="relative overflow-hidden bg-[#dbcbb8] md:bg-[linear-gradient(180deg,#dbd0c1,#d8c9b6)]">
       {/* below xl: copy sits above the slider */}
       <div className="mx-auto hidden max-w-[var(--container)] px-[var(--gutter)] pt-[clamp(2.25rem,4vw,3rem)] md:block xl:hidden">{intro}</div>
 
       {/* desktop: the slider fills the section; copy overlays the open wall on the left */}
-      <div className="relative mx-auto hidden max-w-[1760px] md:block">
+      <div className="relative mx-auto hidden max-w-[1760px] pb-[clamp(1.5rem,3vw,2.75rem)] md:block">
         <ComparisonSlider
-          className="[mask-image:linear-gradient(to_bottom,transparent,#000_4%,#000_95%,transparent)]"
+          className="[mask-image:linear-gradient(to_bottom,transparent,#000_2%,#000_97%,transparent)]"
           sizes="90vw"
-          inset={0.16}
-          rest={57}
-          photo={{ src: "/images/slider-photo.webp", alt: signature.photoAlt, width: 1660, height: 780 }}
-          sketch={{ src: "/images/slider-sketch.webp", alt: signature.sketchAlt, width: 1660, height: 780 }}
+          inset={0.22}
+          rest={61}
+          photo={{ src: "/images/slider-photo.webp", alt: signature.photoAlt, width: 1928, height: 683 }}
+          sketch={{ src: "/images/slider-sketch.webp", alt: signature.sketchAlt, width: 1928, height: 683 }}
           notes={burgerNotes}
-          labels={["", "Sketched"]}
+          labels={["", ""]}
           labelInset="6%"
         />
         <div className="pointer-events-none absolute left-[var(--edge)] top-[7%] hidden xl:block min-[1760px]:left-[calc(var(--edge)-(100vw-1760px)/2)]">{intro}</div>
@@ -48,14 +48,14 @@ export default function SignatureBurger() {
       <div className="bg-[#dbcbb8] md:hidden">
         <div className="relative z-10 px-[var(--gutter)] pt-10">{intro}</div>
         <ComparisonSlider
-          className="mt-[calc(-1.5rem-54vw)]"
+          className="mt-[calc(-1rem-17vw)]"
           sizes="(min-width: 768px) 1px, 100vw"
-          photo={{ src: "/images/slider-photo-mobile.webp", alt: signature.photoAlt, width: 1380, height: 1780 }}
-          sketch={{ src: "/images/slider-sketch-mobile.webp", alt: signature.sketchAlt, width: 1380, height: 1780 }}
+          photo={{ src: "/images/slider-photo-mobile.webp", alt: signature.photoAlt, width: 1521, height: 894 }}
+          sketch={{ src: "/images/slider-sketch-mobile.webp", alt: signature.sketchAlt, width: 1521, height: 894 }}
           notes={burgerNotesMobile}
-          noteSize={54}
-          textZone={900 / 1780}
-          rest={47}
+          noteSize={52}
+          textZone={380 / 894}
+          rest={48}
           labels={["", ""]}
         />
       </div>

@@ -113,7 +113,7 @@
   @media (max-width: 1023px) {
     .surface-stone {
       background-image:
-        radial-gradient(85% 32% at 42% 66%, rgba(240, 232, 220, 0.6), transparent 72%),
+        radial-gradient(140% 55% at 45% 64%, rgba(240, 232, 220, 0.5), rgba(240, 232, 220, 0.18) 55%, transparent 90%),
         linear-gradient(rgba(240, 232, 220, 0.22), rgba(240, 232, 220, 0.22)),
         var(--grain),
         linear-gradient(180deg, #c1a081, #cfb092 25%, #d3b595 50%, #cdaf91 75%, #c4a687);

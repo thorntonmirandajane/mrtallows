@@ -30,7 +30,7 @@ export const order = { label: "Order Now", href: "/#menu" };
 
 export const hero = {
   headline: ["Rewriting", "American", "Fast Food."],
-  copy: "Real ingredients. Thoughtful preparation. A better kind of fast food.",
+  copy: "Burgers, fries and shakes the way they should be made.",
   primary: { label: "Explore Mr. Tallow's", href: "#experience" },
   secondary: { label: "Our Difference", href: "#difference" },
   imageAlt:
@@ -46,12 +46,12 @@ export const features = [
   {
     icon: "/brand/icon-onion.webp",
     title: "Real Ingredients",
-    copy: "Simple, recognizable ingredients. Nothing unnecessarily complicated.",
+    copy: "House-made ketchup, mustard and pickles. Honey in place of refined sugar.",
   },
   {
     icon: "/brand/icon-leaf.webp",
     title: "Intentional Sourcing",
-    copy: "Thoughtfully selected ingredients with quality at the forefront.",
+    copy: "Grass-finished beef and organic potatoes, cooked in beef tallow.",
   },
   {
     icon: "/brand/icon-light.webp",
@@ -67,7 +67,7 @@ export const features = [
  */
 export const burgerNotes = [
   { text: ["Toasted bun"], at: [1438, 170], from: [1421, 158], to: [1264, 225], bend: -30 },
-  { text: ["Quality beef"], at: [1486, 328], from: [1469, 315], to: [1327, 412], bend: -26 },
+  { text: ["Grass-finished", "beef"], at: [1486, 310], from: [1469, 315], to: [1327, 412], bend: -26 },
   { text: ["Seared in", "beef tallow"], at: [1510, 448], from: [1494, 475], to: [1334, 479], bend: -10 },
   { text: ["Simple, real", "ingredients"], at: [1486, 599], from: [1469, 587], to: [1320, 575], bend: 10 },
   { text: ["Crispy hand-cut", "fries in tallow"], at: [470, 160], from: [610, 210], to: [640, 400], bend: -18 },
@@ -76,7 +76,7 @@ export const burgerNotes = [
 /** Mobile callouts, in the 1540 x 1880 space of /images/slider-*-mobile.webp (copy sits in the top 1100). */
 export const burgerNotesMobile = [
   { text: ["Toasted bun"], at: [1090, 340], from: [1080, 330], to: [965, 420], bend: -28 },
-  { text: ["Quality beef"], at: [1110, 500], from: [1100, 510], to: [1020, 640], bend: -20 },
+  { text: ["Grass-finished", "beef"], at: [1110, 470], from: [1100, 510], to: [1020, 640], bend: -20 },
   { text: ["Seared in", "beef tallow"], at: [1110, 630], from: [1100, 655], to: [1036, 712], bend: -10 },
   { text: ["Simple, real", "ingredients"], at: [1110, 780], from: [1100, 790], to: [1040, 790], bend: 6 },
   { text: ["Crispy hand-cut", "fries in tallow"], at: [40, 440], from: [190, 525], to: [235, 625], bend: 20 },
@@ -84,10 +84,11 @@ export const burgerNotesMobile = [
 
 export const signature = {
   eyebrow: "The Signature Burger",
-  headline: ["The Classic,", "Done Right."],
-  copy: "Better ingredients. Thoughtful preparation. A familiar favorite, made differently.",
+  headline: ["Craveable", "Fast Food"],
+  sub: "Made From Real Ingredients",
+  copy: "Grass-finished beef, with certified organic tallow-cooked fries, honey-sweetened drinks, and house-made mustard, ketchup, and pickles.",
   cta: { label: "Explore the Menu", href: "#menu" },
-  photoAlt: "Photograph of a cheeseburger with lettuce and tomato beside hand-cut fries on limestone",
+  photoAlt: "Photograph of a cheeseburger with melted cheese on a toasted bun beside hand-cut fries",
   sketchAlt: "Matching hand-drawn sepia illustration of the same cheeseburger and fries",
 };
 
@@ -99,14 +100,14 @@ export const hotspots = [
   {
     id: "lighting",
     title: "Amber Lighting",
-    copy: "Warm, intentionally selected lighting creates a softer, more welcoming atmosphere.",
+    copy: "Warm amber lighting in place of blue-toned LEDs, for a softer, calmer room.",
     wide: { x: 53.2, y: 25.8 },
     tall: { x: 53.2, y: 25.8 },
   },
   {
     id: "materials",
     title: "Natural Materials",
-    copy: "Limestone, walnut, and other thoughtfully chosen materials bring warmth and character into the space.",
+    copy: "Real wood, sealed concrete and natural paints. Bamboo trays in place of plastic, and no aerosol sprays.",
     wide: { x: 21.5, y: 68 },
     tall: { x: 21.5, y: 68 },
   },
@@ -153,44 +154,103 @@ export const philosophy = {
 export const menu = {
   eyebrow: "Featured Menu",
   headline: "Intentional Classics",
-  copy: "A curated taste of what we do best.",
-  note: "Menu in development. Items, ingredients and pricing will be confirmed before opening.",
+  copy: "Burgers, fries and shakes the way they should be made.",
+  note: "Menu and pricing may change before opening.",
   items: [
     {
       id: "burger",
-      name: "Signature Burger",
-      copy: "Beef seared in tallow and melted cheese on a toasted bun. Simple, the way it should be.",
+      name: "The Cheeseburger",
+      copy: "Grass-finished beef cooked in tallow, with melted cheese on a local sourdough bun.",
       image: "/images/menu-burger.webp",
-      alt: "Signature cheeseburger: a seared beef patty with melted cheese on a toasted brioche bun",
-      price: null as string | null,
+      alt: "Cheeseburger: a seared grass-finished beef patty with melted cheese on a toasted bun",
+      price: "$15",
+      detail: "Or go carnivore style: no bun, wrapped in lettuce from a local farm.",
     },
     {
       id: "fries",
-      name: "Tallow Fries",
-      copy: "Hand-cut potatoes, cooked in beef tallow and finished with salt.",
+      name: "Kennebec Fries",
+      copy: "Organic hand-cut potatoes, double-fried in beef tallow, organic sea salt only.",
       image: "/images/menu-fries.webp",
-      alt: "Golden fries in a kraft Mr. Tallow's fry carton",
-      price: null as string | null,
+      alt: "Golden hand-cut fries in a kraft Mr. Tallow's fry carton",
+      price: "$5.50",
+      detail: "Pair with fermented ketchup, raw mustard or the house special sauce.",
     },
     {
       id: "shake",
-      name: "Chocolate Milkshake",
-      copy: "Classic chocolate, blended thick and creamy.",
+      name: "Straus Milkshake",
+      copy: "Made with Straus dairy and sweetened without refined sugar.",
       image: "/images/menu-shake.webp",
       alt: "Chocolate milkshake in a tall glass with a green and white striped straw",
-      price: null as string | null,
+      price: "$8",
+      detail: "Thick, cold and simple. No refined sugar.",
     },
     {
       id: "lemonade",
-      name: "House Lemonade",
-      copy: "Fresh lemon, lightly sweetened, poured over ice.",
+      name: "Lemonade",
+      copy: "Fresh-squeezed and sweetened with honey.",
       image: "/images/menu-lemonade.webp",
       alt: "Glass of iced lemonade with a lemon wheel",
-      price: null as string | null,
+      price: "$5",
+      detail: "Filtered water is always free.",
     },
   ],
-  // href stays null (shown, not clickable) until the full menu page exists
-  cta: { label: "Explore the Full Menu", href: null as string | null },
+  cta: { label: "Explore the Full Menu" },
+};
+
+/** The complete menu, shown in the full-menu panel. */
+export const fullMenu = {
+  headline: ["Keeping It", "Simple and Clean"],
+  sections: [
+    {
+      title: "Burgers",
+      items: [
+        { name: "Original", price: "$14" },
+        { name: "Cheese", price: "$15" },
+        { name: "Double", price: "$17" },
+        { name: "Carnivore style, no bun", price: "$14" },
+      ],
+      copy: "Grass-finished beef cooked in tallow, on a local sourdough bun or in a lettuce wrap from a local farm.",
+    },
+    {
+      title: "Fries",
+      items: [{ name: "Kennebec potato fries", price: "$5.50" }],
+      copy: "Organic hand-cut potatoes, double-fried in beef tallow, organic sea salt only.",
+    },
+    {
+      title: "Drinks",
+      items: [
+        { name: "Lemonade", price: "$5" },
+        { name: "Straus milkshake", price: "$8" },
+        { name: "Filtered water", price: "Free" },
+      ],
+      copy: "Honey-sweetened, fresh-squeezed lemonade. Shakes made with Straus dairy. No refined sugar.",
+    },
+    {
+      title: "House-Made Extras",
+      items: [
+        { name: "Fermented ketchup", price: "" },
+        { name: "House special sauce", price: "" },
+        { name: "Raw mustard", price: "" },
+        { name: "Fermented pickles", price: "" },
+      ],
+      copy: "Made in our kitchen, from scratch.",
+    },
+  ],
+};
+
+/** Our Mission: each "No ___" is struck through as it scrolls into view. */
+export const mission = {
+  eyebrow: "Our Mission",
+  headline: "Taking Ultra-Processed Food Out of Fast Food",
+  nos: [
+    { icon: "oil", label: "Seed Oils" },
+    { icon: "sugar", label: "Refined Sugar" },
+    { icon: "grain", label: "Grain-Fed Beef" },
+    { icon: "dna", label: "GMOs" },
+    { icon: "syringe", label: "Added Hormones" },
+  ],
+  stat: "About a third of American adults eat fast food on any given day.",
+  close: "We intend to cook those meals.",
 };
 
 export const details = {

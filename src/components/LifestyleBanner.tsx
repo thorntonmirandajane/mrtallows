@@ -48,7 +48,7 @@ export default function LifestyleBanner() {
 function Copy({ id, size = "text-[clamp(2.7rem,4.4vw,4.3rem)]" }: { id?: string; size?: string }) {
   return (
     <>
-      <p className="eyebrow mb-6 text-blush" data-reveal>
+      <p className="eyebrow mb-6 text-[#e6c9c3]" data-reveal>
         {details.eyebrow}
       </p>
       <h2 id={id} className={`display ${size}`} data-reveal-group>

@@ -42,17 +42,8 @@ function ItemDialog({ item, onClose }: { item: Item | null; onClose: () => void 
             <h3 className="display text-[2.3rem] text-ink">{shown.name}</h3>
             <span className="mx-auto mt-3 block h-px w-8 bg-blush" />
             <p className="mx-auto mt-4 max-w-[20rem] text-[0.95rem] leading-[1.65] text-ink/90 [text-wrap:balance]">{shown.copy}</p>
-            <dl className="mt-6 space-y-3 border-t border-ink/10 pt-5 text-left text-[0.85rem]">
-              <div className="flex justify-between gap-6">
-                <dt className="eyebrow text-[0.62rem] text-muted">Ingredients</dt>
-                <dd className="text-ink/90">To be confirmed</dd>
-              </div>
-              <div className="flex justify-between gap-6">
-                <dt className="eyebrow text-[0.62rem] text-muted">Price</dt>
-                <dd className="text-ink/90">{shown.price ?? "Announced at opening"}</dd>
-              </div>
-            </dl>
-            <p className="hand pt-6 text-[1.2rem] text-walnut/60">menu still in the test kitchen</p>
+            <p className="display mt-5 text-[1.6rem] text-rust">{shown.price}</p>
+            <p className="hand mx-auto mt-4 max-w-[20rem] border-t border-ink/10 pt-4 text-[1.2rem] leading-snug text-walnut/80">{shown.detail}</p>
           </div>
         </div>
       )}
@@ -95,6 +86,7 @@ export default function FeaturedMenu() {
                   />
                 </div>
                 <h3 className="display mt-2 text-[clamp(1.35rem,1.9vw,1.75rem)] text-ink">{item.name}</h3>
+                <p className="eyebrow mt-1 text-[0.72rem] tracking-[0.18em] text-rust">{item.price}</p>
                 <span className="mx-auto mt-2 block h-px w-8 bg-blush transition-[width,background-color] duration-700 ease-[var(--ease-luxe)] group-hover:w-14 group-hover:bg-rust" />
                 <p className="mx-auto mt-3 max-w-[17rem] text-[0.86rem] leading-[1.6] text-muted">{item.copy}</p>
                 <span className="eyebrow mt-auto inline-flex items-center gap-2 pt-3 text-[0.66rem] font-semibold text-forest-deep transition-all duration-500 group-hover:gap-3">
@@ -106,15 +98,9 @@ export default function FeaturedMenu() {
         </ul>
 
         <div className="mt-12 flex flex-col items-center gap-2 text-center md:mt-[clamp(1.25rem,2vw,1.75rem)]" data-reveal>
-          {menu.cta.href ? (
-            <a href={menu.cta.href} className="btn btn-outline">
-              {menu.cta.label}
-            </a>
-          ) : (
-            <span aria-disabled="true" className="btn btn-outline pointer-events-none cursor-default opacity-60">
-              {menu.cta.label}
-            </span>
-          )}
+          <a href="#full-menu" className="btn btn-blush">
+            {menu.cta.label}
+          </a>
           <p className="max-w-sm text-[0.74rem] leading-relaxed text-muted">{menu.note}</p>
         </div>
       </div>

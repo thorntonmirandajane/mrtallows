@@ -7,14 +7,17 @@ export default function SignatureBurger() {
       <p className="eyebrow mb-3 text-rust" data-reveal>
         {signature.eyebrow}
       </p>
-      <h2 id="signature-title" className="display text-[clamp(1.8rem,8.4vw,2.3rem)] text-ink md:text-[clamp(2.2rem,3.3vw,3.5rem)]" data-reveal-group>
+      <h2 id="signature-title" className="display text-[clamp(2.4rem,11vw,3rem)] font-[430] leading-[0.95] text-ink md:text-[clamp(2.6rem,4vw,4.2rem)]" data-reveal-group>
         {signature.headline.map((l, i) => (
           <span key={l} className="line-mask">
             <span style={{ "--d": `${i * 120}ms` } as React.CSSProperties}>{l}</span>
           </span>
         ))}
       </h2>
-      <p className="mt-2 max-w-[19rem] text-[0.88rem] leading-[1.5] text-ink/90 md:mt-3 md:text-[0.95rem] md:leading-[1.6]" data-reveal style={{ "--d": "150ms" } as React.CSSProperties}>
+      <p className="display mt-2 text-[clamp(1.25rem,5vw,1.5rem)] font-[430] leading-[1.15] text-ink md:text-[clamp(1.3rem,1.8vw,1.75rem)]" data-reveal style={{ "--d": "120ms" } as React.CSSProperties}>
+        {signature.sub}
+      </p>
+      <p className="mt-2 max-w-[21rem] text-[0.88rem] leading-[1.5] text-ink/90 md:mt-3 md:text-[0.95rem] md:leading-[1.6]" data-reveal style={{ "--d": "150ms" } as React.CSSProperties}>
         {signature.copy}
       </p>
       <a href={signature.cta.href} className="btn btn-solid btn-compact pointer-events-auto mt-4 md:mt-5" data-reveal style={{ "--d": "250ms" } as React.CSSProperties}>
@@ -29,7 +32,7 @@ export default function SignatureBurger() {
       <div className="mx-auto hidden max-w-[var(--container)] px-[var(--gutter)] pt-[clamp(2.25rem,4vw,3rem)] md:block xl:hidden">{intro}</div>
 
       {/* desktop: the slider fills the section; copy overlays the open wall on the left */}
-      <div className="relative mx-auto hidden max-w-[1760px] pb-[clamp(1.5rem,3vw,2.75rem)] md:block">
+      <div className="relative mx-auto hidden max-w-[1760px] pb-2 md:block">
         <ComparisonSlider
           className="[mask-image:linear-gradient(to_bottom,transparent,#000_2%,#000_97%,transparent)]"
           sizes="90vw"

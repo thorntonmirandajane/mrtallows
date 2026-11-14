@@ -10,14 +10,14 @@
   --color-parchment: #ede3d1;
   --color-limestone: #e2d4bd;
   --color-stone: #cbb89b;
-  --color-calke: #737e6c;
-  --color-forest: #5f6a57;
+  --color-calke: #78856e;
+  --color-forest: #78856e;
   --color-forest-deep: #3d4537;
-  --color-sage: #737e6c;
+  --color-sage: #78856e;
   --color-walnut: #402c20;
   --color-walnut-deep: #1f1712;
   --color-rust: #9a5a32;
-  --color-blush: #d6a291;
+  --color-blush: #a17777;
   --color-amber: #d9a25c;
   --color-ink: #2a251f;
   --color-muted: #3f372e;
@@ -97,6 +97,29 @@
       radial-gradient(60% 55% at 85% 80%, rgba(214, 162, 145, 0.08), transparent 70%),
       linear-gradient(180deg, rgba(255, 255, 255, 0) 60%, rgba(160, 142, 122, 0.1));
   }
+  /* limestone with a soft, visible stone texture (fine grain + gentle mottling) */
+  /* warm paper, matching the hero: tan gradient, soft light wash, fine grain */
+  .surface-stone {
+    background-color: #cfb092;
+    background-image:
+      radial-gradient(48% 75% at 74% 50%, rgba(240, 232, 220, 0.6), transparent 72%),
+      linear-gradient(rgba(240, 232, 220, 0.22), rgba(240, 232, 220, 0.22)),
+      radial-gradient(40% 60% at 22% 55%, rgba(240, 232, 220, 0.28), transparent 75%),
+      var(--grain),
+      linear-gradient(180deg, #c1a081, #cfb092 25%, #d3b595 50%, #cdaf91 75%, #c4a687);
+    background-size: auto, auto, auto, 220px, auto;
+  }
+  /* phones: the glow sits behind the copy, which stacks below the photo */
+  @media (max-width: 1023px) {
+    .surface-stone {
+      background-image:
+        radial-gradient(85% 32% at 42% 66%, rgba(240, 232, 220, 0.6), transparent 72%),
+        linear-gradient(rgba(240, 232, 220, 0.22), rgba(240, 232, 220, 0.22)),
+        var(--grain),
+        linear-gradient(180deg, #c1a081, #cfb092 25%, #d3b595 50%, #cdaf91 75%, #c4a687);
+      background-size: auto, auto, 220px, auto;
+    }
+  }
   .surface-limestone {
     background-color: #e8dcc8;
     background-image: radial-gradient(120% 70% at 85% 0%, rgba(255, 246, 228, 0.55), transparent 60%),
@@ -161,10 +184,10 @@
 
   .logo-mark {
     display: block;
-    aspect-ratio: 1172 / 876;
+    aspect-ratio: 1367 / 1006;
     background: currentColor;
-    -webkit-mask: url("/brand/logo-mask.png") center / contain no-repeat;
-    mask: url("/brand/logo-mask.png") center / contain no-repeat;
+    -webkit-mask: url("/brand/logo.svg") center / contain no-repeat;
+    mask: url("/brand/logo.svg") center / contain no-repeat;
   }
 
   /* ---------- reveal system ---------- */
@@ -299,10 +322,10 @@
   }
   .btn-blush {
     background: var(--color-blush);
-    color: var(--color-forest-deep);
+    color: var(--color-cream);
   }
   .btn-blush::before {
-    background: #c98c78;
+    background: #8a6262;
   }
   .btn-outline {
     border: 1.5px solid currentColor;

@@ -32,11 +32,11 @@ export const metadata: Metadata = {
     images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "A Mr. Tallow's cheeseburger and fries on a walnut board in a warmly lit dining room" }],
   },
   twitter: { card: "summary_large_image" },
-  icons: { icon: "/brand/icon.png", apple: "/brand/apple-icon.png" },
+  icons: { icon: [{ url: "/brand/favicon.svg", type: "image/svg+xml" }, { url: "/brand/icon.png" }], apple: "/brand/apple-icon.png" },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f5eee2",
+  themeColor: "#dbcbb8",
 };
 
 /**

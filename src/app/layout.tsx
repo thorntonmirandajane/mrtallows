@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: "Mr. Tallow's | Rewriting American Fast Food",
     description: site.description,
-    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "A Mr. Tallow's cheeseburger and fries on a walnut board in a warmly lit dining room" }],
+    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "The Mr. Tallow's logo beside a cheeseburger and fries on a walnut board against a limestone wall" }],
   },
   twitter: { card: "summary_large_image" },
   icons: { icon: [{ url: "/brand/favicon.svg", type: "image/svg+xml" }, { url: "/brand/icon.png" }], apple: "/brand/apple-icon.png" },

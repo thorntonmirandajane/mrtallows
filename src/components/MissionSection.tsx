@@ -36,7 +36,6 @@ export default function MissionSection() {
         <div className="relative flex flex-col gap-8 lg:min-h-[clamp(500px,40vw,700px)] lg:justify-center lg:py-6">
           <div
             className="relative mx-auto -mt-4 w-[200%] max-w-none -translate-x-[8%] lg:absolute lg:left-1/2 lg:top-1/2 lg:mx-0 lg:w-[min(1600px,115vw)] lg:-translate-x-[90%] lg:-translate-y-1/2"
-            style={{ opacity: on ? 1 : 0, transform: on ? "none" : "translateY(18px)", transition: `opacity 1100ms ${ease} 150ms, transform 1300ms ${ease} 150ms` }}
           >
             <span className="pointer-events-none absolute bottom-[4%] left-[18%] h-[16%] w-[70%] rounded-[50%] bg-[radial-gradient(closest-side,rgba(90,64,42,0.22),transparent)] blur-md" aria-hidden="true" />
             <Image
@@ -45,7 +44,7 @@ export default function MissionSection() {
               width={1305}
               height={705}
               sizes="(min-width: 1024px) 100vw, 180vw"
-              className="relative h-auto w-full opacity-[0.78] [filter:saturate(0.85)_brightness(1.04)] [mask-image:radial-gradient(75%_80%_at_58%_46%,#000_62%,transparent_100%)]"
+              className="relative h-auto w-full opacity-[0.93] [filter:saturate(0.85)_brightness(1.04)] [mask-image:radial-gradient(75%_80%_at_58%_46%,#000_62%,transparent_100%)]"
             />
           </div>
           <div className="relative z-10 -mt-14 lg:ml-auto lg:mt-0 lg:w-[min(46%,640px)] lg:text-right">

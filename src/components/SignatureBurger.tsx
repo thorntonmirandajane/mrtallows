@@ -38,8 +38,8 @@ export default function SignatureBurger() {
           sizes="90vw"
           inset={0.22}
           rest={61}
-          photo={{ src: "/images/slider-photo.webp", alt: signature.photoAlt, width: 1928, height: 813 }}
-          sketch={{ src: "/images/slider-sketch.webp", alt: signature.sketchAlt, width: 1928, height: 813 }}
+          photo={{ src: "/images/slider-photo.webp", alt: signature.photoAlt, width: 1928, height: 683 }}
+          sketch={{ src: "/images/slider-sketch.webp", alt: signature.sketchAlt, width: 1928, height: 683 }}
           notes={burgerNotes}
           labels={["", ""]}
           labelInset="6%"

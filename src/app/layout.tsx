@@ -52,7 +52,7 @@ const jsonLd = {
   servesCuisine: ["Burgers", "American"],
   logo: `${site.url}/brand/logo-forest.png`,
   ...(location.street && {
-    address: { "@type": "PostalAddress", streetAddress: location.street, addressLocality: location.locality, addressRegion: location.regionCode, addressCountry: "US" },
+    address: { "@type": "PostalAddress", streetAddress: location.street, addressRegion: location.region },
   }),
 };
 

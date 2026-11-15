@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { getImageProps } from "next/image";
+import Logo from "./Logo";
 import { hero } from "@/content/site";
 import { prefersReducedMotion } from "@/lib/motion";
 
@@ -9,12 +9,6 @@ export default function Hero() {
   const [ready, setReady] = useState(false);
   const imgWrap = useRef<HTMLDivElement>(null);
   const copy = useRef<HTMLDivElement>(null);
-
-  const common = { alt: hero.imageAlt, sizes: "100vw", priority: true, quality: 85 };
-  // images are served unoptimized, so each <source> points straight at its file
-  const desktop = "/images/hero-desktop.webp";
-  const mobile = "/images/hero-mobile.webp";
-  const { props: img } = getImageProps({ ...common, src: mobile, width: 941, height: 1432 });
 
   useEffect(() => {
     const t = setTimeout(() => setReady(true), 60);
@@ -50,58 +44,65 @@ export default function Hero() {
     <section
       id="top"
       aria-labelledby="hero-title"
-      className={`relative flex h-[calc(var(--header-h)+100vw*1432/941)] flex-col overflow-hidden bg-cream md:h-[min(86svh,44vw)] md:min-h-[420px] md:bg-[linear-gradient(180deg,#c1a081,#cfb092_25%,#d3b595_50%,#cdaf91_75%,#c4a687)] ${
-        ready ? "hero-ready" : ""
-      }`}
+      className={`relative flex flex-col overflow-hidden bg-[linear-gradient(180deg,#e6d4bf,#e3cfb9_40%)] pt-[var(--header-h)] md:h-[calc(100vw*941/1672)] md:max-h-[calc(100svh-90px)] md:min-h-[560px] md:justify-end md:bg-none md:bg-[#d6c4ae] md:pt-0 ${ready ? "hero-ready" : ""}`}
     >
-      {/* paper grain over the extended left margin */}
-      <div className="surface-grain pointer-events-none absolute inset-0 hidden md:block" />
-      <div ref={imgWrap} className="absolute inset-x-0 bottom-0 top-[var(--header-h)] will-change-transform md:top-0">
-        <picture>
-          <source media="(min-width: 768px)" srcSet={desktop} sizes="80vw" />
-          <source media="(max-width: 767px)" srcSet={mobile} sizes="100vw" />
-          <img
-            {...img}
-            alt={hero.imageAlt}
-            className="hero-img absolute inset-0 h-full w-full object-cover object-bottom md:inset-x-auto md:w-auto md:object-fill md:right-0 md:top-0 md:h-full md:w-auto md:max-w-none md:[mask-image:linear-gradient(to_right,transparent,#000_12%)]"
-          />
-        </picture>
-        {/* soft wash so type sits on calm paper */}
-        <div className="pointer-events-none absolute inset-0 hidden bg-[radial-gradient(38%_70%_at_10%_55%,rgba(240,232,220,0.55),transparent_75%)] md:block" />
-        <div className="pointer-events-none absolute inset-x-0 top-0 hidden h-36 bg-gradient-to-b from-[rgba(240,232,220,0.55)] to-transparent md:block" />
+      {/* desktop: full studio composite behind everything */}
+      <div ref={imgWrap} className="pointer-events-none absolute inset-0 hidden will-change-transform md:block">
+        <img
+          src="/images/hero-desktop.webp"
+          alt={hero.imageAlt}
+          width={2506}
+          height={1412}
+          fetchPriority="high"
+          className="hero-img absolute inset-0 h-full w-full object-cover object-[50%_100%]"
+        />
       </div>
 
+      {/* the brand mark: centered on phones, upper left on desktop */}
+      <div
+        className="hero-fade relative z-10 order-1 ml-auto mr-[var(--gutter)] mt-[5vw] w-[62vw] text-cream md:mr-0 md:absolute md:order-none md:ml-0 md:mt-0 [filter:drop-shadow(0_1px_3px_rgba(90,64,40,0.22))] md:right-auto md:left-[max(var(--gutter),5vw)] md:top-[calc(var(--header-h)+1.5vw)] md:w-[28vw] xl:w-[min(31vw,600px)]"
+        style={{ "--d": "300ms" } as React.CSSProperties}
+      >
+        <Logo className="w-full" />
+      </div>
+
+      {/* copy: under the logo on phones, bottom left on desktop */}
       <div
         ref={copy}
-        className="relative flex w-full min-w-0 flex-1 flex-col justify-end px-[var(--gutter)] pb-[5vw] pt-[calc(var(--header-h)+4vw)] md:justify-center md:px-[max(var(--gutter),5vw)] md:pb-[2vw] md:pt-[calc(var(--header-h)+1vw)]"
+        className="relative z-10 order-3 w-full bg-[#dcc1a6] px-[var(--gutter)] pb-8 pt-1 md:order-none md:bg-transparent md:pt-0 md:pb-0 md:max-w-[min(48vw,820px)] md:px-0 md:pb-[clamp(2.5rem,6vh,4.5rem)] md:pl-[max(var(--gutter),5vw)] md:pt-0"
       >
-        <div>
-          <h1 id="hero-title" className="display text-[clamp(1.6rem,8.6vw,3rem)] text-walnut md:text-[clamp(2.4rem,3.7vw,4.6rem)]">
-            {hero.headline.map((line, i) => (
-              <span key={line} className="line-mask max-md:inline-block max-md:pr-[0.24em] max-md:last:pr-0">
-                <span style={{ "--d": `${650 + i * 140}ms` } as React.CSSProperties}>{line}</span>
-              </span>
-            ))}
-          </h1>
-        </div>
-        {/* mobile: everything sits on the tabletop below the burger */}
-        <div className="mt-2 md:mt-0">
-          <p
-            className="hero-fade mb-4 max-w-[22rem] text-[0.92rem] leading-[1.55] text-ink md:mb-[1.8vw] md:mt-[1.4vw] md:max-w-[max(15rem,23vw)] md:text-[clamp(0.95rem,1.05vw,1.15rem)]"
-            style={{ "--d": "1150ms" } as React.CSSProperties}
-          >
-            {hero.copy}
-          </p>
-          <div className="grid grid-cols-2 gap-2.5 md:flex">
-            <a href={hero.primary.href} className="btn btn-solid btn-compact btn-split hero-fade" style={{ "--d": "1350ms" } as React.CSSProperties}>
-              {hero.primary.label}
-            </a>
-            <a href={hero.secondary.href} className="btn btn-outline btn-compact btn-split hero-fade" style={{ "--d": "1450ms" } as React.CSSProperties}>
-              {hero.secondary.label}
-            </a>
-          </div>
+        <h1 id="hero-title" className="display whitespace-nowrap leading-[1.04] text-[calc((100vw-2*var(--gutter))/13.8)] text-walnut md:text-[clamp(1.8rem,2.6vw,3.2rem)]">
+          {hero.headline.map((line, i) => (
+            <span key={line} className="line-mask inline-block pr-[0.24em] last:pr-0">
+              <span style={{ "--d": `${650 + i * 140}ms` } as React.CSSProperties}>{line}</span>
+            </span>
+          ))}
+        </h1>
+        <p
+          className="hero-fade mb-4 mt-2 whitespace-nowrap text-[calc((100vw-2*var(--gutter))/30.5)] leading-[1.55] text-ink md:mb-[1.6vw] md:mt-[0.8vw] md:text-[clamp(0.9rem,1.1vw,1.15rem)]"
+          style={{ "--d": "1150ms" } as React.CSSProperties}
+        >
+          {hero.copy}
+        </p>
+        <div className="grid grid-cols-2 gap-2.5 md:max-w-[38vw] md:max-xl:[&_.btn]:px-3 md:max-xl:[&_.btn]:text-[0.62rem] md:max-xl:[&_.btn]:tracking-[0.1em] xl:flex xl:max-w-none">
+          <a href={hero.primary.href} className="btn btn-solid btn-compact btn-split hero-fade" style={{ "--d": "1350ms" } as React.CSSProperties}>
+            {hero.primary.label}
+          </a>
+          <a href={hero.secondary.href} className="btn btn-outline btn-compact btn-split hero-fade" style={{ "--d": "1450ms" } as React.CSSProperties}>
+            {hero.secondary.label}
+          </a>
         </div>
       </div>
+
+      {/* phones: the food sits below the copy, fading in from the wall */}
+      <img
+        src="/images/hero-mobile.webp"
+        alt=""
+        aria-hidden="true"
+        width={941}
+        height={730}
+        className="hero-img relative order-2 -mt-[22vw] block h-auto w-full md:hidden"
+      />
     </section>
   );
 }

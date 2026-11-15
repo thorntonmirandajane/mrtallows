@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { location, visit } from "@/content/site";
 
-/** Until a verified address exists, directions open a map search for the brand in the region. */
+/** Directions open the address in Google Maps. */
 const directionsHref =
   location.mapsUrl ?? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${location.name} ${location.region}`)}`;
 

@@ -17,7 +17,7 @@ export default function FeatureGrid() {
           </p>
         </header>
 
-        <ul data-reveal-group className="grid border-t border-ink/12 sm:grid-cols-2 sm:gap-y-12 sm:border-0 lg:grid-cols-4 lg:gap-y-0">
+        <ul data-reveal-group className="grid border-t border-ink/12 sm:grid-cols-2 sm:gap-y-12 sm:border-0 lg:grid-cols-3 lg:gap-y-0">
           {features.map((f, i) => (
             <li
               key={f.title}

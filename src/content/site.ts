@@ -268,6 +268,7 @@ export const menu = {
         {
           id: "pickles",
           name: "Fermented Pickles",
+          lines: ["Fermented", "Pickles"],
           copy: "Made in our kitchen, from scratch.",
           image: "/images/menu/pickles.webp",
           alt: "Glass dish of fermented pickle slices",

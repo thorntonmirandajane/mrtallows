@@ -200,9 +200,11 @@ export default function FeaturedMenu() {
                         </span>
                       )}
                     </h3>
-                    <p className={`eyebrow mt-1 text-rust ${"compact" in group || "trio" in group ? "text-[0.6rem] tracking-[0.12em] md:text-[0.72rem] md:tracking-[0.18em]" : "text-[0.64rem] tracking-[0.16em] md:text-[0.72rem] md:tracking-[0.18em]"}`}>
-                      {item.price || "House-made"}
-                    </p>
+                    {item.price && (
+                      <p className={`eyebrow mt-1 text-rust ${"compact" in group || "trio" in group ? "text-[0.6rem] tracking-[0.12em] md:text-[0.72rem] md:tracking-[0.18em]" : "text-[0.64rem] tracking-[0.16em] md:text-[0.72rem] md:tracking-[0.18em]"}`}>
+                        {item.price}
+                      </p>
+                    )}
                     <span className="mx-auto mt-2 block h-px w-8 bg-blush transition-[width,background-color] duration-700 ease-[var(--ease-luxe)] group-hover:w-14 group-hover:bg-rust" />
                     <span
                       className={`eyebrow mt-auto inline-flex items-center gap-2 pt-3 font-semibold text-forest-deep transition-all duration-500 group-hover:gap-3 ${

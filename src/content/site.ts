@@ -50,7 +50,7 @@ export const features = [
   {
     icon: "/brand/icon-leaf.webp",
     title: "Intentional Sourcing",
-    copy: "Grass-finished beef and organic potatoes, cooked in beef tallow.",
+    copy: "100% grass-fed, grass-finished US beef and organic potatoes, cooked in beef tallow.",
   },
 ];
 
@@ -61,7 +61,7 @@ export const features = [
  */
 export const burgerNotes = [
   { text: ["Toasted bun"], at: [1338, 200], from: [1321, 188], to: [1164, 255], bend: -30 },
-  { text: ["Grass-finished", "beef"], at: [1386, 340], from: [1369, 345], to: [1227, 442], bend: -26 },
+  { text: ["100% grass-fed", "US beef"], at: [1386, 340], from: [1369, 345], to: [1227, 442], bend: -26 },
   { text: ["Seared in", "beef tallow"], at: [1410, 478], from: [1394, 505], to: [1234, 509], bend: -10 },
   { text: ["Simple, real", "ingredients"], at: [1386, 629], from: [1369, 617], to: [1220, 605], bend: 10 },
   { text: ["Crispy hand-cut", "fries in tallow"], at: [370, 190], from: [510, 240], to: [540, 430], bend: -18 },
@@ -70,7 +70,7 @@ export const burgerNotes = [
 /** Mobile callouts, in the 1290 x 894 space of /images/slider-*-mobile.webp (copy sits in the top 380). */
 export const burgerNotesMobile = [
   { text: ["Toasted bun"], at: [1020, 330], from: [1010, 322], to: [960, 420], bend: -28 },
-  { text: ["Grass-finished", "beef"], at: [1035, 480], from: [1025, 515], to: [1015, 640], bend: -16 },
+  { text: ["100% grass-fed", "US beef"], at: [985, 480], from: [1000, 515], to: [1015, 640], bend: -16 },
   { text: ["Seared in", "beef tallow"], at: [1050, 640], from: [1042, 660], to: [1036, 712], bend: -8 },
   { text: ["Simple, real", "ingredients"], at: [1050, 790], from: [1042, 800], to: [1040, 800], bend: 4 },
   { text: ["Crispy hand-cut", "fries in tallow"], at: [30, 420], from: [170, 500], to: [225, 615], bend: 20 },
@@ -80,7 +80,7 @@ export const signature = {
   eyebrow: "The Signature Burger",
   headline: ["Craveable", "Fast Food"],
   sub: "Made From Real Ingredients",
-  copy: "Grass-finished beef, with certified organic tallow-cooked fries, honey-sweetened drinks, and house-made mustard, ketchup, and pickles.",
+  copy: "100% grass-fed, grass-finished US beef, with certified organic tallow-cooked fries, honey-sweetened drinks, and house-made mustard, ketchup, and pickles.",
   cta: { label: "Explore the Menu", href: "#full-menu" },
   photoAlt: "Photograph of a cheeseburger with melted cheese on a toasted bun beside hand-cut fries",
   sketchAlt: "Matching hand-drawn sepia illustration of the same cheeseburger and fries",
@@ -154,9 +154,9 @@ export const menu = {
     {
       id: "burger",
       name: "The Cheeseburger",
-      copy: "Grass-finished beef cooked in tallow, with melted cheese on a local sourdough bun.",
+      copy: "100% grass-fed, grass-finished US beef cooked in tallow, with melted cheese on a local sourdough bun.",
       image: "/images/menu-burger.webp",
-      alt: "Cheeseburger: a seared grass-finished beef patty with melted cheese on a toasted bun",
+      alt: "Cheeseburger: a seared grass-fed beef patty with melted cheese on a toasted bun",
       price: "$15",
       detail: "Or go carnivore style: no bun, wrapped in lettuce from a local farm.",
     },
@@ -203,7 +203,7 @@ export const fullMenu = {
         { name: "Double", price: "$17" },
         { name: "Carnivore style, no bun", price: "$14" },
       ],
-      copy: "Grass-finished beef cooked in tallow, on a local sourdough bun or in a lettuce wrap from a local farm.",
+      copy: "100% grass-fed, grass-finished US beef cooked in tallow, on a local sourdough bun or in a lettuce wrap from a local farm.",
     },
     {
       title: "Fries",
@@ -252,7 +252,7 @@ export const process = {
   stat: "About a third of American adults eat fast food on any given day.",
   close: ["We cook those meals.", "And we make them", "real food."],
   steps: [
-    { image: "step-ingredients", title: "Real Ingredients", copy: "Responsibly sourced beef, potatoes, and tallow.", alt: "Illustration of a steak, potatoes and fresh herbs" },
+    { image: "step-ingredients", title: "Real Ingredients", copy: "100% grass-fed, grass-finished US beef, potatoes, and tallow.", alt: "Illustration of a steak, potatoes and fresh herbs" },
     { image: "step-cook", title: "Prepare & Cook", copy: "Cooked simply, the right way.", alt: "Illustration of a patty searing in a cast iron skillet" },
     { image: "step-meal", title: "A Real Meal", copy: "A classic, made with real ingredients.", alt: "Illustration of a cheeseburger" },
     { image: "step-to-go", title: "Packed To-Go", copy: "Real food, ready when you are.", alt: "Illustration of a wrapped burger beside a Mr. Tallow's paper bag" },

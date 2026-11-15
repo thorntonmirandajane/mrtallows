@@ -247,6 +247,18 @@ export const mission = {
   close: "We cook those meals. And we make them real food.",
 };
 
+/** "1 in 3" stat and the four-step story, under Our Mission. Illustrations live in /public/illustrations. */
+export const process = {
+  stat: "About a third of American adults eat fast food on any given day.",
+  close: ["We cook those meals.", "And we make them", "real food."],
+  steps: [
+    { image: "step-ingredients", title: "Real Ingredients", copy: "Responsibly sourced beef, potatoes, and tallow.", alt: "Illustration of a steak, potatoes and fresh herbs" },
+    { image: "step-cook", title: "Prepare & Cook", copy: "Cooked simply, the right way.", alt: "Illustration of a patty searing in a cast iron skillet" },
+    { image: "step-meal", title: "A Real Meal", copy: "A classic, made with real ingredients.", alt: "Illustration of a cheeseburger" },
+    { image: "step-to-go", title: "Packed To-Go", copy: "Real food, ready when you are.", alt: "Illustration of a wrapped burger beside a Mr. Tallow's paper bag" },
+  ],
+};
+
 export const details = {
   eyebrow: "The Details",
   headline: ["Every Detail", "Considered"],

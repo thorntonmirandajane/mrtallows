@@ -6,6 +6,7 @@ import ExperienceHotspots from "@/components/ExperienceHotspots";
 import PhilosophySection from "@/components/PhilosophySection";
 import FeaturedMenu from "@/components/FeaturedMenu";
 import MissionSection from "@/components/MissionSection";
+import ProcessSection from "@/components/ProcessSection";
 import FullMenuSection from "@/components/FullMenuSection";
 import LifestyleBanner from "@/components/LifestyleBanner";
 import LocationSection from "@/components/LocationSection";
@@ -22,6 +23,7 @@ export default function Home() {
         <FeaturedMenu />
         <SignatureBurger />
         <FullMenuSection />
+        <ProcessSection />
         <MissionSection />
         <FeatureGrid />
         <ExperienceHotspots />

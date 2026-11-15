@@ -4,12 +4,11 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { mission } from "@/content/site";
 
-/** Once the list is in view, each "No ___" is struck through in turn, then the closing line lands.
+/** Once the list is in view, each "No ___" is struck through in turn.
  * (Reduced-motion users get the end state instantly via the global transition override.) */
 export default function MissionSection() {
   const list = useRef<HTMLUListElement>(null);
   const [on, setOn] = useState(false);
-  const n = mission.nos.length;
   const STEP = 520; // ms between strikes
 
   useEffect(() => {
@@ -92,17 +91,6 @@ export default function MissionSection() {
                 );
               })}
             </ul>
-            <div
-              className="mt-[clamp(1rem,2.2vw,1.75rem)] border-t border-rust/40 pt-[clamp(0.75rem,1.5vw,1.25rem)] max-lg:!translate-y-0 max-lg:![transform:none] max-lg:!opacity-100"
-              style={{
-                opacity: on ? 1 : 0,
-                transform: on ? "none" : "translateY(16px)",
-                transition: `opacity 900ms ${ease} ${300 + n * STEP}ms, transform 900ms ${ease} ${300 + n * STEP}ms`,
-              }}
-            >
-              <p className="whitespace-nowrap text-[calc((100vw-2*var(--gutter))/33.5)] text-ink/90 md:whitespace-normal md:text-[0.95rem]">{mission.stat}</p>
-              <p className="display mt-1 text-[clamp(1.3rem,2.2vw,1.9rem)] font-[700] leading-[1.1] text-ink">{mission.close}</p>
-            </div>
           </div>
         </div>
       </div>

@@ -36,8 +36,8 @@ export default function SignatureBurger() {
         <ComparisonSlider
           className="[mask-image:linear-gradient(to_bottom,transparent,#000_2%,#000_97%,transparent)]"
           sizes="90vw"
-          inset={0.15}
-          rest={61}
+          inset={0.1}
+          rest={57}
           photo={{ src: "/images/slider-photo.webp", alt: signature.photoAlt, width: 1708, height: 713 }}
           sketch={{ src: "/images/slider-sketch.webp", alt: signature.sketchAlt, width: 1708, height: 713 }}
           notes={burgerNotes}
@@ -51,14 +51,14 @@ export default function SignatureBurger() {
       <div className="bg-[#dbcbb8] md:hidden">
         <div className="relative z-10 px-[var(--gutter)] pt-10">{intro}</div>
         <ComparisonSlider
-          className="mt-[calc(-1rem-9vw)]"
+          className="mt-[calc(-1rem-14vw)]"
           sizes="(min-width: 768px) 1px, 100vw"
-          photo={{ src: "/images/slider-photo-mobile.webp", alt: signature.photoAlt, width: 1521, height: 894 }}
-          sketch={{ src: "/images/slider-sketch-mobile.webp", alt: signature.sketchAlt, width: 1521, height: 894 }}
+          photo={{ src: "/images/slider-photo-mobile.webp", alt: signature.photoAlt, width: 1290, height: 894 }}
+          sketch={{ src: "/images/slider-sketch-mobile.webp", alt: signature.sketchAlt, width: 1290, height: 894 }}
           notes={burgerNotesMobile}
-          noteSize={52}
+          noteSize={48}
           textZone={380 / 894}
-          rest={48}
+          rest={60}
           labels={["", ""]}
         />
       </div>

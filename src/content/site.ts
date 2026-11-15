@@ -67,13 +67,13 @@ export const burgerNotes = [
   { text: ["Crispy hand-cut", "fries in tallow"], at: [370, 190], from: [510, 240], to: [540, 430], bend: -18 },
 ];
 
-/** Mobile callouts, in the 1521 x 894 space of /images/slider-*-mobile.webp (copy sits in the top 380). */
+/** Mobile callouts, in the 1290 x 894 space of /images/slider-*-mobile.webp (copy sits in the top 380). */
 export const burgerNotesMobile = [
-  { text: ["Toasted bun"], at: [1090, 340], from: [1080, 330], to: [965, 420], bend: -28 },
-  { text: ["Grass-finished", "beef"], at: [1110, 470], from: [1100, 510], to: [1020, 640], bend: -20 },
-  { text: ["Seared in", "beef tallow"], at: [1110, 630], from: [1100, 655], to: [1036, 712], bend: -10 },
-  { text: ["Simple, real", "ingredients"], at: [1110, 780], from: [1100, 790], to: [1040, 790], bend: 6 },
-  { text: ["Crispy hand-cut", "fries in tallow"], at: [40, 440], from: [190, 525], to: [235, 625], bend: 20 },
+  { text: ["Toasted bun"], at: [1020, 330], from: [1010, 322], to: [960, 420], bend: -28 },
+  { text: ["Grass-finished", "beef"], at: [1035, 480], from: [1025, 515], to: [1015, 640], bend: -16 },
+  { text: ["Seared in", "beef tallow"], at: [1050, 640], from: [1042, 660], to: [1036, 712], bend: -8 },
+  { text: ["Simple, real", "ingredients"], at: [1050, 790], from: [1042, 800], to: [1040, 800], bend: 4 },
+  { text: ["Crispy hand-cut", "fries in tallow"], at: [30, 420], from: [170, 500], to: [225, 615], bend: 20 },
 ];
 
 export const signature = {

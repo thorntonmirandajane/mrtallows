@@ -35,7 +35,7 @@ export default function MissionSection() {
       <div className="mx-auto w-full max-w-[1560px] px-[var(--gutter)] lg:pr-[max(var(--gutter),5vw)]">
         <div className="relative flex flex-col gap-8 lg:min-h-[clamp(500px,40vw,700px)] lg:justify-center lg:py-6">
           <div
-            className="relative mx-auto -mt-4 w-[200%] max-w-none -translate-x-[8%] lg:absolute lg:left-1/2 lg:top-1/2 lg:mx-0 lg:w-[min(1600px,115vw)] lg:-translate-x-[90%] lg:-translate-y-1/2"
+            className="relative order-2 mx-auto -mt-[26vw] -mb-[6vw] w-[200%] lg:order-none lg:mb-0 lg:mt-0 max-w-none -translate-x-[8%] lg:absolute lg:left-1/2 lg:top-1/2 lg:mx-0 lg:w-[min(1600px,115vw)] lg:-translate-x-[90%] lg:-translate-y-1/2"
           >
             <span className="pointer-events-none absolute bottom-[4%] left-[18%] h-[16%] w-[70%] rounded-[50%] bg-[radial-gradient(closest-side,rgba(90,64,42,0.22),transparent)] blur-md" aria-hidden="true" />
             <Image
@@ -47,11 +47,11 @@ export default function MissionSection() {
               className="relative h-auto w-full opacity-[0.93] [filter:saturate(0.85)_brightness(1.04)] [mask-image:radial-gradient(75%_80%_at_58%_46%,#000_62%,transparent_100%)]"
             />
           </div>
-          <div className="relative z-10 -mt-14 lg:ml-auto lg:mt-0 lg:w-[min(46%,640px)] lg:text-right">
-            <p className="eyebrow mb-3 text-rust" data-reveal>
+          <div className="relative z-10 order-1 pt-8 lg:order-none lg:ml-auto lg:mt-0 lg:pt-0 lg:w-[min(46%,640px)] lg:text-right">
+            <p className="eyebrow mb-3 text-rust max-lg:!translate-y-0 max-lg:![transform:none] max-lg:!opacity-100" data-reveal>
               {mission.eyebrow}
             </p>
-            <h2 id="mission-title" className="display text-[clamp(2.3rem,3.3vw,3.5rem)] leading-[1.04] text-ink" data-reveal style={{ "--d": "90ms" } as React.CSSProperties}>
+            <h2 id="mission-title" className="display text-[clamp(2.3rem,3.3vw,3.5rem)] leading-[1.04] text-ink max-lg:!translate-y-0 max-lg:![transform:none] max-lg:!opacity-100" data-reveal style={{ "--d": "90ms" } as React.CSSProperties}>
               {mission.headline}
             </h2>
             <div className="mt-[clamp(1.25rem,2.4vw,1.75rem)]" />
@@ -93,7 +93,7 @@ export default function MissionSection() {
               })}
             </ul>
             <div
-              className="mt-[clamp(1rem,2.2vw,1.75rem)] border-t border-rust/40 pt-[clamp(0.75rem,1.5vw,1.25rem)]"
+              className="mt-[clamp(1rem,2.2vw,1.75rem)] border-t border-rust/40 pt-[clamp(0.75rem,1.5vw,1.25rem)] max-lg:!translate-y-0 max-lg:![transform:none] max-lg:!opacity-100"
               style={{
                 opacity: on ? 1 : 0,
                 transform: on ? "none" : "translateY(16px)",

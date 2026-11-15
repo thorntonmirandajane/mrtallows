@@ -4,7 +4,7 @@ import { process } from "@/content/site";
 /** "1 in 3" stat, then the four steps from ingredient to bag, in the brand's engraved style. Sits above Our Mission. */
 export default function ProcessSection() {
   return (
-    <section aria-labelledby="process-title" className="surface-limewash relative overflow-hidden py-[clamp(3rem,6vw,5.5rem)]">
+    <section aria-labelledby="process-title" className="surface-limewash relative overflow-hidden py-[clamp(2rem,3.5vw,3rem)]">
       <div className="mx-auto max-w-[var(--container)] px-[var(--gutter)]">
         <div className="grid items-center gap-8 md:grid-cols-[auto_1px_minmax(0,1fr)] md:gap-[clamp(2rem,4vw,4rem)]" data-reveal-group>
           <figure className="mx-auto w-[min(56vw,230px)] md:w-[clamp(190px,19vw,260px)]" data-reveal>
@@ -37,7 +37,7 @@ export default function ProcessSection() {
           </div>
         </div>
 
-        <ol className="mt-[clamp(1.5rem,3vw,2.5rem)] grid grid-cols-2 gap-x-4 gap-y-10 lg:grid-cols-4 lg:gap-x-[clamp(1.5rem,3vw,3rem)]">
+        <ol className="mt-[clamp(0.75rem,1.5vw,1.25rem)] grid grid-cols-2 gap-x-4 gap-y-10 lg:grid-cols-4 lg:gap-x-[clamp(1.5rem,3vw,3rem)]">
           {process.steps.map((step, i) => (
             <li key={step.title} className="relative flex flex-col items-center text-center" data-reveal style={{ "--d": `${i * 120}ms` } as React.CSSProperties}>
               <div className="relative flex aspect-[5/4] w-full items-end justify-center">

@@ -31,7 +31,7 @@ export const order = { label: "Order Now", href: "/#menu" };
 export const hero = {
   headline: ["Rewriting", "American", "Fast Food."],
   copy: "Burgers, fries and shakes the way they should be made.",
-  primary: { label: "Explore Mr. Tallow's", href: "#experience" },
+  primary: { label: "Explore the Menu", href: "#full-menu" },
   secondary: { label: "Our Difference", href: "#difference" },
   imageAlt: "A cheeseburger in a paper wrap beside hand-cut fries on a walnut board, with faint sketches of a grazing cow, potatoes and a jar of tallow on the wall",
 };
@@ -81,7 +81,7 @@ export const signature = {
   headline: ["Craveable", "Fast Food"],
   sub: "Made From Real Ingredients",
   copy: "Grass-finished beef, with certified organic tallow-cooked fries, honey-sweetened drinks, and house-made mustard, ketchup, and pickles.",
-  cta: { label: "Explore the Menu", href: "#menu" },
+  cta: { label: "Explore the Menu", href: "#full-menu" },
   photoAlt: "Photograph of a cheeseburger with melted cheese on a toasted bun beside hand-cut fries",
   sketchAlt: "Matching hand-drawn sepia illustration of the same cheeseburger and fries",
 };

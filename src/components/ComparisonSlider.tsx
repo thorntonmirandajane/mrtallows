@@ -81,7 +81,7 @@ export default function ComparisonSlider({ photo, sketch, notes, sizes, classNam
         };
         raf = requestAnimationFrame(step);
       },
-      { threshold: 0.55 },
+      { threshold: 0.35 },
     );
     io.observe(el);
     return () => {

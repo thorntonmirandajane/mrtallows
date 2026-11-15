@@ -22,7 +22,7 @@ export default function MissionSection() {
           io.disconnect();
         }
       },
-      { threshold: 0.45 },
+      { threshold: 0.2 },
     );
     io.observe(el);
     return () => io.disconnect();

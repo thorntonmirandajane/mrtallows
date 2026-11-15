@@ -7,7 +7,7 @@ export const site = {
   name: "Mr. Tallow's",
   tagline: "Real ingredients. Beef tallow. A better kind of fast food.",
   description:
-    "Mr. Tallow's is a new fast-casual restaurant launching in Florida. Familiar favorites cooked in beef tallow with real, recognizable ingredients, served in a warm, beautifully designed space.",
+    "Mr. Tallow's is a new fast-casual restaurant opening in Austin, Texas. Familiar favorites cooked in beef tallow with real, recognizable ingredients, served in a warm, beautifully designed space.",
   url: "https://mrtallows.com",
 };
 
@@ -33,8 +33,7 @@ export const hero = {
   copy: "Burgers, fries and shakes the way they should be made.",
   primary: { label: "Explore Mr. Tallow's", href: "#experience" },
   secondary: { label: "Our Difference", href: "#difference" },
-  imageAlt:
-    "A hand-drawn sketch of a grazing cow, potatoes, greens and a jar of beef tallow that gradually becomes a photograph of a cheeseburger and fries on a walnut board inside a warmly lit restaurant",
+  imageAlt: "A cheeseburger in a paper wrap beside hand-cut fries on a walnut board, with faint sketches of a grazing cow, potatoes and a jar of tallow on the wall",
 };
 
 export const features = [
@@ -53,27 +52,22 @@ export const features = [
     title: "Intentional Sourcing",
     copy: "Grass-finished beef and organic potatoes, cooked in beef tallow.",
   },
-  {
-    icon: "/brand/icon-light.webp",
-    title: "A Welcoming Environment",
-    copy: "Natural materials, warm lighting, and a space designed to feel good.",
-  },
 ];
 
 /**
  * Handwritten notes on the signature burger slider.
- * Coordinates are in the 1928 x 683 space of /images/slider-*.webp.
+ * Coordinates are in the 1708 x 713 space of /images/slider-*.webp.
  * `from` is where the arrow leaves the note, `to` is where it lands, `bend` curves it.
  */
 export const burgerNotes = [
-  { text: ["Toasted bun"], at: [1438, 170], from: [1421, 158], to: [1264, 225], bend: -30 },
-  { text: ["Grass-finished", "beef"], at: [1486, 310], from: [1469, 315], to: [1327, 412], bend: -26 },
-  { text: ["Seared in", "beef tallow"], at: [1510, 448], from: [1494, 475], to: [1334, 479], bend: -10 },
-  { text: ["Simple, real", "ingredients"], at: [1486, 599], from: [1469, 587], to: [1320, 575], bend: 10 },
-  { text: ["Crispy hand-cut", "fries in tallow"], at: [470, 160], from: [610, 210], to: [640, 400], bend: -18 },
+  { text: ["Toasted bun"], at: [1338, 200], from: [1321, 188], to: [1164, 255], bend: -30 },
+  { text: ["Grass-finished", "beef"], at: [1386, 340], from: [1369, 345], to: [1227, 442], bend: -26 },
+  { text: ["Seared in", "beef tallow"], at: [1410, 478], from: [1394, 505], to: [1234, 509], bend: -10 },
+  { text: ["Simple, real", "ingredients"], at: [1386, 629], from: [1369, 617], to: [1220, 605], bend: 10 },
+  { text: ["Crispy hand-cut", "fries in tallow"], at: [370, 190], from: [510, 240], to: [540, 430], bend: -18 },
 ];
 
-/** Mobile callouts, in the 1540 x 1880 space of /images/slider-*-mobile.webp (copy sits in the top 1100). */
+/** Mobile callouts, in the 1521 x 894 space of /images/slider-*-mobile.webp (copy sits in the top 380). */
 export const burgerNotesMobile = [
   { text: ["Toasted bun"], at: [1090, 340], from: [1080, 330], to: [965, 420], bend: -28 },
   { text: ["Grass-finished", "beef"], at: [1110, 470], from: [1100, 510], to: [1020, 640], bend: -20 },
@@ -177,8 +171,8 @@ export const menu = {
     },
     {
       id: "shake",
-      name: "Straus Milkshake",
-      copy: "Made with Straus dairy and sweetened without refined sugar.",
+      name: "Straus Family Creamery Milkshake",
+      copy: "Made with Straus Family Creamery dairy, with no refined sugar.",
       image: "/images/menu-shake.webp",
       alt: "Chocolate milkshake in a tall glass with a green and white striped straw",
       price: "$8",
@@ -220,10 +214,10 @@ export const fullMenu = {
       title: "Drinks",
       items: [
         { name: "Lemonade", price: "$5" },
-        { name: "Straus milkshake", price: "$8" },
+        { name: "Straus Family Creamery milkshake", price: "$8" },
         { name: "Filtered water", price: "Free" },
       ],
-      copy: "Honey-sweetened, fresh-squeezed lemonade. Shakes made with Straus dairy. No refined sugar.",
+      copy: "Honey-sweetened, fresh-squeezed lemonade. Shakes made with Straus Family Creamery dairy. No refined sugar.",
     },
     {
       title: "House-Made Extras",
@@ -250,7 +244,7 @@ export const mission = {
     { icon: "syringe", label: "Added Hormones" },
   ],
   stat: "About a third of American adults eat fast food on any given day.",
-  close: "We intend to cook those meals.",
+  close: "We cook those meals. And we make them real food.",
 };
 
 export const details = {
@@ -261,21 +255,23 @@ export const details = {
     "A burger wrapped in Mr. Tallow's printed paper nested in straw inside a kraft box, beside a carton of fries reading No Bull, Just Burgers",
 };
 
-/** Location is not yet announced. Fill these in and the section switches from "Coming Soon" to live. */
+/** First location. Add hours and set status to "open" when the doors open. */
 export const location = {
   status: "coming-soon" as "coming-soon" | "open",
   name: "Mr. Tallow's",
-  region: "Florida",
-  street: null as string | null,
-  cityState: null as string | null,
+  region: "Austin, Texas",
+  street: "3005 South Lamar, Suite 114B" as string | null,
+  cityState: "Austin, Texas" as string | null,
+  locality: "Austin",
+  regionCode: "TX",
   hours: null as string | null,
-  mapsUrl: null as string | null,
+  mapsUrl: "https://www.google.com/maps/search/?api=1&query=3005+South+Lamar+Blvd+114B+Austin+TX" as string | null,
 };
 
 export const visit = {
   eyebrow: "Visit Us",
   headline: ["Come In &", "Experience It"],
-  copy: "Discover a new kind of fast-casual, where real food, beef tallow, and a welcoming space come together.",
+  copy: "The burger, fries and shake you already crave, made the way they always should have been. Just as fast, finally real.",
 };
 
 /** Add handles when the accounts are live; icons without an href render as "coming soon". */

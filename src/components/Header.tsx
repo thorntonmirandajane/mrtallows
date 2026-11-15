@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Logo from "./Logo";
 import ContactIcons from "./ContactIcons";
-import { nav, order } from "@/content/site";
+import { location, nav, order } from "@/content/site";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -64,7 +64,7 @@ export default function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-[transform,background-color,box-shadow] duration-500 ease-[var(--ease-luxe)] will-change-transform ${
         hidden && !open ? "-translate-y-full" : ""
-      } ${solid ? `bg-[#dbcbb8] ${open ? "shadow-none" : "shadow-[0_1px_0_rgba(42,37,31,0.08)]"}` : "bg-[#dbcbb8] shadow-none md:bg-[#dbcbb8]/0"}`}
+      } ${solid ? `bg-[#dbcbb8] ${open ? "shadow-none" : "shadow-[0_1px_0_rgba(42,37,31,0.08)]"}` : "bg-[#d8bda0] shadow-none md:bg-[#dbcbb8]/0"}`}
     >
       <a
         href="#main"
@@ -73,19 +73,19 @@ export default function Header() {
         Skip to content
       </a>
       <div
-        className={`mx-auto flex items-center px-[var(--gutter)] md:px-[max(var(--gutter),5vw)] transition-[height] duration-700 ease-[var(--ease-luxe)] ${
+        className={`relative mx-auto flex items-center px-[var(--gutter)] md:px-[max(var(--gutter),5vw)] transition-[height] duration-700 ease-[var(--ease-luxe)] ${
           scrolled ? "h-[68px]" : "h-[var(--header-h)]"
         }`}
       >
-        <a href="#top" className="text-forest" aria-label="Mr. Tallow's, back to top">
+        <a href="#top" className="text-cream [filter:drop-shadow(0_1px_2px_rgba(90,64,40,0.18))]" aria-label="Mr. Tallow's, back to top">
           <Logo className={`transition-[width] duration-700 ease-[var(--ease-luxe)] ${scrolled ? "w-[64px]" : "w-[78px]"}`} />
         </a>
 
-        <nav aria-label="Primary" className="ml-14 hidden lg:block">
-          <ul className="flex items-center gap-9">
+        <nav aria-label="Primary" className="absolute left-1/2 hidden -translate-x-1/2 lg:block">
+          <ul className="flex items-center gap-[clamp(1.5rem,2.6vw,2.25rem)]">
             {nav.map((item) => (
               <li key={item.href}>
-                <a href={item.href} className="nav-link text-[0.8rem] font-semibold uppercase tracking-[0.16em] text-walnut transition-colors hover:text-forest">
+                <a href={item.href} className="nav-link text-[0.74rem] font-semibold xl:text-[0.8rem] uppercase tracking-[0.16em] text-walnut transition-colors hover:text-forest">
                   {item.label}
                 </a>
               </li>
@@ -94,7 +94,7 @@ export default function Header() {
         </nav>
 
         <div className="ml-auto flex items-center gap-3">
-          <ContactIcons className="mr-2 hidden md:flex" />
+          <ContactIcons className="mr-2 hidden md:flex lg:hidden xl:flex" />
           <a href={order.href} className="btn btn-blush hidden !h-11 sm:inline-flex">
             {order.label}
           </a>
@@ -140,7 +140,7 @@ export default function Header() {
           <div className="space-y-6">
             <div className="h-px w-full bg-ink/15" />
             <div className="flex items-center justify-between">
-              <p className="eyebrow text-muted">Opening soon in Florida</p>
+              <p className="eyebrow text-muted">Opening soon in {location.region}</p>
               <ContactIcons size="h-11 w-11" />
             </div>
             <a href={order.href} onClick={() => setOpen(false)} className="btn btn-blush w-full justify-between">

@@ -36,22 +36,22 @@ export default function SignatureBurger() {
         <ComparisonSlider
           className="[mask-image:linear-gradient(to_bottom,transparent,#000_2%,#000_97%,transparent)]"
           sizes="90vw"
-          inset={0.22}
+          inset={0.15}
           rest={61}
-          photo={{ src: "/images/slider-photo.webp", alt: signature.photoAlt, width: 1928, height: 683 }}
-          sketch={{ src: "/images/slider-sketch.webp", alt: signature.sketchAlt, width: 1928, height: 683 }}
+          photo={{ src: "/images/slider-photo.webp", alt: signature.photoAlt, width: 1708, height: 713 }}
+          sketch={{ src: "/images/slider-sketch.webp", alt: signature.sketchAlt, width: 1708, height: 713 }}
           notes={burgerNotes}
           labels={["", ""]}
           labelInset="6%"
         />
-        <div className="pointer-events-none absolute left-[var(--edge)] top-[7%] hidden xl:block min-[1760px]:left-[calc(var(--edge)-(100vw-1760px)/2)]">{intro}</div>
+        <div className="pointer-events-none absolute left-[max(var(--gutter),5vw)] top-[7%] hidden xl:block min-[1760px]:left-[calc(5vw-(100vw-1760px)/2)]">{intro}</div>
       </div>
 
       {/* mobile: copy on the limestone, then the slider, whose top fades up from that same color */}
       <div className="bg-[#dbcbb8] md:hidden">
         <div className="relative z-10 px-[var(--gutter)] pt-10">{intro}</div>
         <ComparisonSlider
-          className="mt-[calc(-1rem-17vw)]"
+          className="mt-[calc(-1rem-9vw)]"
           sizes="(min-width: 768px) 1px, 100vw"
           photo={{ src: "/images/slider-photo-mobile.webp", alt: signature.photoAlt, width: 1521, height: 894 }}
           sketch={{ src: "/images/slider-sketch-mobile.webp", alt: signature.sketchAlt, width: 1521, height: 894 }}

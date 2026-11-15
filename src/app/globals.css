@@ -247,6 +247,21 @@
     transform: scaleX(1);
   }
 
+  /* phones: same motion, quicker and with shorter staggers so content is there as you reach it */
+  @media (max-width: 767px) {
+    [data-reveal] {
+      transform: translate3d(0, 18px, 0);
+      transition-duration: 0.7s, 0.8s;
+      transition-delay: calc(var(--d, 0ms) * 0.5);
+    }
+    .line-mask > span,
+    .img-reveal,
+    .rule-draw {
+      transition-duration: 0.85s;
+      transition-delay: calc(var(--d, 0ms) * 0.5);
+    }
+  }
+
   /* ---------- buttons ---------- */
 
   .btn {

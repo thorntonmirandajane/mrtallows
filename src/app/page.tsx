@@ -7,7 +7,6 @@ import PhilosophySection from "@/components/PhilosophySection";
 import FeaturedMenu from "@/components/FeaturedMenu";
 import MissionSection from "@/components/MissionSection";
 import ProcessSection from "@/components/ProcessSection";
-import FullMenuSection from "@/components/FullMenuSection";
 import LifestyleBanner from "@/components/LifestyleBanner";
 import LocationSection from "@/components/LocationSection";
 import Footer from "@/components/Footer";
@@ -22,7 +21,6 @@ export default function Home() {
         <Hero />
         <FeaturedMenu />
         <SignatureBurger />
-        <FullMenuSection />
         <ProcessSection />
         <MissionSection />
         <FeatureGrid />

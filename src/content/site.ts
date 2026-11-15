@@ -14,7 +14,6 @@ export const site = {
 export const nav = [
   { label: "Menu", href: "#menu" },
   { label: "Our Difference", href: "#difference" },
-  { label: "Experience", href: "#experience" },
   { label: "Visit", href: "#visit" },
 ];
 
@@ -31,16 +30,23 @@ export const order = { label: "Order Now", href: "/#menu" };
 export const hero = {
   headline: ["Rewriting", "American", "Fast Food."],
   copy: "Burgers, fries and shakes the way they should be made.",
-  primary: { label: "Explore the Menu", href: "#full-menu" },
+  primary: { label: "Explore the Menu", href: "#menu" },
   secondary: { label: "Our Difference", href: "#difference" },
   imageAlt: "A cheeseburger in a paper wrap beside hand-cut fries on a walnut board, with faint sketches of a grazing cow, potatoes and a jar of tallow on the wall",
+};
+
+/** Our Difference header, above the three features. */
+export const difference = {
+  eyebrow: "Our Difference",
+  headline: "Fast Food Raised Right",
+  copy: "Great food starts long before it reaches the kitchen. We believe in supporting ranchers and farmers who raise and grow food with care. From grass-fed, grass-finished beef to carefully sourced ingredients, we're bringing quality, transparency, and integrity back to American fast food.",
 };
 
 export const features = [
   {
     icon: "/brand/icon-cow.webp",
     title: "Cooked in Beef Tallow",
-    copy: "Prepared using traditional cooking fats for exceptional flavor.",
+    copy: "Grass-fed, organic beef tallow: the traditional cooking fat, for exceptional flavor.",
   },
   {
     icon: "/brand/icon-onion.webp",
@@ -80,8 +86,8 @@ export const signature = {
   eyebrow: "The Signature Burger",
   headline: ["Craveable", "Fast Food"],
   sub: "Made From Real Ingredients",
-  copy: "100% grass-fed, grass-finished US beef, with certified organic tallow-cooked fries, honey-sweetened drinks, and house-made mustard, ketchup, and pickles.",
-  cta: { label: "Explore the Menu", href: "#full-menu" },
+  copy: "100% grass-fed, grass-finished US beef, with golden tallow-cooked fries, honey-sweetened drinks, and house-made mustard, ketchup, and pickles.",
+  cta: { label: "Explore the Menu", href: "#menu" },
   photoAlt: "Photograph of a cheeseburger with melted cheese on a toasted bun beside hand-cut fries",
   sketchAlt: "Matching hand-drawn sepia illustration of the same cheeseburger and fries",
 };
@@ -146,88 +152,129 @@ export const philosophy = {
 
 /** Provisional menu. Names, descriptions and prices are placeholders until the menu is final. */
 export const menu = {
-  eyebrow: "Featured Menu",
+  eyebrow: "The Menu",
   headline: "Intentional Classics",
-  copy: "Burgers, fries and shakes the way they should be made.",
+  copy: "The next generation of American food.",
   note: "Menu and pricing may change before opening.",
-  items: [
-    {
-      id: "burger",
-      name: "The Cheeseburger",
-      copy: "100% grass-fed, grass-finished US beef cooked in tallow, with melted cheese on a local sourdough bun.",
-      image: "/images/menu-burger.webp",
-      alt: "Cheeseburger: a seared grass-fed beef patty with melted cheese on a toasted bun",
-      price: "$15",
-      detail: "Or go carnivore style: no bun, wrapped in lettuce from a local farm.",
-    },
-    {
-      id: "fries",
-      name: "Kennebec Fries",
-      copy: "Organic hand-cut potatoes, double-fried in beef tallow, organic sea salt only.",
-      image: "/images/menu-fries.webp",
-      alt: "Golden hand-cut fries in a kraft Mr. Tallow's fry carton",
-      price: "$5.50",
-      detail: "Pair with fermented ketchup, raw mustard or the house special sauce.",
-    },
-    {
-      id: "shake",
-      name: "Straus Family Creamery Milkshake",
-      copy: "Made with Straus Family Creamery dairy, with no refined sugar.",
-      image: "/images/menu-shake.webp",
-      alt: "Chocolate milkshake in a tall glass with a green and white striped straw",
-      price: "$8",
-      detail: "Thick, cold and simple. No refined sugar.",
-    },
-    {
-      id: "lemonade",
-      name: "Lemonade",
-      copy: "Fresh-squeezed and sweetened with honey.",
-      image: "/images/menu-lemonade.webp",
-      alt: "Glass of iced lemonade with a lemon wheel",
-      price: "$5",
-      detail: "Filtered water is always free.",
-    },
-  ],
-  cta: { label: "Explore the Full Menu" },
-};
-
-/** The complete menu, shown in the full-menu panel. */
-export const fullMenu = {
-  headline: ["Keeping It", "Simple and Clean"],
-  sections: [
+  groups: [
     {
       title: "Burgers",
       items: [
-        { name: "Original", price: "$14" },
-        { name: "Cheese", price: "$15" },
-        { name: "Double", price: "$17" },
-        { name: "Carnivore style, no bun", price: "$14" },
+        {
+          id: "original",
+          name: "The Original",
+          copy: "100% grass-fed, grass-finished US beef cooked in tallow, on a local sourdough bun.",
+          image: "/images/menu/original.webp",
+          alt: "Burger: a seared grass-fed beef patty on a toasted bun",
+          price: "$14",
+          detail: "Finish it with house-made fermented pickles, ketchup, raw mustard or special sauce.",
+        },
+        {
+          id: "cheese",
+          name: "The Cheeseburger",
+          copy: "100% grass-fed, grass-finished US beef cooked in tallow, with melted cheese on a local sourdough bun.",
+          image: "/images/menu/cheese.webp",
+          alt: "Cheeseburger: a seared grass-fed beef patty with melted cheese on a toasted bun",
+          price: "$15",
+          detail: "Our signature. Add house-made fermented pickles and special sauce.",
+        },
+        {
+          id: "double",
+          name: "The Double",
+          copy: "Two 100% grass-fed, grass-finished US beef patties and melted cheese, on a local sourdough bun.",
+          image: "/images/menu/double.webp",
+          alt: "Double cheeseburger: two seared beef patties with melted cheese on a toasted bun",
+          price: "$17",
+          detail: "Twice the beef, same simple ingredients.",
+        },
+        {
+          id: "carnivore",
+          name: "Carnivore Style",
+          copy: "No bun. 100% grass-fed, grass-finished US beef and melted cheese, cooked in tallow.",
+          image: "/images/menu/carnivore.webp",
+          alt: "Two seared beef patties with melted cheese and no bun",
+          price: "$14",
+          detail: "Served as is, or wrapped in lettuce from a local farm.",
+        },
       ],
-      copy: "100% grass-fed, grass-finished US beef cooked in tallow, on a local sourdough bun or in a lettuce wrap from a local farm.",
     },
     {
-      title: "Fries",
-      items: [{ name: "Kennebec potato fries", price: "$5.50" }],
-      copy: "Organic hand-cut potatoes, double-fried in beef tallow, organic sea salt only.",
-    },
-    {
-      title: "Drinks",
+      title: "Fries & Drinks",
+      trio: true,
       items: [
-        { name: "Lemonade", price: "$5" },
-        { name: "Straus Family Creamery milkshake", price: "$8" },
-        { name: "Filtered water", price: "Free" },
+        {
+          id: "fries",
+          name: "Kennebec Fries",
+          copy: "Golden, tallow-cooked fries: organic hand-cut potatoes, double-fried in grass-fed organic tallow, organic sea salt only.",
+          image: "/images/menu/fries.webp",
+          alt: "Golden hand-cut fries in a kraft Mr. Tallow's fry carton",
+          price: "$5.50",
+          detail: "Pair with fermented ketchup, raw mustard or the house special sauce.",
+        },
+        {
+          id: "lemonade",
+          name: "Lemonade",
+          copy: "Fresh-squeezed and sweetened with honey.",
+          image: "/images/menu/lemonade.webp",
+          alt: "Glass of iced lemonade with a lemon wheel",
+          price: "$5",
+          detail: "Filtered water is always free.",
+        },
+        {
+          id: "shake",
+          name: "Straus Family Creamery Milkshake",
+          cardName: "Milkshake",
+          maker: "Straus Family Creamery",
+          copy: "Made with Straus Family Creamery dairy, with no refined sugar.",
+          image: "/images/menu/shake.webp",
+          alt: "Chocolate milkshake in a tall glass with a green and white striped straw",
+          price: "$8",
+          detail: "Thick, cold and simple. No refined sugar.",
+        },
       ],
-      copy: "Honey-sweetened, fresh-squeezed lemonade. Shakes made with Straus Family Creamery dairy. No refined sugar.",
     },
     {
       title: "House-Made Extras",
+      compact: true,
       items: [
-        { name: "Fermented ketchup", price: "" },
-        { name: "House special sauce", price: "" },
-        { name: "Raw mustard", price: "" },
-        { name: "Fermented pickles", price: "" },
+        {
+          id: "ketchup",
+          name: "Fermented Ketchup",
+          copy: "Made in our kitchen, from scratch.",
+          image: "/images/menu/ketchup.webp",
+          alt: "Glass dish of fermented ketchup",
+          price: "",
+          detail: "Great with the fries.",
+        },
+        {
+          id: "sauce",
+          name: "House Special Sauce",
+          copy: "Made in our kitchen, from scratch.",
+          image: "/images/menu/sauce.webp",
+          alt: "Glass dish of house special sauce",
+          price: "",
+          detail: "The one to put on everything.",
+        },
+        {
+          id: "mustard",
+          name: "Raw Mustard",
+          lines: ["Raw", "Mustard"],
+          copy: "Made in our kitchen, from scratch.",
+          image: "/images/menu/mustard.webp",
+          alt: "Glass dish of raw mustard",
+          price: "",
+          detail: "Bright and sharp, made fresh.",
+        },
+        {
+          id: "pickles",
+          name: "Fermented Pickles",
+          copy: "Made in our kitchen, from scratch.",
+          image: "/images/menu/pickles.webp",
+          alt: "Glass dish of fermented pickle slices",
+          price: "",
+          detail: "Fermented the old-fashioned way.",
+        },
       ],
-      copy: "Made in our kitchen, from scratch.",
     },
   ],
 };

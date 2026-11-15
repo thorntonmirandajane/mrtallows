@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { features } from "@/content/site";
+import { difference, features } from "@/content/site";
 
 export default function FeatureGrid() {
   return (
@@ -7,13 +7,13 @@ export default function FeatureGrid() {
       <div className="mx-auto max-w-[var(--container)] px-[var(--gutter)]">
         <header className="mx-auto mb-[clamp(2rem,3.5vw,3rem)] max-w-3xl text-center">
           <p className="eyebrow mb-3 text-rust" data-reveal>
-            Our Difference
+            {difference.eyebrow}
           </p>
           <h2 id="difference-title" className="display text-[clamp(2.6rem,5.4vw,4.75rem)] text-ink" data-reveal style={{ "--d": "90ms" } as React.CSSProperties}>
-            More Than Fast Food
+            {difference.headline}
           </h2>
-          <p className="mt-3 text-[1.02rem] leading-relaxed text-muted" data-reveal style={{ "--d": "180ms" } as React.CSSProperties}>
-            A higher standard for everyday classics.
+          <p className="mx-auto mt-4 max-w-2xl text-[1.02rem] leading-relaxed text-ink/90" data-reveal style={{ "--d": "180ms" } as React.CSSProperties}>
+            {difference.copy}
           </p>
         </header>
 

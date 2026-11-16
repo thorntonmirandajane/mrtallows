@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Logo from "./Logo";
 import ContactIcons from "./ContactIcons";
+import SocialIcons from "./SocialIcons";
 import { location, nav, order } from "@/content/site";
 
 export default function Header() {
@@ -94,7 +95,8 @@ export default function Header() {
         </nav>
 
         <div className="ml-auto flex items-center gap-3">
-          <ContactIcons className="mr-2 hidden md:flex lg:hidden xl:flex" />
+          <SocialIcons className="mr-2 hidden md:flex lg:hidden xl:flex" />
+          <SocialIcons className="-mr-1 md:hidden" size="h-9 w-9" />
           <a href={order.href} className="btn btn-blush hidden !h-11 sm:inline-flex">
             {order.label}
           </a>

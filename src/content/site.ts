@@ -39,14 +39,14 @@ export const hero = {
 export const difference = {
   eyebrow: "Our Difference",
   headline: "Fast Food Raised Right",
-  copy: "Great food starts long before it reaches the kitchen. We believe in supporting ranchers and farmers who raise and grow food with care. From grass-fed, grass-finished beef to carefully sourced ingredients, we're bringing quality, transparency, and integrity back to American fast food.",
+  copy: "Great food starts long before it reaches the kitchen. We believe in supporting ranchers and farmers who raise and grow food with care. From 100% grass-fed, grass-finished beef to carefully sourced ingredients, we're bringing quality, transparency, and integrity back to American fast food.",
 };
 
 export const features = [
   {
     icon: "/brand/icon-cow.webp",
     title: "Cooked in Beef Tallow",
-    copy: "Grass-fed, organic beef tallow: the traditional cooking fat, for exceptional flavor.",
+    copy: "100% grass-fed, organic beef tallow: the traditional cooking fat, for exceptional flavor.",
   },
   {
     icon: "/brand/icon-onion.webp",
@@ -189,7 +189,7 @@ export const menu = {
         },
         {
           id: "carnivore",
-          name: "Carnivore Style",
+          name: "Saladino Style",
           copy: "No bun. 100% grass-fed, grass-finished US beef and melted cheese, cooked in tallow.",
           image: "/images/menu/carnivore.webp",
           alt: "Two seared beef patties with melted cheese and no bun",
@@ -300,7 +300,7 @@ export const process = {
   stat: "About a third of American adults eat fast food on any given day.",
   close: ["We cook those meals.", "And we make them", "real food."],
   steps: [
-    { image: "step-ingredients", title: "Real Ingredients", copy: "100% grass-fed, grass-finished US beef, potatoes, and tallow.", alt: "Illustration of a steak, potatoes and fresh herbs" },
+    { image: "step-ingredients", title: "Real Ingredients", copy: "100% grass-fed, grass-finished US beef, organic potatoes, and tallow.", alt: "Illustration of a steak, potatoes and fresh herbs" },
     { image: "step-cook", title: "Prepare & Cook", copy: "Cooked simply, the right way.", alt: "Illustration of a patty searing in a cast iron skillet" },
     { image: "step-meal", title: "A Real Meal", copy: "A classic, made with real ingredients.", alt: "Illustration of a cheeseburger" },
     { image: "step-to-go", title: "Packed To-Go", copy: "Real food, ready when you are.", alt: "Illustration of a wrapped burger beside a Mr. Tallow's paper bag" },
@@ -336,6 +336,6 @@ export const visit = {
 
 /** Add handles when the accounts are live; icons without an href render as "coming soon". */
 export const socials = [
-  { label: "Instagram", href: null as string | null },
+  { label: "Instagram", href: "https://www.instagram.com/mr.tallows/" as string | null },
   { label: "TikTok", href: null as string | null },
 ];

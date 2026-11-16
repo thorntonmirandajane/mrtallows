@@ -50,7 +50,7 @@ export default function Hero() {
     <section
       id="top"
       aria-labelledby="hero-title"
-      className={`relative flex flex-col overflow-hidden bg-[linear-gradient(#d8bda0,#d7bca4_55%)] pt-[var(--header-h)] md:h-[calc(100vw*940/1932)] md:max-h-[calc(100svh-130px)] md:min-h-[570px] md:justify-center md:bg-none md:bg-[#d2b9a5] md:pt-[var(--header-h)] ${
+      className={`relative flex flex-col overflow-hidden bg-[linear-gradient(90deg,#d0c4bd,#d1baaa_45%,#d1bbac)] pt-[var(--header-h)] md:h-[calc(100vw*940/1932)] md:max-h-[calc(100svh-130px)] md:min-h-[570px] md:justify-center md:bg-none md:bg-[#d1baad] md:pt-[var(--header-h)] ${
         ready ? "hero-ready" : ""
       }`}
     >
@@ -121,17 +121,17 @@ export default function Hero() {
       </div>
 
       {/* phones: the photo comes first, the logo on its open wall, copy below */}
-      <div className="relative order-1 aspect-[1031/960] overflow-hidden md:hidden">
+      <div className="relative order-1 -mt-[7vw] aspect-[1031/996] overflow-hidden md:hidden">
         <img
           src="/images/hero-mobile.webp"
           alt={hero.imageAlt}
           width={1031}
           height={1842}
           fetchPriority="high"
-          className="hero-img -mt-[48vw] block h-auto w-full [mask-image:linear-gradient(to_bottom,transparent_27%,#000_33%,#000_76%,transparent_79%)]"
+          className="hero-img -mt-[40vw] block h-auto w-full [mask-image:linear-gradient(to_bottom,#000_73.5%,transparent_76.5%)]"
         />
         <div
-          className="hero-fade absolute left-[var(--gutter)] top-[3vw] w-[58vw] text-forest"
+          className="hero-fade absolute left-[var(--gutter)] top-[10vw] w-[52vw] text-forest"
           style={{ "--d": "300ms" } as React.CSSProperties}
         >
           <Logo className="w-full" />

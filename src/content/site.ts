@@ -100,14 +100,14 @@ export const hotspots = [
   {
     id: "lighting",
     title: "Amber Lighting",
-    copy: "Warm amber lighting in place of blue-toned LEDs, for a softer, calmer room.",
+    copy: "Warm, incandescent-rich lighting in place of harsh blue-toned LEDs, for a softer, calmer room.",
     wide: { x: 53.2, y: 25.8 },
     tall: { x: 53.2, y: 25.8 },
   },
   {
     id: "materials",
     title: "Natural Materials",
-    copy: "Real wood, sealed concrete and natural paints. Bamboo trays in place of plastic, and no aerosol sprays.",
+    copy: "Real wood, sealed concrete and organic finishes, with non-toxic paint throughout. Bamboo trays in place of plastic, and no aerosol sprays.",
     wide: { x: 21.5, y: 68 },
     tall: { x: 21.5, y: 68 },
   },
@@ -130,7 +130,7 @@ export const hotspots = [
 export const experience = {
   eyebrow: "The Experience",
   headline: ["A Space", "That Feels Good"],
-  copy: "Warm lighting, natural materials, and thoughtfully designed details create a welcoming environment that elevates the everyday.",
+  copy: "From clean ingredients and organic finishes to warm, incandescent-rich lighting, every detail at Mr. Tallow's is intentional. We've created a space that feels as good as the food tastes.",
   imageAlt: "The Mr. Tallow's dining room: menu boards above an open kitchen and tiled counter, cone pendant lights, a long walnut table, leather banquettes and an arched window",
 };
 

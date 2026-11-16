@@ -64,7 +64,7 @@ export default function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-[transform,background-color,box-shadow] duration-500 ease-[var(--ease-luxe)] will-change-transform ${
         hidden && !open ? "-translate-y-full" : ""
-      } ${solid ? `bg-[#dbcbb8] ${open ? "shadow-none" : "shadow-[0_1px_0_rgba(42,37,31,0.08)]"}` : "bg-[#d8bda0] shadow-none md:bg-[#dbcbb8]/0"}`}
+      } ${solid ? `bg-[#dbcbb8] ${open ? "shadow-none" : "shadow-[0_1px_0_rgba(42,37,31,0.08)]"}` : "bg-[linear-gradient(90deg,#ccb9a9_0%,#cab7a8_20%,#cdbaaa_40%,#d6c0ad_55%,#dcc4ae_70%,#dfc8b1_85%,#d2bba7_100%)] shadow-none md:bg-none md:bg-[#dbcbb8]/0"}`}
     >
       <a
         href="#main"

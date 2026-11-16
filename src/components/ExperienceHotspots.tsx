@@ -266,7 +266,7 @@ export default function ExperienceHotspots() {
         </div>
 
         <div className="relative z-10 order-first px-[var(--gutter)] pb-8 pt-[clamp(2.5rem,5vw,3.5rem)] lg:order-none lg:flex lg:flex-col lg:justify-center lg:px-[clamp(1.75rem,3vw,3.25rem)] lg:py-8">
-          <p className="eyebrow mb-4 text-[#e6c9c3]" data-reveal>
+          <p className="eyebrow mb-4 text-[#d4a7a2]" data-reveal>
             {experience.eyebrow}
           </p>
           <h2 id="experience-title" className="display text-[clamp(2.3rem,3.2vw,3.3rem)] text-cream" data-reveal-group>

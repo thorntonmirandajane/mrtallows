@@ -39,7 +39,7 @@ export const hero = {
 export const difference = {
   eyebrow: "Our Difference",
   headline: "Fast Food Raised Right",
-  copy: "Great food starts long before it reaches the kitchen. We believe in supporting ranchers and farmers who raise and grow food with care. From 100% grass-fed, grass-finished beef to carefully sourced ingredients, we're bringing quality, transparency, and integrity back to American fast food.",
+  copy: "Great food starts long before it reaches the kitchen. We believe in supporting ranchers and farmers who raise and grow food with care. From 100% grass-fed, grass-finished beef to carefully sourced ingredients, we're bringing quality, transparency and integrity back to American fast food.",
 };
 
 export const features = [
@@ -70,23 +70,23 @@ export const burgerNotes = [
   { text: ["100% grass-fed", "US beef"], at: [1386, 340], from: [1369, 345], to: [1227, 442], bend: -26 },
   { text: ["Seared in", "beef tallow"], at: [1410, 478], from: [1394, 505], to: [1234, 509], bend: -10 },
   { text: ["Simple, real", "ingredients"], at: [1386, 629], from: [1369, 617], to: [1220, 605], bend: 10 },
-  { text: ["Crispy hand-cut", "fries in tallow"], at: [370, 190], from: [510, 240], to: [540, 430], bend: -18 },
+  { text: ["Crispy hand-cut", "fries in tallow"], at: [370, 190], from: [450, 252], to: [405, 465], bend: 14 },
 ];
 
 /** Mobile callouts, in the 1290 x 894 space of /images/slider-*-mobile.webp (copy sits in the top 380). */
 export const burgerNotesMobile = [
-  { text: ["Toasted bun"], at: [1020, 330], from: [1010, 322], to: [960, 420], bend: -28 },
-  { text: ["100% grass-fed", "US beef"], at: [985, 480], from: [1000, 515], to: [1015, 640], bend: -16 },
-  { text: ["Seared in", "beef tallow"], at: [1050, 640], from: [1042, 660], to: [1036, 712], bend: -8 },
-  { text: ["Simple, real", "ingredients"], at: [1050, 790], from: [1042, 800], to: [1040, 800], bend: 4 },
-  { text: ["Crispy hand-cut", "fries in tallow"], at: [30, 420], from: [170, 500], to: [225, 615], bend: 20 },
+  { text: ["Toasted bun"], at: [1020, 330], from: [1010, 322], to: [890, 420], bend: -28 },
+  { text: ["100% grass-fed", "US beef"], at: [985, 480], from: [1045, 552], to: [935, 655], bend: -14 },
+  { text: ["Seared in", "beef tallow"], at: [1050, 640], from: [1040, 676], to: [968, 735], bend: -10 },
+  { text: ["Simple, real", "ingredients"], at: [1050, 790], from: [1040, 790], to: [968, 800], bend: 6 },
+  { text: ["Crispy hand-cut", "fries in tallow"], at: [30, 420], from: [150, 500], to: [180, 690], bend: 12 },
 ];
 
 export const signature = {
   eyebrow: "The Signature Burger",
   headline: ["Craveable", "Fast Food"],
   sub: "Made From Real Ingredients",
-  copy: "100% grass-fed, grass-finished US beef, with golden tallow-cooked fries, honey-sweetened drinks, and house-made mustard, ketchup, and pickles.",
+  copy: "100% grass-fed, grass-finished US beef, with golden tallow-cooked fries, honey-sweetened drinks and house-made mustard, ketchup and pickles.",
   cta: { label: "Explore the Menu", href: "#menu" },
   photoAlt: "Photograph of a cheeseburger with melted cheese on a toasted bun beside hand-cut fries",
   sketchAlt: "Matching hand-drawn sepia illustration of the same cheeseburger and fries",
@@ -100,7 +100,7 @@ export const hotspots = [
   {
     id: "lighting",
     title: "Amber Lighting",
-    copy: "Warm, incandescent-rich lighting in place of harsh blue-toned LEDs, for a softer, calmer room.",
+    copy: "Warm, incandescent-rich lighting in place of harsh blue-toned LEDs, for a softer, calmer space.",
     wide: { x: 53.2, y: 25.8 },
     tall: { x: 53.2, y: 25.8 },
   },
@@ -172,27 +172,27 @@ export const menu = {
         {
           id: "cheese",
           name: "The Cheeseburger",
-          copy: "100% grass-fed, grass-finished US beef cooked in tallow, with melted cheese on a local sourdough bun.",
+          copy: "100% grass-fed, grass-finished US beef cooked in tallow, with melted organic cheddar on a local sourdough bun.",
           image: "/images/menu/cheese.webp",
-          alt: "Cheeseburger: a seared grass-fed beef patty with melted cheese on a toasted bun",
+          alt: "Cheeseburger: a seared grass-fed beef patty with melted cheddar on a toasted bun",
           price: "$15",
           detail: "Our signature. Add house-made fermented pickles and special sauce.",
         },
         {
           id: "double",
           name: "The Double",
-          copy: "Two 100% grass-fed, grass-finished US beef patties and melted cheese, on a local sourdough bun.",
+          copy: "Two 100% grass-fed, grass-finished US beef patties and melted organic cheddar, on a local sourdough bun.",
           image: "/images/menu/double.webp",
-          alt: "Double cheeseburger: two seared beef patties with melted cheese on a toasted bun",
+          alt: "Double cheeseburger: two seared beef patties with melted cheddar on a toasted bun",
           price: "$17",
           detail: "Twice the beef, same simple ingredients.",
         },
         {
           id: "carnivore",
           name: "Saladino Style",
-          copy: "No bun. 100% grass-fed, grass-finished US beef and melted cheese, cooked in tallow.",
+          copy: "No bun. 100% grass-fed, grass-finished US beef and melted organic cheddar, cooked in tallow.",
           image: "/images/menu/carnivore.webp",
-          alt: "Two seared beef patties with melted cheese and no bun",
+          alt: "Two seared beef patties with melted cheddar and no bun",
           price: "$14",
           detail: "Served as is, or wrapped in lettuce from a local farm.",
         },
@@ -244,7 +244,7 @@ export const menu = {
           image: "/images/menu/ketchup.webp",
           alt: "Glass dish of fermented ketchup",
           price: "",
-          detail: "Great with the fries.",
+          detail: "Great with the Kennebec fries.",
         },
         {
           id: "sauce",
@@ -291,19 +291,17 @@ export const mission = {
     { icon: "dna", label: "GMOs" },
     { icon: "syringe", label: "Added Hormones" },
   ],
-  stat: "About a third of American adults eat fast food on any given day.",
-  close: "We cook those meals. And we make them real food.",
 };
 
 /** "1 in 3" stat and the four-step story, under Our Mission. Illustrations live in /public/illustrations. */
 export const process = {
-  stat: "About a third of American adults eat fast food on any given day.",
-  close: ["We cook those meals.", "And we make them", "real food."],
+  stat: "About a third of Americans eat fast food on any given day.",
+  close: ["Convenience should never mean compromising on what we eat.", "Same cravings. Better ingredients. A whole new standard."],
   steps: [
-    { image: "step-ingredients", title: "Real Ingredients", copy: "100% grass-fed, grass-finished US beef, organic potatoes, and tallow.", alt: "Illustration of a steak, potatoes and fresh herbs" },
+    { image: "step-ingredients", title: "Real Ingredients", copy: "100% grass-fed, grass-finished US beef, organic potatoes and tallow.", alt: "Illustration of a steak, potatoes and fresh herbs" },
     { image: "step-cook", title: "Prepare & Cook", copy: "Cooked simply, the right way.", alt: "Illustration of a patty searing in a cast iron skillet" },
-    { image: "step-meal", title: "A Real Meal", copy: "A classic, made with real ingredients.", alt: "Illustration of a cheeseburger" },
-    { image: "step-to-go", title: "Packed To-Go", copy: "Real food, ready when you are.", alt: "Illustration of a wrapped burger beside a Mr. Tallow's paper bag" },
+    { image: "step-meal", title: "A Better Classic", copy: "Familiar favorites, made with carefully sourced ingredients.", alt: "Illustration of a cheeseburger" },
+    { image: "step-to-go", title: "Packed To-Go", copy: "Quality food, ready when you are.", alt: "Illustration of a wrapped burger beside a Mr. Tallow's paper bag" },
   ],
 };
 

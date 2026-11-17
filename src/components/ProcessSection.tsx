@@ -30,9 +30,11 @@ export default function ProcessSection() {
               {process.stat}
             </h2>
             <p className="mt-4 text-[1rem] leading-[1.6] text-ink md:text-[1.1rem]" data-reveal style={{ "--d": "200ms" } as React.CSSProperties}>
-              {process.close[0]}
-              <br />
-              {process.close[1]} {process.close[2]}
+              {process.close.map((line) => (
+                <span key={line} className="block [text-wrap:balance] max-md:[&+span]:mt-2">
+                  {line}
+                </span>
+              ))}
             </p>
           </div>
         </div>

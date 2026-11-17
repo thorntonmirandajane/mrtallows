@@ -32,7 +32,7 @@ export default function SignatureBurger() {
       <div className="mx-auto hidden max-w-[var(--container)] px-[var(--gutter)] pt-[clamp(2.25rem,4vw,3rem)] md:block xl:hidden">{intro}</div>
 
       {/* desktop: the slider fills the section; copy overlays the open wall on the left */}
-      <div className="relative mx-auto hidden max-w-[1760px] pb-2 md:block">
+      <div className="relative mx-auto hidden max-w-[1760px] pb-2 md:block xl:-mt-[3vw] min-[1760px]:-mt-[52px]">
         <ComparisonSlider
           className="[mask-image:linear-gradient(to_bottom,transparent,#000_2%,#000_97%,transparent)]"
           sizes="90vw"
@@ -41,10 +41,11 @@ export default function SignatureBurger() {
           photo={{ src: "/images/slider-photo.webp", alt: signature.photoAlt, width: 1708, height: 713 }}
           sketch={{ src: "/images/slider-sketch.webp", alt: signature.sketchAlt, width: 1708, height: 713 }}
           notes={burgerNotes}
+          still
           labels={["", ""]}
           labelInset="6%"
         />
-        <div className="pointer-events-none absolute left-[max(var(--gutter),5vw)] top-[7%] hidden xl:block min-[1760px]:left-[calc(5vw-(100vw-1760px)/2)]">{intro}</div>
+        <div className="pointer-events-none absolute left-[max(var(--gutter),5vw)] top-[calc(7%+3vw)] hidden xl:block min-[1760px]:top-[calc(7%+52px)] min-[1760px]:left-[calc(5vw-(100vw-1760px)/2)]">{intro}</div>
       </div>
 
       {/* mobile: copy on the limestone, then the slider, whose top fades up from that same color */}
@@ -56,6 +57,7 @@ export default function SignatureBurger() {
           photo={{ src: "/images/slider-photo-mobile.webp", alt: signature.photoAlt, width: 1290, height: 894 }}
           sketch={{ src: "/images/slider-sketch-mobile.webp", alt: signature.sketchAlt, width: 1290, height: 894 }}
           notes={burgerNotesMobile}
+          still
           noteSize={48}
           textZone={380 / 894}
           rest={60}

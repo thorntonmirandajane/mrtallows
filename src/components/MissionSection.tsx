@@ -58,17 +58,7 @@ export default function MissionSection() {
               {mission.nos.map((item, i) => {
                 const delay = 300 + i * STEP;
                 return (
-                  <li key={item.label} className="grid grid-cols-[clamp(2.75rem,4.4vw,3.75rem)_1px_minmax(0,1fr)] items-center gap-[clamp(0.7rem,1.2vw,1.1rem)]">
-                    <Image
-                      className="h-auto w-full"
-                      src={`/brand/no-${item.icon}.webp`}
-                      alt=""
-                      width={240}
-                      height={240}
-                      
-                      style={{ transform: on ? "rotate(-6deg)" : "none", transition: `transform 700ms ${ease} ${delay}ms` }}
-                    />
-                    <span className="h-[70%] w-px bg-rust/50" aria-hidden="true" />
+                  <li key={item.label} className="lg:text-right">
                     <p className="display whitespace-nowrap text-[clamp(1.3rem,5.4vw,2.6rem)] leading-[1.15] text-ink">
                       No{" "}
                       <span

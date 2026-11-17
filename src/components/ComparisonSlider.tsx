@@ -25,6 +25,8 @@ type Props = {
   noteSize?: number;
   /** fraction of the frame at the top reserved for overlaid copy; the divider starts below it */
   textZone?: number;
+  /** show the photograph only: no sketch, divider or dragging, just the notes */
+  still?: boolean;
 };
 
 const clamp = (v: number, lo = 0, hi = 100) => Math.min(hi, Math.max(lo, v));
@@ -44,9 +46,9 @@ function arrowPaths(n: Note) {
   return { curve: `M${x1},${y1} Q${cx},${cy} ${x2},${y2}`, head: head.join(" ") };
 }
 
-export default function ComparisonSlider({ photo, sketch, notes, sizes, className = "", labels = ["Plated", "Sketched"], labelInset = "1.25rem", inset = 0, rest = 50, noteSize = 46, textZone = 0 }: Props) {
+export default function ComparisonSlider({ photo, sketch, notes, sizes, className = "", labels = ["Plated", "Sketched"], labelInset = "1.25rem", inset = 0, rest = 50, noteSize = 46, textZone = 0, still = false }: Props) {
   const frame = useRef<HTMLDivElement>(null);
-  const [pos, setPos] = useState(rest);
+  const [pos, setPos] = useState(still ? 100 : rest);
   const [dragging, setDragging] = useState(false);
   const [inView, setInView] = useState(false);
   const touched = useRef(false);
@@ -66,7 +68,7 @@ export default function ComparisonSlider({ photo, sketch, notes, sizes, classNam
         if (!e.isIntersecting) return;
         io.disconnect();
         setInView(true);
-        if (prefersReducedMotion()) return;
+        if (still || prefersReducedMotion()) return;
         const keys = [rest, rest - 20, rest + 16, rest];
         const seg = 900;
         const start = performance.now() + 500;
@@ -88,10 +90,10 @@ export default function ComparisonSlider({ photo, sketch, notes, sizes, classNam
       io.disconnect();
       cancelAnimationFrame(raf);
     };
-  }, [rest]);
+  }, [rest, still]);
 
   const onPointerDown = (e: React.PointerEvent) => {
-    if (e.button !== 0) return;
+    if (still || e.button !== 0) return;
     touched.current = true;
     setDragging(true);
     frame.current!.setPointerCapture(e.pointerId);
@@ -124,7 +126,7 @@ export default function ComparisonSlider({ photo, sketch, notes, sizes, classNam
   return (
     <div
       ref={frame}
-      className={`relative select-none touch-pan-y ${dragging ? "cursor-grabbing" : "cursor-ew-resize"} ${inView ? "is-in" : ""} ${className}`}
+      className={`relative select-none touch-pan-y ${still ? "" : dragging ? "cursor-grabbing" : "cursor-ew-resize"} ${inView ? "is-in" : ""} ${className}`}
       style={{ aspectRatio: `${photo.width / (1 - inset)} / ${photo.height}` }}
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
@@ -139,7 +141,7 @@ export default function ComparisonSlider({ photo, sketch, notes, sizes, classNam
           ...(inset > 0 && { maskImage: "linear-gradient(to right, transparent, #000 14%, #000 95%, transparent)", WebkitMaskImage: "linear-gradient(to right, transparent, #000 14%, #000 95%, transparent)" }),
         }}
       >
-        <Image src={sketch.src} alt={sketch.alt} fill sizes={sizes} quality={88} draggable={false} className="object-cover" />
+        {!still && <Image src={sketch.src} alt={sketch.alt} fill sizes={sizes} quality={88} draggable={false} className="object-cover" />}
         <div className="absolute inset-0" style={{ clipPath: `inset(0 ${clamp(((100 - pos) / (1 - inset)), 0, 100)}% 0 0)` }}>
           <Image src={photo.src} alt={photo.alt} fill sizes={sizes} quality={88} draggable={false} className="object-cover" />
         </div>
@@ -181,6 +183,7 @@ export default function ComparisonSlider({ photo, sketch, notes, sizes, classNam
       </span>
 
       {/* divider + handle */}
+      {!still && (<>
       <div className="pointer-events-none absolute bottom-0 w-px -translate-x-1/2 bg-cream/90 shadow-[0_0_0_0.5px_rgba(58,42,32,0.15)]" style={{ left: `${pos}%`, top: `${textZone * 100}%` }} />
       <div
         role="slider"
@@ -200,6 +203,7 @@ export default function ComparisonSlider({ photo, sketch, notes, sizes, classNam
           <path d="M4 1 1 4l3 3M12 1l3 3-3 3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </div>
+      </>)}
     </div>
   );
 }

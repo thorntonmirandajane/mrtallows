@@ -40,8 +40,12 @@ export default function PhilosophySection() {
             ))}
           </h2>
           <div className="rule-draw mb-4 mt-5 h-[2px] w-9 bg-blush" style={{ "--d": "450ms" } as React.CSSProperties} />
-          <p className="max-w-[19rem] text-[0.95rem] leading-[1.6] text-ink" data-reveal style={{ "--d": "300ms" } as React.CSSProperties}>
-            {philosophy.copy}
+          <p className="text-[min(0.95rem,calc((100vw-2*var(--gutter))/26.6))] leading-[1.6] text-ink" data-reveal style={{ "--d": "300ms" } as React.CSSProperties}>
+            {philosophy.copy.map((line) => (
+              <span key={line} className="block whitespace-nowrap">
+                {line}
+              </span>
+            ))}
           </p>
         </div>
 

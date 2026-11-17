@@ -137,13 +137,13 @@ export const experience = {
 export const philosophy = {
   eyebrow: "Our Philosophy",
   headline: ["Changing", "Fast Food", "for the Better"],
-  copy: "Real ingredients. Thoughtful preparation. A space worth slowing down in.",
+  copy: ["Carefully sourced ingredients. Thoughtful preparation.", "A space worth slowing down in."],
   statements: [
     { title: "Real Food", copy: "Classic favorites made with quality ingredients." },
     { title: "A Higher Standard", copy: "Better cooking, better ingredients, better for how you feel." },
     {
       title: "The Whole Experience",
-      copy: "Fast-casual, with the warmth and intention of a great restaurant.",
+      copy: "Fast-casual, with the warmth and intention of a sit-down restaurant.",
     },
   ],
   imageAlt:

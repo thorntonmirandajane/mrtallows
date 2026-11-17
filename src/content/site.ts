@@ -167,7 +167,7 @@ export const menu = {
           image: "/images/menu/original.webp",
           alt: "Burger: a seared grass-fed beef patty on a toasted bun",
           price: "$14",
-          detail: "Finish it with house-made fermented pickles, ketchup, raw mustard or special sauce.",
+          detail: "Finish it with house-made fermented pickles, ketchup, scratch mustard or special sauce.",
         },
         {
           id: "cheese",
@@ -209,7 +209,7 @@ export const menu = {
           image: "/images/menu/fries.webp",
           alt: "Golden hand-cut fries in a kraft Mr. Tallow's fry carton",
           price: "$5.50",
-          detail: "Pair with fermented ketchup, raw mustard or the house special sauce.",
+          detail: "Pair with fermented ketchup, scratch mustard or the house special sauce.",
         },
         {
           id: "lemonade",
@@ -257,11 +257,11 @@ export const menu = {
         },
         {
           id: "mustard",
-          name: "Raw Mustard",
-          lines: ["Raw", "Mustard"],
+          name: "Scratch Mustard",
+          lines: ["Scratch", "Mustard"],
           copy: "Made in our kitchen, from scratch.",
           image: "/images/menu/mustard.webp",
-          alt: "Glass dish of raw mustard",
+          alt: "Glass dish of scratch mustard",
           price: "",
           detail: "Bright and sharp, made fresh.",
         },

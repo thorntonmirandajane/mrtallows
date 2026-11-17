@@ -172,16 +172,16 @@ export const menu = {
         {
           id: "cheese",
           name: "The Cheeseburger",
-          copy: "100% grass-fed, grass-finished US beef cooked in tallow, with melted organic cheddar on a local sourdough bun.",
+          copy: "100% grass-fed, grass-finished US beef cooked in tallow, with melted organic white cheddar on a local sourdough bun.",
           image: "/images/menu/cheese.webp",
           alt: "Cheeseburger: a seared grass-fed beef patty with melted cheddar on a toasted bun",
           price: "$15",
-          detail: "Our signature. Add house-made fermented pickles and special sauce.",
+          detail: "Our signature, with grass-fed organic farmhouse white cheddar. Add house-made fermented pickles and special sauce.",
         },
         {
           id: "double",
           name: "The Double",
-          copy: "Two 100% grass-fed, grass-finished US beef patties and melted organic cheddar, on a local sourdough bun.",
+          copy: "Two 100% grass-fed, grass-finished US beef patties and melted organic white cheddar, on a local sourdough bun.",
           image: "/images/menu/double.webp",
           alt: "Double cheeseburger: two seared beef patties with melted cheddar on a toasted bun",
           price: "$17",
@@ -190,7 +190,7 @@ export const menu = {
         {
           id: "carnivore",
           name: "Saladino Style",
-          copy: "No bun. 100% grass-fed, grass-finished US beef and melted organic cheddar, cooked in tallow.",
+          copy: "No bun. 100% grass-fed, grass-finished US beef and melted organic white cheddar, cooked in tallow.",
           image: "/images/menu/carnivore.webp",
           alt: "Two seared beef patties with melted cheddar and no bun",
           price: "$14",

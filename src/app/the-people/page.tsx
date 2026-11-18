@@ -12,6 +12,9 @@ export const metadata: Metadata = {
 
 const d = (ms: number) => ({ "--d": `${ms}ms` }) as React.CSSProperties;
 
+const card =
+  "mt-8 rounded-xl border border-walnut/15 bg-cream/45 px-[clamp(1.1rem,2.2vw,1.75rem)] py-[clamp(1.25rem,2.2vw,1.75rem)] shadow-[0_10px_30px_-18px_rgba(58,42,32,0.35)]";
+
 export default function ThePeople() {
   return (
     <>
@@ -76,8 +79,8 @@ export default function ThePeople() {
                     {/* handwritten note in the same hand, color and arrow as the signature burger callouts */}
                     <svg viewBox="0 0 250 120" aria-hidden="true" className="pointer-events-none absolute -left-[3%] -top-[clamp(4.25rem,8vw,5.5rem)] w-[clamp(10rem,17vw,12.5rem)] overflow-visible text-[#5a3420] min-[1420px]:hidden">
                       <text className="hand note-fade" style={d(500)} fill="currentColor" fontSize="30" transform="rotate(-6 10 40)">
-                        <tspan x="10" y="40">the man behind</tspan>
-                        <tspan x="34" y="72">the menu</tspan>
+                        <tspan x="10" y="40">{p.note[0]}</tspan>
+                        <tspan x="34" y="72">{p.note[1]}</tspan>
                       </text>
                       <path d="M150 62 Q205 55 212 112" pathLength={1} className="draw-path" style={{ "--len": 1, "--d": "900ms" } as React.CSSProperties} fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
                       <path d="M201 101 L212 112 L220 99" pathLength={1} className="draw-path" style={{ "--len": 1, "--d": "1900ms" } as React.CSSProperties} fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
@@ -85,8 +88,8 @@ export default function ThePeople() {
                     {/* wide screens: the note sits in the margin to the left of the photo, arrow pointing in */}
                     <svg viewBox="0 0 210 150" aria-hidden="true" className="pointer-events-none absolute right-[calc(100%-0.6rem)] top-[7%] hidden w-[10.5rem] overflow-visible text-[#5a3420] min-[1420px]:block">
                       <text className="hand note-fade" style={d(500)} fill="currentColor" fontSize="30" transform="rotate(-6 0 40)">
-                        <tspan x="0" y="40">the man behind</tspan>
-                        <tspan x="24" y="72">the menu</tspan>
+                        <tspan x="0" y="40">{p.note[0]}</tspan>
+                        <tspan x="24" y="72">{p.note[1]}</tspan>
                       </text>
                       <path d="M120 92 Q140 132 200 124" pathLength={1} className="draw-path" style={{ "--len": 1, "--d": "900ms" } as React.CSSProperties} fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
                       <path d="M188 115 L200 124 L188 132" pathLength={1} className="draw-path" style={{ "--len": 1, "--d": "1900ms" } as React.CSSProperties} fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
@@ -111,7 +114,19 @@ export default function ThePeople() {
                       ))}
                     </div>
 
-                    <div className="mt-8 rounded-xl border border-walnut/15 bg-cream/45 px-[clamp(1.1rem,2.2vw,1.75rem)] py-[clamp(1.25rem,2.2vw,1.75rem)] shadow-[0_10px_30px_-18px_rgba(58,42,32,0.35)]" aria-label="Recognition">
+                    {p.stat && (
+                      <div className={card}>
+                        <p className="display text-[clamp(3.6rem,7vw,5.5rem)] font-[430] leading-[0.9] tracking-[-0.02em] text-rust" data-reveal style={d(200)}>
+                          {p.stat.value}
+                        </p>
+                        <p className="mt-3 text-[1rem] leading-[1.45] text-ink" data-reveal style={d(320)}>
+                          {p.stat.label}
+                        </p>
+                      </div>
+                    )}
+
+                    {p.recognition && (
+                    <div className={card} aria-label="Recognition">
                       {/* timeline, oldest first: across on desktop, down the left on phones */}
                       <ol className="relative grid gap-6 md:grid-cols-4 md:gap-[clamp(0.6rem,1.4vw,1.1rem)]">
                         <span aria-hidden="true" className="rule-draw absolute bottom-2 left-[6px] top-2 w-px bg-walnut/40 md:bottom-auto md:left-0 md:right-0 md:top-[calc(1.35rem+0.95rem)] md:h-px md:w-auto" />
@@ -125,6 +140,7 @@ export default function ThePeople() {
                         ))}
                       </ol>
                     </div>
+                    )}
                   </div>
                 </div>
               </article>

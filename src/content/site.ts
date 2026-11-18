@@ -352,6 +352,22 @@ export const socials = [
 ];
 
 /** The People page (/the-people). Each entry in `team` renders as a numbered profile, so more people can be added later. */
+type Person = {
+  id: string;
+  name: string;
+  role: string;
+  image: string;
+  alt: string;
+  /** handwritten note beside the photo, one string per line */
+  note: [string, string];
+  /** use **word** for bold */
+  bio: string[];
+  /** awards timeline, newest first */
+  recognition?: { year: string; title: string; from: string }[];
+  /** one big number in place of the timeline */
+  stat?: { value: string; label: string };
+};
+
 export const people = {
   eyebrow: "Our Founders",
   headline: ["The people behind", "Mr. Tallows."],
@@ -364,6 +380,7 @@ export const people = {
       role: "Co-Founder & COO",
       image: "/people/shon.webp",
       alt: "Chef Shon Foster in a black apron and cap, talking with guests at a long table",
+      note: ["the man behind", "the menu"],
       bio: [
         "As our Co-Founder and COO, Shon is the master chef bringing our vision and Dr. Paul Saladino’s philosophy to the table. Hailing from Kanab, Utah, his culinary roots run deep as a former executive chef at **Amangiri**, the crown jewel of the Aman resort portfolio. That elite fine dining background adds unmatched precision to our mission of delivering thoughtfully sourced, straightforward and healthy fast food. Alongside his work across Southern Utah restaurants like Sego, Anthera and Añu, Shon remains in high demand, continuing to cook privately for exclusive Amangiri guests.",
       ],
@@ -374,6 +391,18 @@ export const people = {
         { year: "2018", title: "Best New Concept, Fine Dining", from: "Sego" },
       ],
     },
-  ],
+    {
+      id: "paul",
+      name: "Paul Saladino, MD",
+      role: "Strategic Brand Partner",
+      image: "/people/paul.webp",
+      alt: "Dr. Paul Saladino in a pinstripe suit speaking on stage",
+      note: ["the voice behind", "the brand"],
+      bio: [
+        "Paul founded Heart & Soil, an Austin supplement company with over 180,000 customers, and co-founded Lineage Provisions. As a part owner, he will launch Mr. Tallows to his audience.",
+      ],
+      stat: { value: "4.5M", label: "followers on Instagram, YouTube and TikTok" },
+    },
+  ] as Person[],
 
 };

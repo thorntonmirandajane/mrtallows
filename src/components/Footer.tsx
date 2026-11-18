@@ -1,5 +1,5 @@
 import Logo from "./Logo";
-import { location, nav, site, socials } from "@/content/site";
+import { location, nav, navHref, site, socials } from "@/content/site";
 
 const icons: Record<string, React.ReactNode> = {
   Instagram: (
@@ -16,7 +16,7 @@ const icons: Record<string, React.ReactNode> = {
   ),
 };
 
-export default function Footer() {
+export default function Footer({ home = true }: { home?: boolean }) {
   return (
     <footer className="on-dark relative text-cream">
       <div className="h-1 bg-rust" aria-hidden="true" />
@@ -37,7 +37,7 @@ export default function Footer() {
                 <ul className="grid grid-cols-2 gap-x-8 gap-y-3 sm:flex sm:flex-wrap">
                   {nav.map((n) => (
                     <li key={n.href}>
-                      <a href={n.href} className="nav-link eyebrow text-[0.64rem] text-cream/90 transition-colors hover:text-cream">
+                      <a href={navHref(n.href, home)} className="nav-link eyebrow text-[0.64rem] text-cream/90 transition-colors hover:text-cream">
                         {n.label}
                       </a>
                     </li>

@@ -14,8 +14,12 @@ export const site = {
 export const nav = [
   { label: "Menu", href: "#menu" },
   { label: "Our Difference", href: "#difference" },
+  { label: "The People", href: "/the-people" },
   { label: "Visit", href: "#visit" },
 ];
+
+/** Section links (#menu) only resolve on the homepage; from any other page they need the "/" prefix. */
+export const navHref = (href: string, home: boolean) => (home || !href.startsWith("#") ? href : `/${href}`);
 
 /** Header contact shortcuts. Placeholder values until the real details are confirmed. */
 export const contact = [
@@ -346,3 +350,31 @@ export const socials = [
   { label: "Instagram", href: "https://www.instagram.com/mr.tallows/" as string | null },
   { label: "TikTok", href: null as string | null },
 ];
+
+/** The People page (/the-people). Each entry in `team` renders as a numbered profile, so more people can be added later. */
+export const people = {
+  eyebrow: "Our Founders",
+  headline: ["The people behind", "Mr. Tallow's."],
+  intro: "Meet the founders bringing real ingredients and thoughtful cooking to American fast food.",
+  imageAlt: "A patty searing in a cast iron skillet on the stove beside a cutting board of hand-cut potatoes and a chef's knife",
+  team: [
+    {
+      id: "shon",
+      name: "Shon Foster",
+      role: "Co-Founder & COO",
+      image: "/people/shon.webp",
+      alt: "Chef Shon Foster in a black apron and cap, talking with guests at a long table",
+      bio: [
+        "Shon created the recipes at Mr. Tallow's. A Kanab, Utah native and former executive chef at Amangiri, he brings a background in fine dining and a thoughtful approach to familiar food.",
+        "His restaurant work includes Sego, Anthera and Añu in Southern Utah. At Mr. Tallow's, that experience shapes a menu built around carefully sourced ingredients and straightforward cooking.",
+      ],
+      recognition: [
+        { year: "2026", title: "Golden Spoon", from: "Utah Restaurant Association" },
+        { year: "2023", title: "Utah Chef of the Year", from: "Best of State" },
+        { year: "2021", title: "Concept of the Year", from: "Wood.Ash.Rye" },
+        { year: "2018", title: "Best New Concept, Fine Dining", from: "Sego" },
+      ],
+    },
+  ],
+
+};

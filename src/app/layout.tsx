@@ -19,6 +19,8 @@ const baseUrl = process.env.SITE_URL ?? process.env.RENDER_EXTERNAL_URL ?? site.
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
+  // preview deploys set NOINDEX=1 so search engines never pick up the unapproved copy
+  ...(process.env.NOINDEX && { robots: { index: false, follow: false } }),
   title: {
     default: "Mr. Tallow's | Rewriting American Fast Food",
     template: "%s | Mr. Tallow's",

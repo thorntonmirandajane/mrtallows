@@ -4,9 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import Logo from "./Logo";
 import ContactIcons from "./ContactIcons";
 import SocialIcons from "./SocialIcons";
-import { location, nav, order } from "@/content/site";
+import { location, nav, navHref, order } from "@/content/site";
 
-export default function Header() {
+/** `home` is false on inner pages: section links point back to the homepage and the bar starts solid. */
+export default function Header({ home = true }: { home?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
@@ -65,7 +66,7 @@ export default function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-[transform,background-color,box-shadow] duration-500 ease-[var(--ease-luxe)] will-change-transform ${
         hidden && !open ? "-translate-y-full" : ""
-      } ${solid ? `bg-[#dbcbb8] ${open ? "shadow-none" : "shadow-[0_1px_0_rgba(42,37,31,0.08)]"}` : "bg-[linear-gradient(90deg,#ccb9a9_0%,#cab7a8_20%,#cdbaaa_40%,#d6c0ad_55%,#dcc4ae_70%,#dfc8b1_85%,#d2bba7_100%)] shadow-none md:bg-none md:bg-[#dbcbb8]/0"}`}
+      } ${solid ? `bg-[#dbcbb8] ${open ? "shadow-none" : "shadow-[0_1px_0_rgba(42,37,31,0.08)]"}` : `${home ? "bg-[linear-gradient(90deg,#ccb9a9_0%,#cab7a8_20%,#cdbaaa_40%,#d6c0ad_55%,#dcc4ae_70%,#dfc8b1_85%,#d2bba7_100%)]" : "bg-transparent"} shadow-none md:bg-none md:bg-[#dbcbb8]/0`}`}
     >
       <a
         href="#main"
@@ -78,7 +79,7 @@ export default function Header() {
           scrolled ? "h-[68px]" : "h-[var(--header-h)]"
         }`}
       >
-        <a href="#top" className="text-cream [filter:drop-shadow(0_1px_2px_rgba(90,64,40,0.18))]" aria-label="Mr. Tallow's, back to top">
+        <a href={home ? "#top" : "/"} className="text-cream [filter:drop-shadow(0_1px_2px_rgba(90,64,40,0.18))]" aria-label={home ? "Mr. Tallow's, back to top" : "Mr. Tallow's home"}>
           <Logo className={`transition-[width] duration-700 ease-[var(--ease-luxe)] ${scrolled ? "w-[64px]" : "w-[78px]"}`} />
         </a>
 
@@ -86,7 +87,7 @@ export default function Header() {
           <ul className="flex items-center gap-[clamp(1.5rem,2.6vw,2.25rem)]">
             {nav.map((item) => (
               <li key={item.href}>
-                <a href={item.href} className="nav-link text-[0.74rem] font-semibold xl:text-[0.8rem] uppercase tracking-[0.16em] text-walnut transition-colors hover:text-forest">
+                <a href={navHref(item.href, home)} aria-current={item.href === "/the-people" && !home ? "page" : undefined} className="nav-link text-[0.74rem] font-semibold xl:text-[0.8rem] uppercase tracking-[0.16em] text-walnut transition-colors hover:text-forest">
                   {item.label}
                 </a>
               </li>
@@ -129,7 +130,7 @@ export default function Header() {
             {nav.map((item, i) => (
               <li key={item.href} className="overflow-hidden">
                 <a
-                  href={item.href}
+                  href={navHref(item.href, home)}
                   onClick={() => setOpen(false)}
                   className="display block py-1.5 text-[2.1rem] text-ink transition-transform duration-[900ms] ease-[var(--ease-luxe)]"
                   style={{ transform: open ? "none" : "translateY(110%)", transitionDelay: open ? `${120 + i * 70}ms` : "0ms" }}

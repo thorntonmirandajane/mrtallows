@@ -7,7 +7,7 @@ import { people } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "The People",
-  description: "Meet the people behind Mr. Tallow's, starting with Shon Foster, the chef who created the recipes.",
+  description: "Meet the people behind Mr. Tallows, starting with Shon Foster, the chef who created the recipes.",
 };
 
 const d = (ms: number) => ({ "--d": `${ms}ms` }) as React.CSSProperties;

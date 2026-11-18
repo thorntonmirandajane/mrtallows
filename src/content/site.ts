@@ -4,10 +4,10 @@
  */
 
 export const site = {
-  name: "Mr. Tallow's",
+  name: "Mr. Tallows",
   tagline: "Real ingredients. Beef tallow. A better kind of fast food.",
   description:
-    "Mr. Tallow's is a new fast-casual restaurant opening in Austin, Texas. Familiar favorites cooked in beef tallow with real, recognizable ingredients, served in a warm, beautifully designed space.",
+    "Mr. Tallows is a new fast-casual restaurant opening in Austin, Texas. Familiar favorites cooked in beef tallow with real, recognizable ingredients, served in a warm, beautifully designed space.",
   url: "https://therealmrtallows.com",
 };
 
@@ -23,9 +23,9 @@ export const navHref = (href: string, home: boolean) => (home || !href.startsWit
 
 /** Header contact shortcuts. Placeholder values until the real details are confirmed. */
 export const contact = [
-  { id: "phone", label: "Call Mr. Tallow's", href: "tel:+10000000000" },
-  { id: "location", label: "Find Mr. Tallow's", href: "#visit" },
-  { id: "email", label: "Email Mr. Tallow's", href: "mailto:hello@therealmrtallows.com" },
+  { id: "phone", label: "Call Mr. Tallows", href: "tel:+10000000000" },
+  { id: "location", label: "Find Mr. Tallows", href: "#visit" },
+  { id: "email", label: "Email Mr. Tallows", href: "mailto:hello@therealmrtallows.com" },
 ];
 
 /** Header call to action. Ordering isn't live yet, so it jumps to the featured menu on the homepage. */
@@ -134,8 +134,8 @@ export const hotspots = [
 export const experience = {
   eyebrow: "The Experience",
   headline: ["A Space", "That Feels Good"],
-  copy: "From clean ingredients and organic finishes to warm, incandescent-rich lighting, every detail at Mr. Tallow's is intentional. We've created a space that feels as good as the food tastes.",
-  imageAlt: "The Mr. Tallow's dining room: menu boards above an open kitchen and tiled counter, cone pendant lights, a long walnut table, leather banquettes and an arched window",
+  copy: "From clean ingredients and organic finishes to warm, incandescent-rich lighting, every detail at Mr. Tallows is intentional. We've created a space that feels as good as the food tastes.",
+  imageAlt: "The Mr. Tallows dining room: menu boards above an open kitchen and tiled counter, cone pendant lights, a long walnut table, leather banquettes and an arched window",
 };
 
 export const philosophy = {
@@ -151,7 +151,7 @@ export const philosophy = {
     },
   ],
   imageAlt:
-    "Mr. Tallow's packaging: a forest-green box, a kraft takeout bag, a burger wrapped in cream paper with a blush logo sticker, twine-tied cards and a potted olive sprig",
+    "Mr. Tallows packaging: a forest-green box, a kraft takeout bag, a burger wrapped in cream paper with a blush logo sticker, twine-tied cards and a potted olive sprig",
 };
 
 /** Provisional menu. Names, descriptions and prices are placeholders until the menu is final. */
@@ -220,7 +220,7 @@ export const menu = {
           name: "Kennebec Fries",
           copy: "Golden, tallow-cooked fries: organic hand-cut potatoes, double-fried in grass-fed organic tallow, organic sea salt only.",
           image: "/images/menu/fries.webp",
-          alt: "Golden hand-cut fries in a kraft Mr. Tallow's fry carton",
+          alt: "Golden hand-cut fries in a kraft Mr. Tallows fry carton",
           price: "$5.50",
           detail: "Pair with fermented ketchup, scratch mustard or the house special sauce.",
         },
@@ -314,7 +314,7 @@ export const process = {
     { image: "step-ingredients", title: "Real Ingredients", copy: "100% grass-fed, grass-finished US beef, organic potatoes and tallow.", alt: "Illustration of a steak, potatoes and fresh herbs" },
     { image: "step-cook", title: "Prepare & Cook", copy: "Cooked simply, the right way.", alt: "Illustration of a patty searing in a cast iron skillet" },
     { image: "step-meal", title: "A Better Classic", copy: "Familiar favorites, made with carefully sourced ingredients.", alt: "Illustration of a cheeseburger" },
-    { image: "step-to-go", title: "Packed To-Go", copy: "Quality food, ready when you are.", alt: "Illustration of a wrapped burger beside a Mr. Tallow's paper bag" },
+    { image: "step-to-go", title: "Packed To-Go", copy: "Quality food, ready when you are.", alt: "Illustration of a wrapped burger beside a Mr. Tallows paper bag" },
   ],
 };
 
@@ -323,13 +323,13 @@ export const details = {
   headline: ["Every Detail", "Considered"],
   copy: "From our ingredients to our packaging, we approach every detail with intention.",
   imageAlt:
-    "A burger wrapped in Mr. Tallow's printed paper nested in straw inside a kraft box, beside a carton of fries reading No Bull, Just Burgers",
+    "A burger wrapped in Mr. Tallows printed paper nested in straw inside a kraft box, beside a carton of fries reading No Bull, Just Burgers",
 };
 
 /** First location. Add hours and set status to "open" when the doors open. */
 export const location = {
   status: "coming-soon" as "coming-soon" | "open",
-  name: "Mr. Tallow's",
+  name: "Mr. Tallows",
   region: "Austin, Texas",
   street: "3005 South Lamar, Suite 114B" as string | null,
   cityState: "Austin, Texas" as string | null,
@@ -354,7 +354,7 @@ export const socials = [
 /** The People page (/the-people). Each entry in `team` renders as a numbered profile, so more people can be added later. */
 export const people = {
   eyebrow: "Our Founders",
-  headline: ["The people behind", "Mr. Tallow's."],
+  headline: ["The people behind", "Mr. Tallows."],
   intro: "Meet the founders bringing real ingredients and thoughtful cooking to American fast food.",
   imageAlt: "A patty searing in a cast iron skillet on the stove beside a cutting board of hand-cut potatoes and a chef's knife",
   team: [
@@ -365,8 +365,8 @@ export const people = {
       image: "/people/shon.webp",
       alt: "Chef Shon Foster in a black apron and cap, talking with guests at a long table",
       bio: [
-        "Shon created the recipes at Mr. Tallow's. A Kanab, Utah native and former executive chef at Amangiri, he brings a background in fine dining and a thoughtful approach to familiar food.",
-        "His restaurant work includes Sego, Anthera and Añu in Southern Utah. At Mr. Tallow's, that experience shapes a menu built around carefully sourced ingredients and straightforward cooking.",
+        "Shon created the recipes at Mr. Tallows. A Kanab, Utah native and former executive chef at Amangiri, he brings a background in fine dining and a thoughtful approach to familiar food.",
+        "His restaurant work includes Sego, Anthera and Añu in Southern Utah. At Mr. Tallows, that experience shapes a menu built around carefully sourced ingredients and straightforward cooking.",
       ],
       recognition: [
         { year: "2026", title: "Golden Spoon", from: "Utah Restaurant Association" },

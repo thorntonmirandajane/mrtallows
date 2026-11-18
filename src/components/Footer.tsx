@@ -72,7 +72,7 @@ export default function Footer({ home = true }: { home?: boolean }) {
             </div>
           </div>
           <div className="mt-10 flex flex-col md:mt-16 justify-between gap-3 border-t border-cream/12 pt-6 text-[0.72rem] text-cream/70 sm:flex-row">
-            <p>© {new Date().getFullYear()} Mr. Tallow&rsquo;s. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Mr. Tallows. All rights reserved.</p>
             <p>Clean ingredients. Beef tallow. A better kind of fast food.</p>
           </div>
         </div>

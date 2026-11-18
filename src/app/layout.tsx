@@ -22,16 +22,16 @@ export const metadata: Metadata = {
   // preview deploys set NOINDEX=1 so search engines never pick up the unapproved copy
   ...(process.env.NOINDEX && { robots: { index: false, follow: false } }),
   title: {
-    default: "Mr. Tallow's | Rewriting American Fast Food",
-    template: "%s | Mr. Tallow's",
+    default: "Mr. Tallows | Rewriting American Fast Food",
+    template: "%s | Mr. Tallows",
   },
   description: site.description,
   openGraph: {
     type: "website",
     siteName: site.name,
-    title: "Mr. Tallow's | Rewriting American Fast Food",
+    title: "Mr. Tallows | Rewriting American Fast Food",
     description: site.description,
-    images: [{ url: "/og-v2.jpg", width: 1200, height: 630, alt: "The Mr. Tallow's logo beside a cheeseburger and fries on a walnut board against a limestone wall" }],
+    images: [{ url: "/og-v2.jpg", width: 1200, height: 630, alt: "The Mr. Tallows logo beside a cheeseburger and fries on a walnut board against a limestone wall" }],
   },
   twitter: { card: "summary_large_image" },
   icons: { icon: [{ url: "/brand/favicon.svg", type: "image/svg+xml" }, { url: "/brand/icon.png" }], apple: "/brand/apple-icon.png" },

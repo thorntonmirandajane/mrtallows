@@ -79,7 +79,7 @@ export default function Header({ home = true }: { home?: boolean }) {
           scrolled ? "h-[68px]" : "h-[var(--header-h)]"
         }`}
       >
-        <a href={home ? "#top" : "/"} className="text-cream [filter:drop-shadow(0_1px_2px_rgba(90,64,40,0.18))]" aria-label={home ? "Mr. Tallow's, back to top" : "Mr. Tallow's home"}>
+        <a href={home ? "#top" : "/"} className="text-cream [filter:drop-shadow(0_1px_2px_rgba(90,64,40,0.18))]" aria-label={home ? "Mr. Tallows, back to top" : "Mr. Tallows home"}>
           <Logo className={`transition-[width] duration-700 ease-[var(--ease-luxe)] ${scrolled ? "w-[64px]" : "w-[78px]"}`} />
         </a>
 

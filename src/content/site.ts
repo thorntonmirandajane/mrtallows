@@ -202,7 +202,7 @@ export const menu = {
           copy: "100% grass-fed, grass-finished US beef cooked in tallow, topped with a sunny side up egg on a local sourdough bun.",
           image: "/images/menu/chadwick.webp",
           alt: "Burger: a seared grass-fed beef patty topped with a sunny side up egg on a toasted bun",
-          price: "$",
+          price: "$18",
           detail: "The beef, a runny yolk and house special sauce.",
         },
       ],

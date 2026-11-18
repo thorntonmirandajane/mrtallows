@@ -151,10 +151,10 @@ export default function ThePeople() {
 
                     {p.stat && (
                       <div className={card}>
-                        <div className="grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-[1.4fr_1fr_1fr] sm:items-end sm:gap-[clamp(1rem,2vw,1.75rem)]">
+                        <div className={`grid grid-cols-2 gap-x-4 gap-y-6 sm:items-end sm:gap-[clamp(1rem,2vw,1.75rem)] ${(p.facts?.length ?? 0) > 1 ? "sm:grid-cols-[1.4fr_1fr_1fr]" : "sm:grid-cols-[auto_auto] sm:justify-start sm:gap-x-[clamp(1.75rem,4vw,3rem)]"}`}>
                           <div data-reveal style={d(200)} className="col-span-2 sm:col-span-1">
                             <p className="display text-[clamp(3.6rem,6.5vw,5.25rem)] font-[430] leading-[0.85] tracking-[-0.02em] text-rust">{p.stat.value}</p>
-                            <p className="mt-2 text-[0.92rem] leading-[1.4] text-ink">{p.stat.label}</p>
+                            <p className="mt-2 max-w-[15rem] text-[0.92rem] leading-[1.4] text-ink">{p.stat.label}</p>
                           </div>
                           {p.facts?.map((f, i) => (
                             <div key={f.label} data-reveal style={d(320 + i * 120)} className="border-l border-walnut/25 pl-[clamp(0.9rem,1.6vw,1.25rem)]">

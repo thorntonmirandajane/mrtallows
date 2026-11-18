@@ -377,9 +377,9 @@ type Person = {
 };
 
 export const people = {
-  eyebrow: "Our Founders",
+  eyebrow: "Our Team",
   headline: ["The people behind", "Mr. Tallows."],
-  intro: "Meet the founders bringing real ingredients and thoughtful cooking to American fast food.",
+  intro: "Meet the people bringing real ingredients and thoughtful cooking to American fast food.",
   imageAlt: "A patty searing in a cast iron skillet on the stove beside a cutting board of hand-cut potatoes and a chef's knife",
   team: [
     {
@@ -412,7 +412,6 @@ export const people = {
       stat: { value: "4.5M", label: "followers on Instagram, YouTube and TikTok" },
       facts: [
         { value: "MD", label: "University of Arizona, with honors" },
-        { value: "Psychiatry", label: "Residency, University of Washington" },
       ],
       links: [
         {

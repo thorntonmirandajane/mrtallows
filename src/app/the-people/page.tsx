@@ -105,7 +105,9 @@ export default function ThePeople() {
                     </p>
                     <div className="mt-6 max-w-[40rem] space-y-4 text-[0.98rem] leading-[1.6] text-ink" data-reveal style={d(200)}>
                       {p.bio.map((b) => (
-                        <p key={b}>{b}</p>
+                        <p key={b}>
+                          {b.split(/\*\*(.+?)\*\*/).map((t, j) => (j % 2 ? <strong key={j} className="font-semibold">{t}</strong> : t))}
+                        </p>
                       ))}
                     </div>
 

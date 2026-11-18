@@ -365,8 +365,7 @@ export const people = {
       image: "/people/shon.webp",
       alt: "Chef Shon Foster in a black apron and cap, talking with guests at a long table",
       bio: [
-        "Shon created the recipes at Mr. Tallows. A Kanab, Utah native and former executive chef at Amangiri, he brings a background in fine dining and a thoughtful approach to familiar food.",
-        "His restaurant work includes Sego, Anthera and Añu in Southern Utah. At Mr. Tallows, that experience shapes a menu built around carefully sourced ingredients and straightforward cooking.",
+        "As our Co-Founder and COO, Shon is the master chef bringing our vision and Dr. Paul Saladino’s philosophy to the table. Hailing from Kanab, Utah, his culinary roots run deep as a former executive chef at **Amangiri**, the crown jewel of the Aman resort portfolio. That elite fine dining background adds unmatched precision to our mission of delivering thoughtfully sourced, straightforward and healthy fast food. Alongside his work across Southern Utah restaurants like Sego, Anthera and Añu, Shon remains in high demand, continuing to cook privately for exclusive Amangiri guests.",
       ],
       recognition: [
         { year: "2026", title: "Golden Spoon", from: "Utah Restaurant Association" },

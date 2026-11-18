@@ -3,6 +3,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
+import { socialIcons } from "@/components/SocialIcons";
 import { people } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -69,13 +70,16 @@ export default function ThePeople() {
           {/* subtle limewash texture lifted from the homepage hero wall */}
           <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[url(/people/limewash.webp)] bg-[length:1100px_auto] bg-repeat opacity-100 mix-blend-overlay" />
           <div className="relative mx-auto max-w-[76rem] px-[var(--gutter)]">
-            {people.team.map((p, n) => (
+            {people.team.map((p, n) => {
+              // alternate sides: every second profile puts the photo on the right
+              const flip = n % 2 === 1;
+              return (
               <article key={p.id} aria-labelledby={`${p.id}-name`} className="border-b border-rust/40 py-[clamp(2.75rem,5vw,4rem)]">
                 <p className="eyebrow text-rust" data-reveal>
                   {String(n + 1).padStart(2, "0")} / {p.name}
                 </p>
-                <div className="mt-[5.5rem] grid items-start gap-8 md:mt-[clamp(5rem,7vw,6rem)] min-[1420px]:!mt-7 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1fr)] md:gap-[clamp(2rem,4vw,3.5rem)]">
-                  <figure className="relative" data-reveal>
+                <div className={`mt-[5.5rem] grid items-start gap-8 md:mt-[clamp(5rem,7vw,6rem)] min-[1420px]:!mt-7 ${flip ? "md:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)]" : "md:grid-cols-[minmax(0,0.85fr)_minmax(0,1fr)]"} md:gap-[clamp(2rem,4vw,3.5rem)]`}>
+                  <figure className={`relative ${flip ? "md:order-2" : ""}`} data-reveal>
                     {/* handwritten note in the same hand, color and arrow as the signature burger callouts */}
                     <svg viewBox="0 0 250 120" aria-hidden="true" className="pointer-events-none absolute -left-[3%] -top-[clamp(4.25rem,8vw,5.5rem)] w-[clamp(10rem,17vw,12.5rem)] overflow-visible text-[#5a3420] min-[1420px]:hidden">
                       <text className="hand note-fade" style={d(500)} fill="currentColor" fontSize="30" transform="rotate(-6 10 40)">
@@ -85,6 +89,20 @@ export default function ThePeople() {
                       <path d="M150 62 Q205 55 212 112" pathLength={1} className="draw-path" style={{ "--len": 1, "--d": "900ms" } as React.CSSProperties} fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
                       <path d="M201 101 L212 112 L220 99" pathLength={1} className="draw-path" style={{ "--len": 1, "--d": "1900ms" } as React.CSSProperties} fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
+                    {flip ? (
+                      <>
+                    {/* flipped: the note sits in the right margin, arrow pointing back at the photo */}
+                    <svg viewBox="0 0 210 150" aria-hidden="true" className="pointer-events-none absolute left-[calc(100%-0.6rem)] top-[7%] hidden w-[10.5rem] overflow-visible text-[#5a3420] min-[1420px]:block">
+                      <text className="hand note-fade" style={d(500)} fill="currentColor" fontSize="30" transform="rotate(5 30 40)">
+                        <tspan x="30" y="40">{p.note[0]}</tspan>
+                        <tspan x="54" y="72">{p.note[1]}</tspan>
+                      </text>
+                      <path d="M100 92 Q78 132 12 124" pathLength={1} className="draw-path" style={{ "--len": 1, "--d": "900ms" } as React.CSSProperties} fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+                      <path d="M24 115 L12 124 L24 132" pathLength={1} className="draw-path" style={{ "--len": 1, "--d": "1900ms" } as React.CSSProperties} fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                      </>
+                    ) : (
+                      <>
                     {/* wide screens: the note sits in the margin to the left of the photo, arrow pointing in */}
                     <svg viewBox="0 0 210 150" aria-hidden="true" className="pointer-events-none absolute right-[calc(100%-0.6rem)] top-[7%] hidden w-[10.5rem] overflow-visible text-[#5a3420] min-[1420px]:block">
                       <text className="hand note-fade" style={d(500)} fill="currentColor" fontSize="30" transform="rotate(-6 0 40)">
@@ -94,6 +112,8 @@ export default function ThePeople() {
                       <path d="M120 92 Q140 132 200 124" pathLength={1} className="draw-path" style={{ "--len": 1, "--d": "900ms" } as React.CSSProperties} fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
                       <path d="M188 115 L200 124 L188 132" pathLength={1} className="draw-path" style={{ "--len": 1, "--d": "1900ms" } as React.CSSProperties} fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
+                      </>
+                    )}
                     <div className="border border-walnut/50 p-[clamp(0.45rem,1vw,0.7rem)]">
                       <Image src={p.image} alt={p.alt} width={900} height={1250} sizes="(min-width: 768px) 30rem, 90vw" quality={88} className="block h-auto w-full" />
                     </div>
@@ -105,10 +125,9 @@ export default function ThePeople() {
                             key={s.src}
                             data-reveal
                             style={d(350 + i * 160)}
-                            className={`w-[48%] bg-[#f4ece1] p-[3%] pb-0 shadow-[0_14px_30px_-12px_rgba(58,42,32,0.55)] ${i % 2 ? "mt-[9%] rotate-[3.5deg] md:-mr-[4%]" : "-rotate-[4deg] md:-ml-[5%]"}`}
+                            className={`w-[48%] bg-[#f4ece1] p-[3%] pb-[9%] shadow-[0_14px_30px_-12px_rgba(58,42,32,0.55)] ${i % 2 ? "mt-[9%] rotate-[3.5deg] md:-mr-[4%]" : "-rotate-[4deg] md:-ml-[5%]"}`}
                           >
                             <Image src={s.src} alt={s.alt} width={640} height={520} sizes="(min-width: 768px) 15rem, 45vw" quality={85} className="block h-auto w-full" />
-                            <p className="hand py-[0.35em] text-center text-[clamp(1.05rem,2.2vw,1.35rem)] leading-none text-[#5a3420]">{s.caption}</p>
                           </div>
                         ))}
                       </div>
@@ -139,11 +158,36 @@ export default function ThePeople() {
                           </div>
                           {p.facts?.map((f, i) => (
                             <div key={f.label} data-reveal style={d(320 + i * 120)} className="border-l border-walnut/25 pl-[clamp(0.9rem,1.6vw,1.25rem)]">
-                              <p className="display text-[clamp(1.9rem,3vw,2.4rem)] font-[430] leading-none text-rust">{f.value}</p>
+                              <p className={`display font-[430] leading-none text-rust ${f.value.length > 4 ? "text-[clamp(1.3rem,2vw,1.6rem)]" : "text-[clamp(1.9rem,3vw,2.4rem)]"}`}>{f.value}</p>
                               <p className="mt-2 text-[0.85rem] leading-[1.35] text-muted">{f.label}</p>
                             </div>
                           ))}
                         </div>
+                        {p.links && (
+                          <div className="mt-6 grid grid-cols-[auto_auto] justify-start gap-x-[clamp(1.5rem,5vw,3.5rem)] gap-y-5 border-t border-walnut/20 pt-5" data-reveal style={d(480)}>
+                            {p.links.map((g) => (
+                              <div key={g.group}>
+                                <p className="eyebrow text-rust">{g.group}</p>
+                                <ul className="mt-3 flex items-center gap-2">
+                                  {g.items.map((l) => (
+                                    <li key={l.label}>
+                                      <a
+                                        href={l.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={`${p.name} on ${l.label}`}
+                                        title={l.label}
+                                        className="flex h-10 w-10 items-center justify-center rounded-full border border-walnut/30 bg-cream/90 text-walnut-deep transition-colors duration-500 hover:border-forest hover:bg-forest hover:text-cream"
+                                      >
+                                        {socialIcons[l.label]}
+                                      </a>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ))}
+                          </div>
+                        )}
                         {p.brands && (
                           <div className="mt-6 border-t border-walnut/20 pt-5" data-reveal style={d(560)}>
                             <p className="eyebrow text-rust">Companies he built</p>
@@ -180,7 +224,8 @@ export default function ThePeople() {
                   </div>
                 </div>
               </article>
-            ))}
+              );
+            })}
           </div>
           <div className="h-[clamp(2rem,4vw,3rem)]" />
         </section>

@@ -368,8 +368,10 @@ type Person = {
   stat?: { value: string; label: string };
   /** smaller numbers under the stat */
   facts?: { value: string; label: string }[];
+  /** profile links shown in the card, with icon names from SocialIcons */
+  links?: { group: string; items: { label: string; href: string }[] }[];
   /** small tilted snapshots overlapping the main photo */
-  snapshots?: { src: string; alt: string; caption: string }[];
+  snapshots?: { src: string; alt: string }[];
   /** company logos shown in the card */
   brands?: { name: string; logo: string; width: number; height: number; href: string }[];
 };
@@ -399,23 +401,40 @@ export const people = {
     },
     {
       id: "paul",
-      name: "Paul Saladino, MD",
-      role: "Strategic Brand Partner",
+      name: "Dr. Paul Saladino",
+      role: "Co-Owner & Spokesperson",
       image: "/people/paul.webp",
       alt: "Dr. Paul Saladino in a grey knit shirt, arms crossed, in a studio portrait",
       note: ["the voice behind", "the brand"],
       bio: [
-        "A board-certified physician, Paul earned his MD at the University of Arizona and completed his residency at the University of Washington. He also hosts The Paul Saladino MD Podcast.",
-        "Paul founded Heart & Soil, an Austin supplement company with over 180,000 customers, and co-founded Lineage Provisions. As a part owner, he will launch Mr. Tallows to his audience.",
+        "As our marketing face and a co-owner, Dr. Paul Saladino brings his revolutionary approach to health and nutrition to life. A globally recognized advocate for animal based nutrition and ancestral living, Dr. Saladino is dedicated to transforming the way the world thinks about food. His philosophy centers on radical transparency, nutrient density and returning to foods that humans have thrived on for generations. Through his leadership and outreach, he champions our mission to make clean, nourishing and thoughtfully sourced fast food accessible to everyone.",
       ],
       stat: { value: "4.5M", label: "followers on Instagram, YouTube and TikTok" },
       facts: [
-        { value: "500+", label: "podcast episodes" },
-        { value: "403K+", label: "newsletter subscribers" },
+        { value: "MD", label: "University of Arizona, with honors" },
+        { value: "Psychiatry", label: "Residency, University of Washington" },
+      ],
+      links: [
+        {
+          group: "Follow Paul",
+          items: [
+            { label: "Instagram", href: "https://www.instagram.com/paulsaladinomd" },
+            { label: "YouTube", href: "https://www.youtube.com/@Paulsaladinomd" },
+            { label: "TikTok", href: "https://www.tiktok.com/@paulsaladinomd2" },
+            { label: "X", href: "https://x.com/paulsaladinomd" },
+          ],
+        },
+        {
+          group: "The podcast",
+          items: [
+            { label: "Apple Podcasts", href: "https://podcasts.apple.com/us/podcast/paul-saladino-md-podcast/id1461771083" },
+            { label: "Spotify", href: "https://open.spotify.com/show/1b61TV5imeL89ilY11a7ll" },
+          ],
+        },
       ],
       snapshots: [
-        { src: "/people/paul-podcast.webp", alt: "Paul recording his podcast in a dark studio lit by a salt lamp", caption: "on the podcast" },
-        { src: "/people/paul-stage.webp", alt: "Paul speaking on stage in a pinstripe suit", caption: "on stage" },
+        { src: "/people/paul-podcast.webp", alt: "Paul recording his podcast in a dark studio lit by a salt lamp" },
+        { src: "/people/paul-stage.webp", alt: "Paul speaking on stage in a pinstripe suit" },
       ],
       brands: [
         { name: "Heart & Soil", logo: "/people/heart-and-soil.png", width: 532, height: 108, href: "https://heartandsoil.co" },

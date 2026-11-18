@@ -407,7 +407,7 @@ export const people = {
       alt: "Dr. Paul Saladino in a grey knit shirt, arms crossed, in a studio portrait",
       note: ["the voice behind", "the brand"],
       bio: [
-        "As our marketing face and a co-owner, Dr. Paul Saladino brings his revolutionary approach to health and nutrition to life. A globally recognized advocate for animal based nutrition and ancestral living, Dr. Saladino is dedicated to transforming the way the world thinks about food. His philosophy centers on radical transparency, nutrient density and returning to foods that humans have thrived on for generations. Through his leadership and outreach, he champions our mission to make clean, nourishing and thoughtfully sourced fast food accessible to everyone.",
+        "Co-owner Dr. Paul Saladino brings his revolutionary approach to health and nutrition to life. A globally recognized advocate for animal based nutrition and ancestral living, Dr. Saladino is dedicated to transforming the way the world thinks about food. His philosophy centers on radical transparency, nutrient density and returning to foods that humans have thrived on for generations. Through his leadership and outreach, he champions our mission to make clean, nourishing and thoughtfully sourced fast food accessible to everyone.",
       ],
       stat: { value: "4.5M", label: "followers on Instagram, YouTube and TikTok" },
       facts: [
@@ -418,6 +418,7 @@ export const people = {
         {
           group: "Follow Paul",
           items: [
+            { label: "Website", href: "https://www.paulsaladinomd.com" },
             { label: "Instagram", href: "https://www.instagram.com/paulsaladinomd" },
             { label: "YouTube", href: "https://www.youtube.com/@Paulsaladinomd" },
             { label: "TikTok", href: "https://www.tiktok.com/@paulsaladinomd2" },

@@ -125,7 +125,7 @@ export default function ThePeople() {
                             key={s.src}
                             data-reveal
                             style={d(350 + i * 160)}
-                            className={`w-[48%] bg-[#f4ece1] p-[3%] pb-[9%] shadow-[0_14px_30px_-12px_rgba(58,42,32,0.55)] ${i % 2 ? "mt-[9%] rotate-[3.5deg] md:-mr-[4%]" : "-rotate-[4deg] md:-ml-[5%]"}`}
+                            className={`w-[48%] bg-[#f4ece1] p-[1.6%] shadow-[0_14px_30px_-12px_rgba(58,42,32,0.55)] ${i % 2 ? "mt-[9%] rotate-[3.5deg] md:-mr-[4%]" : "-rotate-[4deg] md:-ml-[5%]"}`}
                           >
                             <Image src={s.src} alt={s.alt} width={640} height={520} sizes="(min-width: 768px) 15rem, 45vw" quality={85} className="block h-auto w-full" />
                           </div>
@@ -159,12 +159,12 @@ export default function ThePeople() {
                           {p.facts?.map((f, i) => (
                             <div key={f.label} data-reveal style={d(320 + i * 120)} className="border-l border-walnut/25 pl-[clamp(0.9rem,1.6vw,1.25rem)]">
                               <p className={`display font-[430] leading-none text-rust ${f.value.length > 4 ? "text-[clamp(1.3rem,2vw,1.6rem)]" : "text-[clamp(1.9rem,3vw,2.4rem)]"}`}>{f.value}</p>
-                              <p className="mt-2 text-[0.85rem] leading-[1.35] text-muted">{f.label}</p>
+                              <p className="mt-2 text-[0.75rem] leading-[1.35] text-muted">{f.label}</p>
                             </div>
                           ))}
                         </div>
                         {p.links && (
-                          <div className="mt-6 grid grid-cols-[auto_auto] justify-start gap-x-[clamp(1.5rem,5vw,3.5rem)] gap-y-5 border-t border-walnut/20 pt-5" data-reveal style={d(480)}>
+                          <div className="mt-6 grid justify-start gap-x-[clamp(1.5rem,5vw,3.5rem)] sm:grid-cols-[auto_auto] gap-y-5 border-t border-walnut/20 pt-5" data-reveal style={d(480)}>
                             {p.links.map((g) => (
                               <div key={g.group}>
                                 <p className="eyebrow text-rust">{g.group}</p>

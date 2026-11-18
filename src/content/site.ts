@@ -402,7 +402,7 @@ export const people = {
     {
       id: "paul",
       name: "Dr. Paul Saladino",
-      role: "Co-Owner & Spokesperson",
+      role: "Co-Owner & Food Philosophy Partner",
       image: "/people/paul.webp",
       alt: "Dr. Paul Saladino in a grey knit shirt, arms crossed, in a studio portrait",
       note: ["the voice behind", "the brand"],

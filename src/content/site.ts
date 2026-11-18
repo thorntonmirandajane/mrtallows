@@ -405,7 +405,7 @@ export const people = {
       alt: "Dr. Paul Saladino in a grey knit shirt, arms crossed, in a studio portrait",
       note: ["the voice behind", "the brand"],
       bio: [
-        "A board-certified physician, Paul earned his MD at the University of Arizona and completed his residency at the University of Washington. He hosts The Paul Saladino MD Podcast and his new book, **Food for Humans**, is available for pre-order.",
+        "A board-certified physician, Paul earned his MD at the University of Arizona and completed his residency at the University of Washington. He also hosts The Paul Saladino MD Podcast.",
         "Paul founded Heart & Soil, an Austin supplement company with over 180,000 customers, and co-founded Lineage Provisions. As a part owner, he will launch Mr. Tallows to his audience.",
       ],
       stat: { value: "4.5M", label: "followers on Instagram, YouTube and TikTok" },

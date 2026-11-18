@@ -125,7 +125,7 @@ export default function ThePeople() {
                             key={s.src}
                             data-reveal
                             style={d(350 + i * 160)}
-                            className={`w-[48%] bg-[#f4ece1] p-[1.6%] shadow-[0_14px_30px_-12px_rgba(58,42,32,0.55)] ${i % 2 ? "mt-[9%] rotate-[3.5deg] md:-mr-[4%]" : "-rotate-[4deg] md:-ml-[5%]"}`}
+                            className={`w-[48%] border border-walnut/50 bg-[#d8c5b0] p-[clamp(0.35rem,0.8vw,0.55rem)] shadow-[0_12px_28px_-14px_rgba(58,42,32,0.45)] ${i % 2 ? "mt-[9%] rotate-[3.5deg] md:-mr-[4%]" : "-rotate-[4deg] md:-ml-[5%]"}`}
                           >
                             <Image src={s.src} alt={s.alt} width={640} height={520} sizes="(min-width: 768px) 15rem, 45vw" quality={85} className="block h-auto w-full" />
                           </div>

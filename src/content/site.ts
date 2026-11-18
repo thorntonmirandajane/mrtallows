@@ -366,6 +366,12 @@ type Person = {
   recognition?: { year: string; title: string; from: string }[];
   /** one big number in place of the timeline */
   stat?: { value: string; label: string };
+  /** smaller numbers under the stat */
+  facts?: { value: string; label: string }[];
+  /** small tilted snapshots overlapping the main photo */
+  snapshots?: { src: string; alt: string; caption: string }[];
+  /** company logos shown in the card */
+  brands?: { name: string; logo: string; width: number; height: number; href: string }[];
 };
 
 export const people = {
@@ -396,12 +402,25 @@ export const people = {
       name: "Paul Saladino, MD",
       role: "Strategic Brand Partner",
       image: "/people/paul.webp",
-      alt: "Dr. Paul Saladino in a pinstripe suit speaking on stage",
+      alt: "Dr. Paul Saladino in a grey knit shirt, arms crossed, in a studio portrait",
       note: ["the voice behind", "the brand"],
       bio: [
+        "A board-certified physician, Paul earned his MD at the University of Arizona and completed his residency at the University of Washington. He hosts The Paul Saladino MD Podcast and his new book, **Food for Humans**, is available for pre-order.",
         "Paul founded Heart & Soil, an Austin supplement company with over 180,000 customers, and co-founded Lineage Provisions. As a part owner, he will launch Mr. Tallows to his audience.",
       ],
       stat: { value: "4.5M", label: "followers on Instagram, YouTube and TikTok" },
+      facts: [
+        { value: "500+", label: "podcast episodes" },
+        { value: "403K+", label: "newsletter subscribers" },
+      ],
+      snapshots: [
+        { src: "/people/paul-podcast.webp", alt: "Paul recording his podcast in a dark studio lit by a salt lamp", caption: "on the podcast" },
+        { src: "/people/paul-stage.webp", alt: "Paul speaking on stage in a pinstripe suit", caption: "on stage" },
+      ],
+      brands: [
+        { name: "Heart & Soil", logo: "/people/heart-and-soil.png", width: 532, height: 108, href: "https://heartandsoil.co" },
+        { name: "Lineage Provisions", logo: "/people/lineage.png", width: 700, height: 238, href: "https://lineageprovisions.com" },
+      ],
     },
   ] as Person[],
 

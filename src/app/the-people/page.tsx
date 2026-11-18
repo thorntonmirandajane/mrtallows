@@ -97,6 +97,22 @@ export default function ThePeople() {
                     <div className="border border-walnut/50 p-[clamp(0.45rem,1vw,0.7rem)]">
                       <Image src={p.image} alt={p.alt} width={900} height={1250} sizes="(min-width: 768px) 30rem, 90vw" quality={88} className="block h-auto w-full" />
                     </div>
+                    {/* snapshots pinned over the bottom of the portrait, like prints tucked into a frame */}
+                    {p.snapshots && (
+                      <div className="relative -mt-[24%] flex items-start justify-between px-[1%]">
+                        {p.snapshots.map((s, i) => (
+                          <div
+                            key={s.src}
+                            data-reveal
+                            style={d(350 + i * 160)}
+                            className={`w-[48%] bg-[#f4ece1] p-[3%] pb-0 shadow-[0_14px_30px_-12px_rgba(58,42,32,0.55)] ${i % 2 ? "mt-[9%] rotate-[3.5deg] md:-mr-[4%]" : "-rotate-[4deg] md:-ml-[5%]"}`}
+                          >
+                            <Image src={s.src} alt={s.alt} width={640} height={520} sizes="(min-width: 768px) 15rem, 45vw" quality={85} className="block h-auto w-full" />
+                            <p className="hand py-[0.35em] text-center text-[clamp(1.05rem,2.2vw,1.35rem)] leading-none text-[#5a3420]">{s.caption}</p>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </figure>
 
                   <div>
@@ -116,12 +132,32 @@ export default function ThePeople() {
 
                     {p.stat && (
                       <div className={card}>
-                        <p className="display text-[clamp(3.6rem,7vw,5.5rem)] font-[430] leading-[0.9] tracking-[-0.02em] text-rust" data-reveal style={d(200)}>
-                          {p.stat.value}
-                        </p>
-                        <p className="mt-3 text-[1rem] leading-[1.45] text-ink" data-reveal style={d(320)}>
-                          {p.stat.label}
-                        </p>
+                        <div className="grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-[1.4fr_1fr_1fr] sm:items-end sm:gap-[clamp(1rem,2vw,1.75rem)]">
+                          <div data-reveal style={d(200)} className="col-span-2 sm:col-span-1">
+                            <p className="display text-[clamp(3.6rem,6.5vw,5.25rem)] font-[430] leading-[0.85] tracking-[-0.02em] text-rust">{p.stat.value}</p>
+                            <p className="mt-2 text-[0.92rem] leading-[1.4] text-ink">{p.stat.label}</p>
+                          </div>
+                          {p.facts?.map((f, i) => (
+                            <div key={f.label} data-reveal style={d(320 + i * 120)} className="border-l border-walnut/25 pl-[clamp(0.9rem,1.6vw,1.25rem)]">
+                              <p className="display text-[clamp(1.9rem,3vw,2.4rem)] font-[430] leading-none text-rust">{f.value}</p>
+                              <p className="mt-2 text-[0.85rem] leading-[1.35] text-muted">{f.label}</p>
+                            </div>
+                          ))}
+                        </div>
+                        {p.brands && (
+                          <div className="mt-6 border-t border-walnut/20 pt-5" data-reveal style={d(560)}>
+                            <p className="eyebrow text-rust">Companies he built</p>
+                            <ul className="mt-4 flex flex-wrap items-center gap-x-[clamp(1.75rem,4vw,3rem)] gap-y-4">
+                              {p.brands.map((b) => (
+                                <li key={b.name}>
+                                  <a href={b.href} target="_blank" rel="noopener noreferrer" className="block opacity-80 transition-opacity hover:opacity-100">
+                                    <Image src={b.logo} alt={b.name} width={b.width} height={b.height} className={`w-auto ${b.height / b.width > 0.3 ? "h-[3rem]" : "h-[2rem]"}`} />
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
                       </div>
                     )}
 

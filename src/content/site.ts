@@ -8,7 +8,7 @@ export const site = {
   tagline: "Real ingredients. Beef tallow. A better kind of fast food.",
   description:
     "Mr. Tallow's is a new fast-casual restaurant opening in Austin, Texas. Familiar favorites cooked in beef tallow with real, recognizable ingredients, served in a warm, beautifully designed space.",
-  url: "https://mrtallows.com",
+  url: "https://therealmrtallows.com",
 };
 
 export const nav = [
@@ -21,7 +21,7 @@ export const nav = [
 export const contact = [
   { id: "phone", label: "Call Mr. Tallow's", href: "tel:+10000000000" },
   { id: "location", label: "Find Mr. Tallow's", href: "#visit" },
-  { id: "email", label: "Email Mr. Tallow's", href: "mailto:hello@mrtallows.com" },
+  { id: "email", label: "Email Mr. Tallow's", href: "mailto:hello@therealmrtallows.com" },
 ];
 
 /** Header call to action. Ordering isn't live yet, so it jumps to the featured menu on the homepage. */
@@ -195,6 +195,15 @@ export const menu = {
           alt: "Two seared beef patties with melted cheddar and no bun",
           price: "$14",
           detail: "Served as is, or wrapped in lettuce from a local farm.",
+        },
+        {
+          id: "chadwick",
+          name: "The Chadwick",
+          copy: "100% grass-fed, grass-finished US beef cooked in tallow, topped with a sunny side up egg on a local sourdough bun.",
+          image: "/images/menu/chadwick.webp",
+          alt: "Burger: a seared grass-fed beef patty topped with a sunny side up egg on a toasted bun",
+          price: "$",
+          detail: "The beef, a runny yolk and house special sauce.",
         },
       ],
     },

@@ -47,19 +47,28 @@ function LinkGroups({ p }: { p: (typeof people.team)[number] }) {
 const pill =
   "flex h-10 items-center justify-center rounded-full border border-walnut/30 bg-cream/90 text-walnut-deep transition-colors duration-500 hover:border-forest hover:bg-forest hover:text-cream";
 
-/** press coverage card: outlet, full headline, arrow */
-function PressCard({ p, className = "" }: { p: (typeof people.team)[number]; className?: string }) {
+/** press coverage as a collapsed list: closed by default so the column stays short */
+function PressAccordion({ p }: { p: (typeof people.team)[number] }) {
   if (!p.press) return null;
   return (
-    <div className={`${card} ${className}`} data-reveal style={d(300)}>
-      <p className="eyebrow text-rust">In the press</p>
-      <ul className="mt-1.5 divide-y divide-walnut/15">
+    <details className="group/press mt-5 border-t border-walnut/20 pt-4">
+      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
+        <span className="eyebrow text-rust">
+          In the press <span className="text-muted">({p.press.length})</span>
+        </span>
+        <span aria-hidden="true" className="flex h-7 w-7 items-center justify-center rounded-full border border-walnut/30 bg-cream/90 text-walnut-deep transition-transform duration-300 group-open/press:rotate-45">
+          <svg viewBox="0 0 16 16" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+            <path d="M8 3v10M3 8h10" />
+          </svg>
+        </span>
+      </summary>
+      <ul className="mt-2 divide-y divide-walnut/15">
         {p.press.map((a) => (
           <li key={a.href}>
             <a href={a.href} target="_blank" rel="noopener noreferrer" className="group flex items-start justify-between gap-4 py-2.5">
               <span>
                 <span className="block text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-muted">{a.outlet}</span>
-                <span className="display mt-1 block text-[0.9rem] font-[560] leading-[1.28] text-ink transition-colors duration-300 group-hover:text-rust">{a.title}</span>
+                <span className="display mt-1 block text-[0.92rem] font-[560] leading-[1.28] text-ink transition-colors duration-300 group-hover:text-rust">{a.title}</span>
               </span>
               <svg viewBox="0 0 16 16" aria-hidden="true" className="mt-4 h-3.5 w-3.5 shrink-0 text-rust transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 11 11 5M6 5h5v5" />
@@ -68,7 +77,7 @@ function PressCard({ p, className = "" }: { p: (typeof people.team)[number]; cla
           </li>
         ))}
       </ul>
-    </div>
+    </details>
   );
 }
 
@@ -191,8 +200,6 @@ export default function ThePeople() {
                         ))}
                       </div>
                     )}
-                    {/* desktop: press card tucked over the bottom of the portrait */}
-                    <PressCard p={p} className="relative !bg-[#ece2d4] max-md:hidden md:!-mt-[20%] md:-mx-[7%]" />
                   </figure>
 
                   <div>
@@ -226,11 +233,9 @@ export default function ThePeople() {
                             ))}
                           </figcaption>
                         </figure>
+                        <PressAccordion p={p} />
                       </div>
                     )}
-
-                    {/* phones: press card after the quote, so the story reads in order */}
-                    <PressCard p={p} className="md:hidden" />
 
                     {p.stat && (
                       <div className={card}>

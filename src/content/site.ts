@@ -364,7 +364,9 @@ type Person = {
   bio: string[];
   /** awards timeline, newest first */
   recognition?: { year: string; title: string; from: string }[];
-  /** pull quote under the photo, in the handwritten face */
+  /** illustrated story stops, in order; icon names map to drawings on the page */
+  journey?: { icon: "coast" | "barn" | "burger"; place: string; detail: string }[];
+  /** pull quote in the card, in the handwritten face */
   quote?: string;
   /** one big number in place of the timeline */
   stat?: { value: string; label: string };
@@ -394,6 +396,11 @@ export const people = {
       bio: [
         "Raised along northern California’s wild coast where the temperate rainforest meets the ocean, Ceadda is known for his deep connection with wildlife and the natural world. Shaped early on by redwoods, horses and the rugged Pacific, he was never one for conventional paths, leaving traditional schooling after ninth grade and spending his early adulthood navigating hard lessons and personal reinvention before forging an out-of-the-box life built on self-reliance, resilience and solution-oriented thinking.",
         "When multi-generational organic dairy farms in Point Reyes faced displacement, Ceadda bypassed traditional political bottlenecks and bridged an unlikely alliance, connecting local organic ranchers directly with HHS Secretary Robert F. Kennedy Jr. and top leadership at the Department of the Interior to fight for regenerative agriculture and land stewardship. As the visionary and heart of Mr. Tallows, he channels that same unconventional conviction and belief that real food and healthy ecosystems go hand in hand into bringing uncompromising ingredient integrity and ancestral nutrition to everyday fast food.",
+      ],
+      journey: [
+        { icon: "coast", place: "Northern California coast", detail: "Raised among redwoods, horses and the rugged Pacific" },
+        { icon: "barn", place: "Point Reyes", detail: "Connected organic dairy ranchers with HHS and Interior leadership" },
+        { icon: "burger", place: "Mr. Tallows", detail: "Ingredient integrity and ancestral nutrition in everyday fast food" },
       ],
       quote: "“Ultra-processed food is destroying our country. We’re doing something about it.”",
     },

@@ -13,6 +13,36 @@ export const metadata: Metadata = {
 
 const d = (ms: number) => ({ "--d": `${ms}ms` }) as React.CSSProperties;
 
+/** hand-drawn line icons for the story stops, in the same rust ink as the notes */
+const journeyIcons: Record<string, React.ReactNode> = {
+  coast: (
+    <>
+      <path d="M14 6 7 20h4L5 31h18l-6-11h4Z" />
+      <path d="M14 31v5" />
+      <path d="M31 12 26 22h3l-4 8h12l-4-8h3Z" />
+      <path d="M31 30v5" />
+      <path d="M3 41c4-3 8-3 12 0s8 3 12 0 8-3 12 0 5 2 6 1" />
+    </>
+  ),
+  barn: (
+    <>
+      <path d="M8 42V22L24 9l16 13v20Z" />
+      <path d="M18 42V30h12v12M18 30l12 12M30 30 18 42" />
+      <path d="M21 19h6v5h-6Z" />
+      <path d="M3 42h42" />
+    </>
+  ),
+  burger: (
+    <>
+      <path d="M7 22c0-8 8-14 17-14s17 6 17 14Z" />
+      <path d="m17 14 1.5 1M24 12l1.5 1M30 15l1.5 1" />
+      <rect x="6" y="25" width="36" height="6" rx="3" />
+      <path d="M7 34.5c3 1.6 5-1 8 .4s5 1.4 8 0 5-1.4 8 0 5 1.4 8 0 2-.6 2-.6" />
+      <path d="M7 38h34c0 3-3 5-6 5H13c-3 0-6-2-6-5Z" />
+    </>
+  ),
+};
+
 const card =
   "mt-8 rounded-xl border border-walnut/15 bg-cream/45 px-[clamp(1.1rem,2.2vw,1.75rem)] py-[clamp(1.25rem,2.2vw,1.75rem)] shadow-[0_10px_30px_-18px_rgba(58,42,32,0.35)]";
 
@@ -132,12 +162,24 @@ export default function ThePeople() {
                         ))}
                       </div>
                     )}
-                    {/* pull quote in the margin under the photo */}
-                    {p.quote && (
-                      <blockquote className="mt-[clamp(1.75rem,3vw,2.5rem)] border-l-2 border-rust/40 pl-5 md:pl-6" data-reveal style={d(400)}>
-                        <p className="hand [text-wrap:balance] text-[clamp(1.55rem,2.5vw,2.05rem)] leading-[1.25] text-[#5a3420]">{p.quote}</p>
-                        <footer className="eyebrow mt-3 text-rust">{p.name}</footer>
-                      </blockquote>
+                    {/* story stops as small framed cards tucked over the bottom of the portrait, like Paul's photos */}
+                    {p.journey && (
+                      <ol aria-label={`${p.name}\u2019s path`} className="relative -mt-[16%] grid grid-cols-3 items-start gap-[2.5%] px-[1%]">
+                        {p.journey.map((j, i) => (
+                          <li
+                            key={j.place}
+                            data-reveal
+                            style={d(350 + i * 160)}
+                            className={`border border-walnut/50 bg-[#d8c5b0] px-[8%] pb-[9%] pt-[10%] text-center shadow-[0_12px_28px_-14px_rgba(58,42,32,0.45)] ${["-rotate-[3deg] md:-ml-[6%]", "mt-[18%] rotate-[2deg]", "mt-[4%] -rotate-[1.5deg] md:-mr-[6%]"][i % 3]}`}
+                          >
+                            <svg viewBox="0 0 48 48" aria-hidden="true" className="mx-auto h-[clamp(2rem,3.6vw,2.6rem)] w-auto text-rust" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                              {journeyIcons[j.icon]}
+                            </svg>
+                            <p className="display mt-2 text-[clamp(0.8rem,1.15vw,0.95rem)] font-[640] leading-[1.15] text-ink">{j.place}</p>
+                            <p className="mt-1 text-[clamp(0.66rem,0.85vw,0.74rem)] leading-[1.35] text-muted">{j.detail}</p>
+                          </li>
+                        ))}
+                      </ol>
                     )}
                   </figure>
 
@@ -210,6 +252,13 @@ export default function ThePeople() {
                           </div>
                         )}
                       </div>
+                    )}
+
+                    {p.quote && (
+                      <figure className={card} data-reveal style={d(260)}>
+                        <blockquote className="hand text-[clamp(1.6rem,2.6vw,2.1rem)] leading-[1.25] text-[#5a3420]">{p.quote}</blockquote>
+                        <figcaption className="eyebrow mt-4 text-rust">{p.name}</figcaption>
+                      </figure>
                     )}
 
                     {p.recognition && (

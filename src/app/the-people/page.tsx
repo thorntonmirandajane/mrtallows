@@ -166,6 +166,22 @@ export default function ThePeople() {
                         ))}
                       </div>
                     )}
+                    {/* quote card tucked over the bottom of the portrait */}
+                    {p.quote && (
+                      <div className="relative -mt-[14%] mx-[3%] rounded-xl border border-walnut/15 bg-[#ece2d4] px-[clamp(1.1rem,2.2vw,1.6rem)] py-[clamp(1.1rem,2vw,1.5rem)] shadow-[0_14px_34px_-16px_rgba(58,42,32,0.45)] md:-mx-[6%]" data-reveal style={d(350)}>
+                      <figure>
+                        <blockquote className="display [text-wrap:balance] text-[min(0.95rem,4vw)] font-[480] leading-[1.3] tracking-[-0.01em] text-ink md:text-[clamp(1.2rem,1.75vw,1.5rem)]">{p.quote}</blockquote>
+                        <figcaption className="mt-3 flex items-center gap-3">
+                          <span className="eyebrow text-rust">{p.name}</span>
+                          {p.links?.flatMap((g) => g.items).map((l) => (
+                            <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer" aria-label={`${p.name} on ${l.label}`} title={l.handle ?? l.label} className={pill + " !h-8 w-8 [&>svg]:h-4 [&>svg]:w-4"}>
+                              {socialIcons[l.label]}
+                            </a>
+                          ))}
+                        </figcaption>
+                      </figure>
+                      </div>
+                    )}
                   </figure>
 
                   <div>
@@ -184,38 +200,26 @@ export default function ThePeople() {
                     </div>
 
 
-                    {p.quote && (
-                      <div className={card} data-reveal style={d(260)}>
-                        <figure>
-                          <blockquote className="display [text-wrap:balance] text-[min(0.95rem,4vw)] font-[480] leading-[1.3] tracking-[-0.01em] text-ink md:text-[clamp(1.2rem,1.75vw,1.5rem)]">{p.quote}</blockquote>
-                          <figcaption className="mt-3 flex items-center gap-3">
-                            <span className="eyebrow text-rust">{p.name}</span>
-                            {p.links?.flatMap((g) => g.items).map((l) => (
-                              <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer" aria-label={`${p.name} on ${l.label}`} title={l.handle ?? l.label} className={pill + " !h-8 w-8 [&>svg]:h-4 [&>svg]:w-4"}>
-                                {socialIcons[l.label]}
+
+                    {/* press coverage under the bio, full headlines */}
+                    {p.press && (
+                      <div className={card} data-reveal style={d(300)}>
+                        <p className="eyebrow text-rust">In the press</p>
+                        <ul className="mt-1.5 divide-y divide-walnut/15">
+                          {p.press.map((a) => (
+                            <li key={a.href}>
+                              <a href={a.href} target="_blank" rel="noopener noreferrer" className="group flex items-start justify-between gap-4 py-3">
+                                <span>
+                                  <span className="block text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-muted">{a.outlet}</span>
+                                  <span className="display mt-1 block text-[0.95rem] font-[560] leading-[1.3] text-ink transition-colors duration-300 group-hover:text-rust">{a.title}</span>
+                                </span>
+                                <svg viewBox="0 0 16 16" aria-hidden="true" className="mt-4 h-3.5 w-3.5 shrink-0 text-rust transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+                                  <path d="M5 11 11 5M6 5h5v5" />
+                                </svg>
                               </a>
-                            ))}
-                          </figcaption>
-                        </figure>
-                        {/* press coverage as a compact list inside the quote card: one line per article */}
-                        {p.press && (
-                          <div className="mt-5 border-t border-walnut/20 pt-4" data-reveal style={d(480)}>
-                            <p className="eyebrow text-rust">In the press</p>
-                            <ul className="mt-1.5 divide-y divide-walnut/15">
-                              {p.press.map((a) => (
-                                <li key={a.href}>
-                                  <a href={a.href} target="_blank" rel="noopener noreferrer" title={a.title} className="group grid grid-cols-[1fr_auto] items-center gap-x-3 py-2.5 sm:grid-cols-[9.75rem_1fr_auto]">
-                                    <span className="whitespace-nowrap text-[0.66rem] font-semibold uppercase tracking-[0.12em] text-muted">{a.outlet}</span>
-                                    <span className="display col-start-1 line-clamp-2 text-[0.92rem] font-[560] leading-[1.3] text-ink transition-colors duration-300 group-hover:text-rust sm:col-start-auto sm:truncate">{a.title}</span>
-                                    <svg viewBox="0 0 16 16" aria-hidden="true" className="col-start-2 row-span-2 row-start-1 h-3.5 w-3.5 shrink-0 text-rust transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 sm:col-start-3 sm:row-span-1" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-                                      <path d="M5 11 11 5M6 5h5v5" />
-                                    </svg>
-                                  </a>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        )}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     )}
 

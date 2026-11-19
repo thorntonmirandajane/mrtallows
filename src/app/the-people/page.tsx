@@ -135,7 +135,7 @@ export default function ThePeople() {
                     {/* quote card tucked over the bottom of the portrait */}
                     {p.quote && (
                       <div className="relative -mt-[18%] mx-[3%] rounded-xl md:-mx-[9%] border border-walnut/15 bg-[#ece2d4] px-[clamp(1.1rem,2.2vw,1.6rem)] py-[clamp(1.1rem,2vw,1.5rem)] shadow-[0_14px_34px_-16px_rgba(58,42,32,0.45)]" data-reveal style={d(350)}>
-                        <blockquote className="hand [text-wrap:balance] text-[clamp(1.35rem,2vw,1.75rem)] leading-[1.25] text-[#5a3420]">{p.quote}</blockquote>
+                        <blockquote className="display [text-wrap:balance] text-[clamp(1.2rem,1.75vw,1.5rem)] font-[480] leading-[1.25] tracking-[-0.01em] text-ink">{p.quote}</blockquote>
                         <p className="eyebrow mt-3 text-rust">{p.name}</p>
                       </div>
                     )}
@@ -160,7 +160,7 @@ export default function ThePeople() {
                     {p.journey && (
                       <ol aria-label={`${p.name}\u2019s path`} className="mt-[clamp(0.75rem,1.6vw,1.25rem)] grid max-w-[42rem] grid-cols-3 items-start gap-5">
                         {p.journey.map((j, i) => (
-                          <li key={j.place} data-reveal style={d(350 + i * 180)} className={`relative text-center ${["", "mt-[2.25rem]", "mt-[0.8rem]"][i % 3]}`}>
+                          <li key={j.place} data-reveal style={d(350 + i * 180)} className={`relative text-center ${["", "mt-[2.25rem]", "-mt-[0.75rem]"][i % 3]}`}>
                             <div className="relative mx-auto h-[clamp(6.25rem,13vw,10.75rem)] w-[100%]">
                               <Image src={j.image} alt="" fill sizes="14rem" className="object-contain object-bottom" />
                             </div>
@@ -168,15 +168,15 @@ export default function ThePeople() {
                             <p className="eyebrow mt-1.5 [text-wrap:balance] !text-[clamp(0.56rem,0.85vw,0.68rem)] !tracking-[0.14em] leading-[1.5] text-rust">{j.caption}</p>
                             {/* dotted arrow to the next stop: drops to the lower one, rises to the higher one */}
                             {i === 0 && (
-                              <svg viewBox="0 0 60 40" preserveAspectRatio="none" aria-hidden="true" className="pointer-events-none absolute left-[91%] top-[clamp(2.6rem,4.6vw,3.6rem)] h-[2.9rem] w-[calc(18%+1.5rem)] overflow-visible text-rust">
-                                <path d="M2 4 Q36 4 54 34" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeDasharray="0.5 4.5" vectorEffect="non-scaling-stroke" />
-                                <path d="M46 32 L55 35 L55 26" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
+                              <svg viewBox="0 0 60 40" aria-hidden="true" className="pointer-events-none absolute left-[91%] top-[clamp(2.2rem,4vw,3.1rem)] w-[calc(18%+1.5rem)] overflow-visible text-[#5a3420]">
+                                <path d="M4 4 Q10 34 52 30" pathLength={1} className="draw-path" style={{ "--len": 1, "--d": "900ms" } as React.CSSProperties} fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" />
+                                <path d="M44 24 L52 30 L44 35" pathLength={1} className="draw-path" style={{ "--len": 1, "--d": "1500ms" } as React.CSSProperties} fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" />
                               </svg>
                             )}
                             {i === 1 && (
-                              <svg viewBox="0 0 60 40" preserveAspectRatio="none" aria-hidden="true" className="pointer-events-none absolute left-[91%] top-[clamp(1.2rem,2.6vw,2rem)] h-[2.4rem] w-[calc(18%+1.5rem)] overflow-visible text-rust">
-                                <path d="M2 34 Q30 36 54 10" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeDasharray="0.5 4.5" vectorEffect="non-scaling-stroke" />
-                                <path d="M45 9 L55 9 L53 18" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
+                              <svg viewBox="0 0 60 40" aria-hidden="true" className="pointer-events-none absolute left-[91%] top-[clamp(0.4rem,1.4vw,1rem)] w-[calc(18%+1.5rem)] overflow-visible text-[#5a3420]">
+                                <path d="M4 32 Q40 34 52 8" pathLength={1} className="draw-path" style={{ "--len": 1, "--d": "900ms" } as React.CSSProperties} fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" />
+                                <path d="M44 13 L52 8 L53 17" pathLength={1} className="draw-path" style={{ "--len": 1, "--d": "1500ms" } as React.CSSProperties} fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" />
                               </svg>
                             )}
                           </li>

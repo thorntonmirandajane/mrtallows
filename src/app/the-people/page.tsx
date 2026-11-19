@@ -164,15 +164,15 @@ export default function ThePeople() {
                     )}
                     {/* story stops as small framed cards tucked over the bottom of the portrait, like Paul's photos */}
                     {p.journey && (
-                      <ol aria-label={`${p.name}\u2019s path`} className="relative -mt-[16%] grid grid-cols-3 items-start gap-[7%] px-[1%]">
-                        {/* dotted hand-drawn arrows in the gaps, leading from one stop to the next */}
-                        <svg viewBox="0 0 48 40" aria-hidden="true" className="pointer-events-none absolute left-[28.2%] top-[46%] z-10 w-[8.5%] overflow-visible text-rust">
-                          <path d="M2 6 Q30 2 42 30" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeDasharray="0.5 5" />
-                          <path d="M34 26 L42 31 L44 22" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                      <ol aria-label={`${p.name}\u2019s path`} className="relative -mt-[16%] grid grid-cols-3 items-start gap-[5%] px-[1%] pb-[7%]">
+                        {/* dotted hand-drawn arrows looping underneath, from one stop to the next */}
+                        <svg viewBox="0 0 120 40" aria-hidden="true" className="pointer-events-none absolute bottom-[1%] left-[14%] w-[30%] overflow-visible text-rust">
+                          <path d="M4 2 Q46 44 110 22" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeDasharray="0.5 5" />
+                          <path d="M100 20 L110 22 L104 30" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
-                        <svg viewBox="0 0 48 40" aria-hidden="true" className="pointer-events-none absolute left-[63.6%] top-[38%] z-10 w-[8.5%] overflow-visible text-rust">
-                          <path d="M2 32 Q18 4 42 8" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeDasharray="0.5 5" />
-                          <path d="M35 2 L43 8 L35 14" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                        <svg viewBox="0 0 120 40" aria-hidden="true" className="pointer-events-none absolute bottom-[-3%] left-[52%] w-[30%] overflow-visible text-rust">
+                          <path d="M8 18 Q60 46 112 6" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeDasharray="0.5 5" />
+                          <path d="M102 6 L112 6 L110 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                         {p.journey.map((j, i) => (
                           <li

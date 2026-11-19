@@ -53,9 +53,7 @@ function PressAccordion({ p }: { p: (typeof people.team)[number] }) {
   return (
     <details className="group/press mt-5 border-t border-walnut/20 pt-4">
       <summary className="flex cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
-        <span className="eyebrow text-rust">
-          In the press <span className="text-muted">({p.press.length})</span>
-        </span>
+        <span className="eyebrow text-rust">Articles</span>
         <span aria-hidden="true" className="flex h-7 w-7 items-center justify-center rounded-full border border-walnut/30 bg-cream/90 text-walnut-deep transition-transform duration-300 group-open/press:rotate-45">
           <svg viewBox="0 0 16 16" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
             <path d="M8 3v10M3 8h10" />

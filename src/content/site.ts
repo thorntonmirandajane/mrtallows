@@ -447,7 +447,7 @@ export const people = {
     },
     {
       id: "ceadda",
-      name: "Ceadda Conover",
+      name: "Chadwick “Ceadda” Conover",
       role: "Co-Founder & Co-CEO",
       image: "/people/ceadda.webp",
       alt: "Ceadda Conover in a cable-knit sweater, kneeling with his forehead pressed to a white horse on a frosty field",

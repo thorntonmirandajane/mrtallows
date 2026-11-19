@@ -215,7 +215,9 @@ export default function ThePeople() {
                     {/* quote set straight on the page under the portrait */}
                     {p.quote && (
                       <figure className="relative mt-[clamp(1.5rem,2.6vw,2rem)] px-1" data-reveal style={d(260)}>
-                        <blockquote className="display relative [text-wrap:balance] text-[min(1rem,4.2vw)] font-[480] leading-[1.3] tracking-[-0.01em] text-ink md:text-[clamp(1.05rem,1.5vw,1.3rem)]">{p.quote}</blockquote>
+                        {/* big rust quote mark leading into the pull quote */}
+                        <span aria-hidden="true" className="display block h-[0.5em] select-none text-[clamp(4.5rem,7vw,6rem)] font-[640] leading-[0.9] text-rust">&ldquo;</span>
+                        <blockquote className="display relative [text-wrap:balance] text-[min(1.3rem,5.4vw)] font-[540] leading-[1.22] tracking-[-0.015em] text-ink md:text-[clamp(1.3rem,1.95vw,1.7rem)]">{p.quote.replace(/^[\u201c"]|[\u201d"]$/g, "")}</blockquote>
                         <figcaption className="relative mt-4 flex items-center gap-3">
                           <span aria-hidden="true" className="h-px w-6 bg-rust/60" />
                           <span className="eyebrow text-rust">{p.name}</span>

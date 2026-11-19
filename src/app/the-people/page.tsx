@@ -134,8 +134,8 @@ export default function ThePeople() {
                     )}
                     {/* quote card tucked over the bottom of the portrait */}
                     {p.quote && (
-                      <div className="relative -mt-[18%] mx-[5%] rounded-xl border border-walnut/15 bg-[#ece2d4] px-[clamp(1.1rem,2.2vw,1.6rem)] py-[clamp(1.1rem,2vw,1.5rem)] shadow-[0_14px_34px_-16px_rgba(58,42,32,0.45)]" data-reveal style={d(350)}>
-                        <blockquote className="hand [text-wrap:balance] text-[clamp(1.4rem,2.2vw,1.85rem)] leading-[1.25] text-[#5a3420]">{p.quote}</blockquote>
+                      <div className="relative -mt-[18%] mx-[3%] rounded-xl md:-mx-[9%] border border-walnut/15 bg-[#ece2d4] px-[clamp(1.1rem,2.2vw,1.6rem)] py-[clamp(1.1rem,2vw,1.5rem)] shadow-[0_14px_34px_-16px_rgba(58,42,32,0.45)]" data-reveal style={d(350)}>
+                        <blockquote className="hand [text-wrap:balance] text-[clamp(1.35rem,2vw,1.75rem)] leading-[1.25] text-[#5a3420]">{p.quote}</blockquote>
                         <p className="eyebrow mt-3 text-rust">{p.name}</p>
                       </div>
                     )}
@@ -158,10 +158,10 @@ export default function ThePeople() {
 
                     {/* story stops sketched under the bio, linked by a dotted trail */}
                     {p.journey && (
-                      <ol aria-label={`${p.name}\u2019s path`} className="mt-[clamp(2rem,3.5vw,2.75rem)] grid max-w-[40rem] grid-cols-3 items-start gap-6">
+                      <ol aria-label={`${p.name}\u2019s path`} className="mt-[clamp(0.75rem,1.6vw,1.25rem)] grid max-w-[42rem] grid-cols-3 items-start gap-5">
                         {p.journey.map((j, i) => (
                           <li key={j.place} data-reveal style={d(350 + i * 180)} className={`relative text-center ${["", "mt-[2.25rem]", "mt-[0.8rem]"][i % 3]}`}>
-                            <div className="relative mx-auto h-[clamp(5.5rem,11vw,9rem)] w-[92%]">
+                            <div className="relative mx-auto h-[clamp(6.25rem,13vw,10.75rem)] w-[100%]">
                               <Image src={j.image} alt="" fill sizes="14rem" className="object-contain object-bottom" />
                             </div>
                             <p className="display mt-2.5 text-[clamp(1rem,1.6vw,1.25rem)] font-[640] leading-[1.1] text-ink">{j.place}</p>

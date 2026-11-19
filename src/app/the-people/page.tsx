@@ -191,12 +191,31 @@ export default function ThePeople() {
                           <figcaption className="mt-3 flex items-center gap-3">
                             <span className="eyebrow text-rust">{p.name}</span>
                             {p.links?.flatMap((g) => g.items).map((l) => (
-                              <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer" aria-label={`${p.name} on ${l.label}`} title={l.handle ?? l.label} className={pill + " h-8 w-8 [&>svg]:h-4 [&>svg]:w-4"}>
+                              <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer" aria-label={`${p.name} on ${l.label}`} title={l.handle ?? l.label} className={pill + " !h-8 w-8 [&>svg]:h-4 [&>svg]:w-4"}>
                                 {socialIcons[l.label]}
                               </a>
                             ))}
                           </figcaption>
                         </figure>
+                        {/* press coverage as a compact list inside the quote card: one line per article */}
+                        {p.press && (
+                          <div className="mt-5 border-t border-walnut/20 pt-4" data-reveal style={d(480)}>
+                            <p className="eyebrow text-rust">In the press</p>
+                            <ul className="mt-1.5 divide-y divide-walnut/15">
+                              {p.press.map((a) => (
+                                <li key={a.href}>
+                                  <a href={a.href} target="_blank" rel="noopener noreferrer" title={a.title} className="group grid grid-cols-[1fr_auto] items-center gap-x-3 py-2.5 sm:grid-cols-[9.75rem_1fr_auto]">
+                                    <span className="whitespace-nowrap text-[0.66rem] font-semibold uppercase tracking-[0.12em] text-muted">{a.outlet}</span>
+                                    <span className="display col-start-1 line-clamp-2 text-[0.92rem] font-[560] leading-[1.3] text-ink transition-colors duration-300 group-hover:text-rust sm:col-start-auto sm:truncate">{a.title}</span>
+                                    <svg viewBox="0 0 16 16" aria-hidden="true" className="col-start-2 row-span-2 row-start-1 h-3.5 w-3.5 shrink-0 text-rust transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 sm:col-start-3 sm:row-span-1" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+                                      <path d="M5 11 11 5M6 5h5v5" />
+                                    </svg>
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
                       </div>
                     )}
 
@@ -251,28 +270,6 @@ export default function ThePeople() {
                     )}
                   </div>
                 </div>
-                {/* press coverage as preview cards across the full width */}
-                {p.press && (
-                  <div className="mt-[clamp(2.5rem,4.5vw,3.5rem)]">
-                    <p className="eyebrow text-rust" data-reveal>In the press</p>
-                    <ul className="mt-4 grid gap-4 md:grid-cols-3 md:gap-[clamp(1rem,2vw,1.5rem)]">
-                      {p.press.map((a, i) => (
-                        <li key={a.href} data-reveal style={d(150 + i * 120)}>
-                          <a href={a.href} target="_blank" rel="noopener noreferrer" className="group flex h-full flex-col rounded-xl border border-walnut/15 bg-cream/45 p-[clamp(1.1rem,2vw,1.5rem)] shadow-[0_10px_30px_-18px_rgba(58,42,32,0.35)] transition-[transform,box-shadow] duration-500 hover:-translate-y-1 hover:shadow-[0_18px_36px_-18px_rgba(58,42,32,0.45)]">
-                            <span className="text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-muted">{a.outlet}</span>
-                            <span className="display mt-3 block text-[clamp(1.05rem,1.5vw,1.25rem)] font-[600] leading-[1.25] text-ink">{a.title}</span>
-                            <span className="eyebrow mt-auto inline-flex items-center gap-1.5 pt-5 text-rust">
-                              Read article
-                              <svg viewBox="0 0 16 16" aria-hidden="true" className="h-3 w-3 transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="M5 11 11 5M6 5h5v5" />
-                              </svg>
-                            </span>
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
               </article>
               );
             })}

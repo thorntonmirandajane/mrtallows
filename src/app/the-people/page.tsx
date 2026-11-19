@@ -164,13 +164,22 @@ export default function ThePeople() {
                     )}
                     {/* story stops as small framed cards tucked over the bottom of the portrait, like Paul's photos */}
                     {p.journey && (
-                      <ol aria-label={`${p.name}\u2019s path`} className="relative -mt-[16%] grid grid-cols-3 items-start gap-[2.5%] px-[1%]">
+                      <ol aria-label={`${p.name}\u2019s path`} className="relative -mt-[16%] grid grid-cols-3 items-start gap-[7%] px-[1%]">
+                        {/* dotted hand-drawn arrows in the gaps, leading from one stop to the next */}
+                        <svg viewBox="0 0 48 40" aria-hidden="true" className="pointer-events-none absolute left-[28.2%] top-[46%] z-10 w-[8.5%] overflow-visible text-rust">
+                          <path d="M2 6 Q30 2 42 30" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeDasharray="0.5 5" />
+                          <path d="M34 26 L42 31 L44 22" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                        <svg viewBox="0 0 48 40" aria-hidden="true" className="pointer-events-none absolute left-[63.6%] top-[38%] z-10 w-[8.5%] overflow-visible text-rust">
+                          <path d="M2 32 Q18 4 42 8" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeDasharray="0.5 5" />
+                          <path d="M35 2 L43 8 L35 14" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
                         {p.journey.map((j, i) => (
                           <li
                             key={j.place}
                             data-reveal
                             style={d(350 + i * 160)}
-                            className={`border border-walnut/50 bg-[#d8c5b0] px-[8%] pb-[9%] pt-[10%] text-center shadow-[0_12px_28px_-14px_rgba(58,42,32,0.45)] ${["-rotate-[3deg] md:-ml-[6%]", "mt-[18%] rotate-[2deg]", "mt-[4%] -rotate-[1.5deg] md:-mr-[6%]"][i % 3]}`}
+                            className={`relative border border-walnut/40 bg-[#efe5d8] px-[5%] pb-[9%] pt-[10%] text-center shadow-[0_12px_28px_-14px_rgba(58,42,32,0.45)] ${["-rotate-[3deg] md:-ml-[6%]", "mt-[18%] rotate-[2deg]", "mt-[4%] -rotate-[1.5deg] md:-mr-[6%]"][i % 3]}`}
                           >
                             <svg viewBox="0 0 48 48" aria-hidden="true" className="mx-auto h-[clamp(2rem,3.6vw,2.6rem)] w-auto text-rust" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                               {journeyIcons[j.icon]}

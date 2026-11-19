@@ -179,13 +179,13 @@ export default function ThePeople() {
                             key={j.place}
                             data-reveal
                             style={d(350 + i * 160)}
-                            className={`relative border border-walnut/40 bg-[#efe5d8] px-[5%] pb-[9%] pt-[10%] text-center shadow-[0_12px_28px_-14px_rgba(58,42,32,0.45)] ${["-rotate-[3deg] md:-ml-[6%]", "mt-[18%] rotate-[2deg]", "mt-[4%] -rotate-[1.5deg] md:-mr-[6%]"][i % 3]}`}
+                            className={`relative border border-walnut/40 bg-[#efe5d8] px-[5%] pb-[12%] pt-[14%] text-center shadow-[0_12px_28px_-14px_rgba(58,42,32,0.45)] ${["-rotate-[3deg] md:-ml-[6%]", "mt-[18%] rotate-[2deg]", "mt-[4%] -rotate-[1.5deg] md:-mr-[6%]"][i % 3]}`}
                           >
-                            <svg viewBox="0 0 48 48" aria-hidden="true" className="mx-auto h-[clamp(2rem,3.6vw,2.6rem)] w-auto text-rust" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                            <svg viewBox="0 0 48 48" aria-hidden="true" className="mx-auto h-[clamp(2.4rem,4.4vw,3.25rem)] w-auto text-rust" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                               {journeyIcons[j.icon]}
                             </svg>
-                            <p className="display mt-2 text-[clamp(0.8rem,1.15vw,0.95rem)] font-[640] leading-[1.15] text-ink">{j.place}</p>
-                            <p className="mt-1 text-[clamp(0.66rem,0.85vw,0.74rem)] leading-[1.35] text-muted">{j.detail}</p>
+                            <p className="display mt-3 text-[clamp(0.92rem,1.4vw,1.1rem)] font-[640] leading-[1.1] text-ink">{j.place}</p>
+                            <p className="hand mt-1 [text-wrap:balance] text-[clamp(0.95rem,1.45vw,1.15rem)] leading-[1.1] text-[#5a3420]">{j.caption}</p>
                           </li>
                         ))}
                       </ol>

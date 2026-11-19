@@ -365,7 +365,7 @@ type Person = {
   /** awards timeline, newest first */
   recognition?: { year: string; title: string; from: string }[];
   /** illustrated story stops, in order; icon names map to drawings on the page */
-  journey?: { icon: "coast" | "barn" | "burger"; place: string; detail: string }[];
+  journey?: { icon: "coast" | "barn" | "burger"; place: string; caption: string }[];
   /** pull quote in the card, in the handwritten face */
   quote?: string;
   /** one big number in place of the timeline */
@@ -398,9 +398,9 @@ export const people = {
         "When multi-generational organic dairy farms in Point Reyes faced displacement, Ceadda bypassed traditional political bottlenecks and bridged an unlikely alliance, connecting local organic ranchers directly with HHS Secretary Robert F. Kennedy Jr. and top leadership at the Department of the Interior to fight for regenerative agriculture and land stewardship. As the visionary and heart of Mr. Tallows, he channels that same unconventional conviction and belief that real food and healthy ecosystems go hand in hand into bringing uncompromising ingredient integrity and ancestral nutrition to everyday fast food.",
       ],
       journey: [
-        { icon: "coast", place: "Northern California coast", detail: "Raised among redwoods, horses and the rugged Pacific" },
-        { icon: "barn", place: "Point Reyes", detail: "Connected organic dairy ranchers with HHS and Interior leadership" },
-        { icon: "burger", place: "Mr. Tallows", detail: "Ingredient integrity and ancestral nutrition in everyday fast food" },
+        { icon: "coast", place: "The coast", caption: "where it began" },
+        { icon: "barn", place: "Point Reyes", caption: "fighting for farms" },
+        { icon: "burger", place: "Mr. Tallows", caption: "real food, every day" },
       ],
       quote: "“Ultra-processed food is destroying our country. We’re doing something about it.”",
     },

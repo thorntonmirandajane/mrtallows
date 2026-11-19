@@ -132,13 +132,6 @@ export default function ThePeople() {
                         ))}
                       </div>
                     )}
-                    {/* quote card tucked over the bottom of the portrait */}
-                    {p.quote && (
-                      <div className="relative -mt-[18%] mx-[3%] rounded-xl md:-mx-[9%] border border-walnut/15 bg-[#ece2d4] px-[clamp(1.1rem,2.2vw,1.6rem)] py-[clamp(1.1rem,2vw,1.5rem)] shadow-[0_14px_34px_-16px_rgba(58,42,32,0.45)]" data-reveal style={d(350)}>
-                        <blockquote className="display [text-wrap:balance] text-[min(0.95rem,4vw)] md:text-[clamp(1.2rem,1.75vw,1.5rem)] font-[480] leading-[1.25] tracking-[-0.01em] text-ink">{p.quote}</blockquote>
-                        <p className="eyebrow mt-3 text-rust">{p.name}</p>
-                      </div>
-                    )}
                   </figure>
 
                   <div>
@@ -156,24 +149,12 @@ export default function ThePeople() {
                       ))}
                     </div>
 
-                    {/* story stops sketched under the bio, linked by a dotted trail */}
-                    {p.journey && (
-                      <ol aria-label={`${p.name}\u2019s path`} className="relative mt-[clamp(1rem,2vw,1.5rem)] grid max-w-[42rem] grid-cols-3 items-start gap-x-[6%]">
-                        {/* both arrows on one overlay; the sketches, gaps and stagger are all sized off the row width, so the arrows stay pinned to the sketches */}
-                        <svg viewBox="0 0 1000 400" aria-hidden="true" data-reveal className="pointer-events-none absolute inset-x-0 top-0 h-auto w-full overflow-visible text-[#5a3420]">
-                          <path d="M283.6 106 Q330 102.8 360.4 154" pathLength={1} className="draw-path" style={{ "--len": 1, "--d": "900ms" } as React.CSSProperties} fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
-                          <path d="M363.6 132.4 L360.4 154 L342 143.6" pathLength={1} className="draw-path" style={{ "--len": 1, "--d": "1500ms" } as React.CSSProperties} fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
-                          <path d="M638 169.4 Q689.2 172.6 718 116.6" pathLength={1} className="draw-path" style={{ "--len": 1, "--d": "1200ms" } as React.CSSProperties} fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
-                          <path d="M699.6 125.4 L718 116.6 L720.4 137.8" pathLength={1} className="draw-path" style={{ "--len": 1, "--d": "1800ms" } as React.CSSProperties} fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
-                        </svg>
-                        {p.journey.map((j, i) => (
-                          <li key={j.place} data-reveal style={d(350 + i * 180)} className={`relative text-center ${["", "mt-[42%]", "mt-[12%]"][i % 3]}`}>
-                            <Image src={j.image} alt="" width={j.width} height={j.height} sizes="14rem" className="mx-auto block h-auto w-[80%]" />
-                            <p className="display mt-2.5 text-[clamp(1rem,1.6vw,1.25rem)] font-[640] leading-[1.1] text-ink">{j.place}</p>
-                            <p className="eyebrow mt-1.5 [text-wrap:balance] !text-[clamp(0.56rem,0.85vw,0.68rem)] !tracking-[0.14em] leading-[1.5] text-rust">{j.caption}</p>
-                          </li>
-                        ))}
-                      </ol>
+
+                    {p.quote && (
+                      <figure className={card} data-reveal style={d(260)}>
+                        <blockquote className="display [text-wrap:balance] text-[min(0.95rem,4vw)] font-[480] leading-[1.3] tracking-[-0.01em] text-ink md:text-[clamp(1.2rem,1.75vw,1.5rem)]">{p.quote}</blockquote>
+                        <figcaption className="eyebrow mt-3 text-rust">{p.name}</figcaption>
+                      </figure>
                     )}
 
                     {p.stat && (

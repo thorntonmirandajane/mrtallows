@@ -355,6 +355,8 @@ export const socials = [
 type Person = {
   id: string;
   name: string;
+  /** full name for the big heading only, when it differs from the everyday name */
+  title?: string;
   role: string;
   image: string;
   alt: string;
@@ -447,7 +449,8 @@ export const people = {
     },
     {
       id: "ceadda",
-      name: "Chadwick “Ceadda” Conover",
+      name: "Ceadda Conover",
+      title: "Chadwick “Ceadda” Conover",
       role: "Co-Founder & Co-CEO",
       image: "/people/ceadda.webp",
       alt: "Ceadda Conover in a cable-knit sweater, kneeling with his forehead pressed to a white horse on a frosty field",

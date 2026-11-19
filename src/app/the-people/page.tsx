@@ -8,7 +8,7 @@ import { people } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "The People",
-  description: "Meet the people behind Mr. Tallows: co-founder Shon Foster, co-owner Dr. Paul Saladino and co-founder Chadwick “Ceadda” Conover.",
+  description: "Meet the people behind Mr. Tallows: co-founder Shon Foster, co-owner Dr. Paul Saladino and co-founder Ceadda Conover.",
 };
 
 const d = (ms: number) => ({ "--d": `${ms}ms` }) as React.CSSProperties;
@@ -233,7 +233,7 @@ export default function ThePeople() {
 
                   <div>
                     <h2 id={`${p.id}-name`} className="display text-[clamp(2.4rem,4.6vw,3.8rem)] font-[640] leading-[0.98] tracking-[-0.025em] text-ink" data-reveal style={d(80)}>
-                      {p.name}
+                      {p.title ?? p.name}
                     </h2>
                     <p className="mt-4 inline-block -rotate-1 bg-blush px-4 py-1.5 text-[0.95rem] italic tracking-[0.02em] text-cream" data-reveal style={d(140)}>
                       {p.role}

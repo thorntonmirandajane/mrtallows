@@ -387,24 +387,6 @@ export const people = {
   imageAlt: "A patty searing in a cast iron skillet on the stove beside a cutting board of hand-cut potatoes and a chef's knife",
   team: [
     {
-      id: "ceadda",
-      name: "Ceadda Conover",
-      role: "Co-Founder & Co-CEO",
-      image: "/people/ceadda.webp",
-      alt: "Ceadda Conover in a cable-knit sweater, kneeling with his forehead pressed to a white horse on a frosty field",
-      note: ["the heart of", "Mr. Tallows"],
-      bio: [
-        "Raised along northern California’s wild coast where the temperate rainforest meets the ocean, Ceadda is known for his deep connection with wildlife and the natural world. Shaped early on by redwoods, horses and the rugged Pacific, he was never one for conventional paths, leaving traditional schooling after ninth grade and spending his early adulthood navigating hard lessons and personal reinvention before forging an out-of-the-box life built on self-reliance, resilience and solution-oriented thinking.",
-        "When multi-generational organic dairy farms in Point Reyes faced displacement, Ceadda bypassed traditional political bottlenecks and bridged an unlikely alliance, connecting local organic ranchers directly with HHS Secretary Robert F. Kennedy Jr. and top leadership at the Department of the Interior to fight for regenerative agriculture and land stewardship. As the visionary and heart of Mr. Tallows, he channels that same unconventional conviction and belief that real food and healthy ecosystems go hand in hand into bringing uncompromising ingredient integrity and ancestral nutrition to everyday fast food.",
-      ],
-      journey: [
-        { image: "/people/path-coast.webp", width: 640, height: 613, place: "The coast", caption: "where it began" },
-        { image: "/people/path-barn.webp", width: 640, height: 333, place: "Point Reyes", caption: "fighting for farms" },
-        { image: "/people/path-burger.webp", width: 640, height: 423, place: "Mr. Tallows", caption: "real food, every day" },
-      ],
-      quote: "“Ultra-processed food is destroying our country. We’re doing something about it.”",
-    },
-    {
       id: "shon",
       name: "Shon Foster",
       role: "Co-Founder & COO",
@@ -462,6 +444,24 @@ export const people = {
         { name: "Heart & Soil", logo: "/people/heart-and-soil.png", width: 532, height: 108, href: "https://heartandsoil.co" },
         { name: "Lineage Provisions", logo: "/people/lineage.png", width: 700, height: 238, href: "https://lineageprovisions.com" },
       ],
+    },
+    {
+      id: "ceadda",
+      name: "Ceadda Conover",
+      role: "Co-Founder & Co-CEO",
+      image: "/people/ceadda.webp",
+      alt: "Ceadda Conover in a cable-knit sweater, kneeling with his forehead pressed to a white horse on a frosty field",
+      note: ["the heart of", "Mr. Tallows"],
+      bio: [
+        "Raised along northern California’s wild coast where the temperate rainforest meets the ocean, Ceadda is known for his deep connection with wildlife and the natural world. Shaped early on by redwoods, horses and the rugged Pacific, he was never one for conventional paths, leaving traditional schooling after ninth grade and spending his early adulthood navigating hard lessons and personal reinvention before forging an out-of-the-box life built on self-reliance, resilience and solution-oriented thinking.",
+        "When multi-generational organic dairy farms in Point Reyes faced displacement, Ceadda bypassed traditional political bottlenecks and bridged an unlikely alliance, connecting local organic ranchers directly with HHS Secretary Robert F. Kennedy Jr. and top leadership at the Department of the Interior to fight for regenerative agriculture and land stewardship. As the visionary and heart of Mr. Tallows, he channels that same unconventional conviction and belief that real food and healthy ecosystems go hand in hand into bringing uncompromising ingredient integrity and ancestral nutrition to everyday fast food.",
+      ],
+      journey: [
+        { image: "/people/path-coast.webp", width: 640, height: 613, place: "The coast", caption: "where it began" },
+        { image: "/people/path-barn.webp", width: 640, height: 333, place: "Point Reyes", caption: "fighting for farms" },
+        { image: "/people/path-burger.webp", width: 640, height: 423, place: "Mr. Tallows", caption: "real food, every day" },
+      ],
+      quote: "“Ultra-processed food is destroying our country. We’re doing something about it.”",
     },
   ] as Person[],
 

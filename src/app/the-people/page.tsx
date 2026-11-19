@@ -158,27 +158,19 @@ export default function ThePeople() {
 
                     {/* story stops sketched under the bio, linked by a dotted trail */}
                     {p.journey && (
-                      <ol aria-label={`${p.name}\u2019s path`} className="mt-[clamp(0.75rem,1.6vw,1.25rem)] grid max-w-[42rem] grid-cols-3 items-start gap-5">
+                      <ol aria-label={`${p.name}\u2019s path`} className="relative mt-[clamp(1rem,2vw,1.5rem)] grid max-w-[42rem] grid-cols-3 items-start gap-x-[6%]">
+                        {/* both arrows on one overlay; the sketches, gaps and stagger are all sized off the row width, so the arrows stay pinned to the sketches */}
+                        <svg viewBox="0 0 1000 400" aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-auto w-full overflow-visible text-[#5a3420]">
+                          <path d="M274 100 Q332 96 370 160" pathLength={1} className="draw-path" style={{ "--len": 1, "--d": "900ms" } as React.CSSProperties} fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
+                          <path d="M374 133 L370 160 L347 147" pathLength={1} className="draw-path" style={{ "--len": 1, "--d": "1500ms" } as React.CSSProperties} fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
+                          <path d="M628 176 Q692 180 728 110" pathLength={1} className="draw-path" style={{ "--len": 1, "--d": "1200ms" } as React.CSSProperties} fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
+                          <path d="M705 121 L728 110 L731 136" pathLength={1} className="draw-path" style={{ "--len": 1, "--d": "1800ms" } as React.CSSProperties} fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
+                        </svg>
                         {p.journey.map((j, i) => (
-                          <li key={j.place} data-reveal style={d(350 + i * 180)} className={`relative text-center ${["", "mt-[2.25rem]", "-mt-[0.75rem]"][i % 3]}`}>
-                            <div className="relative mx-auto h-[clamp(6.25rem,13vw,10.75rem)] w-[100%]">
-                              <Image src={j.image} alt="" fill sizes="14rem" className="object-contain object-bottom" />
-                            </div>
+                          <li key={j.place} data-reveal style={d(350 + i * 180)} className={`relative text-center ${["", "mt-[42%]", "mt-[12%]"][i % 3]}`}>
+                            <Image src={j.image} alt="" width={j.width} height={j.height} sizes="14rem" className="mx-auto block h-auto w-[80%]" />
                             <p className="display mt-2.5 text-[clamp(1rem,1.6vw,1.25rem)] font-[640] leading-[1.1] text-ink">{j.place}</p>
                             <p className="eyebrow mt-1.5 [text-wrap:balance] !text-[clamp(0.56rem,0.85vw,0.68rem)] !tracking-[0.14em] leading-[1.5] text-rust">{j.caption}</p>
-                            {/* dotted arrow to the next stop: drops to the lower one, rises to the higher one */}
-                            {i === 0 && (
-                              <svg viewBox="0 0 60 40" aria-hidden="true" className="pointer-events-none absolute left-[91%] top-[clamp(2.2rem,4vw,3.1rem)] w-[calc(18%+1.5rem)] overflow-visible text-[#5a3420]">
-                                <path d="M4 4 Q10 34 52 30" pathLength={1} className="draw-path" style={{ "--len": 1, "--d": "900ms" } as React.CSSProperties} fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" />
-                                <path d="M44 24 L52 30 L44 35" pathLength={1} className="draw-path" style={{ "--len": 1, "--d": "1500ms" } as React.CSSProperties} fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" />
-                              </svg>
-                            )}
-                            {i === 1 && (
-                              <svg viewBox="0 0 60 40" aria-hidden="true" className="pointer-events-none absolute left-[91%] top-[clamp(0.4rem,1.4vw,1rem)] w-[calc(18%+1.5rem)] overflow-visible text-[#5a3420]">
-                                <path d="M4 32 Q40 34 52 8" pathLength={1} className="draw-path" style={{ "--len": 1, "--d": "900ms" } as React.CSSProperties} fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" />
-                                <path d="M44 13 L52 8 L53 17" pathLength={1} className="draw-path" style={{ "--len": 1, "--d": "1500ms" } as React.CSSProperties} fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" />
-                              </svg>
-                            )}
                           </li>
                         ))}
                       </ol>

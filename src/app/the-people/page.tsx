@@ -47,35 +47,49 @@ function LinkGroups({ p }: { p: (typeof people.team)[number] }) {
 const pill =
   "flex h-10 items-center justify-center rounded-full border border-walnut/30 bg-cream/90 text-walnut-deep transition-colors duration-500 hover:border-forest hover:bg-forest hover:text-cream";
 
-/** press coverage as a collapsed list: closed by default so the column stays short */
-function PressAccordion({ p }: { p: (typeof people.team)[number] }) {
-  if (!p.press) return null;
+/** one press link: outlet, full headline, arrow */
+function ArticleLink({ a, big = false }: { a: NonNullable<(typeof people.team)[number]["press"]>[number]; big?: boolean }) {
   return (
-    <details className="group/press mt-5 border-t border-walnut/20 pt-4">
-      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
-        <span className="eyebrow text-rust">Articles</span>
-        <span aria-hidden="true" className="flex h-7 w-7 items-center justify-center rounded-full border border-walnut/30 bg-cream/90 text-walnut-deep transition-transform duration-300 group-open/press:rotate-45">
-          <svg viewBox="0 0 16 16" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
-            <path d="M8 3v10M3 8h10" />
-          </svg>
-        </span>
-      </summary>
-      <ul className="mt-2 divide-y divide-walnut/15">
-        {p.press.map((a) => (
-          <li key={a.href}>
-            <a href={a.href} target="_blank" rel="noopener noreferrer" className="group flex items-start justify-between gap-4 py-2.5">
-              <span>
-                <span className="block text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-muted">{a.outlet}</span>
-                <span className="display mt-1 block text-[0.92rem] font-[560] leading-[1.28] text-ink transition-colors duration-300 group-hover:text-rust">{a.title}</span>
-              </span>
-              <svg viewBox="0 0 16 16" aria-hidden="true" className="mt-4 h-3.5 w-3.5 shrink-0 text-rust transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 11 11 5M6 5h5v5" />
+    <a href={a.href} target="_blank" rel="noopener noreferrer" className="group flex items-start justify-between gap-4 py-2.5">
+      <span>
+        <span className="block text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-muted">{a.outlet}</span>
+        <span className={`display mt-1 block font-[560] leading-[1.28] text-ink transition-colors duration-300 group-hover:text-rust ${big ? "text-[1.02rem]" : "text-[0.92rem]"}`}>{a.title}</span>
+      </span>
+      <svg viewBox="0 0 16 16" aria-hidden="true" className="mt-4 h-3.5 w-3.5 shrink-0 text-rust transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M5 11 11 5M6 5h5v5" />
+      </svg>
+    </a>
+  );
+}
+
+/** press coverage: the first article featured, the rest tucked in a dropdown so the column stays short */
+function PressAccordion({ p }: { p: (typeof people.team)[number] }) {
+  if (!p.press?.length) return null;
+  const [featured, ...rest] = p.press;
+  return (
+    <div className="mt-5 border-t border-walnut/20 pt-4">
+      <p className="eyebrow text-rust">Featured article</p>
+      <ArticleLink a={featured} big />
+      {rest.length > 0 && (
+        <details className="group/press border-t border-walnut/15 pt-3">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
+            <span className="eyebrow text-rust">More articles</span>
+            <span aria-hidden="true" className="flex h-7 w-7 items-center justify-center rounded-full border border-walnut/30 bg-cream/90 text-walnut-deep transition-transform duration-300 group-open/press:rotate-45">
+              <svg viewBox="0 0 16 16" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+                <path d="M8 3v10M3 8h10" />
               </svg>
-            </a>
-          </li>
-        ))}
-      </ul>
-    </details>
+            </span>
+          </summary>
+          <ul className="mt-1 divide-y divide-walnut/15">
+            {rest.map((a) => (
+              <li key={a.href}>
+                <ArticleLink a={a} />
+              </li>
+            ))}
+          </ul>
+        </details>
+      )}
+    </div>
   );
 }
 

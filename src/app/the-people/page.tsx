@@ -8,7 +8,7 @@ import { people } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "The People",
-  description: "Meet the people behind Mr. Tallows, starting with Shon Foster, the chef who created the recipes.",
+  description: "Meet the people behind Mr. Tallows: co-founders Ceadda Conover and Shon Foster and co-owner Dr. Paul Saladino.",
 };
 
 const d = (ms: number) => ({ "--d": `${ms}ms` }) as React.CSSProperties;
@@ -203,6 +203,13 @@ export default function ThePeople() {
                           </div>
                         )}
                       </div>
+                    )}
+
+                    {p.quote && (
+                      <figure className={card} data-reveal style={d(260)}>
+                        <blockquote className="hand text-[clamp(1.6rem,2.6vw,2.1rem)] leading-[1.25] text-[#5a3420]">{p.quote}</blockquote>
+                        <figcaption className="eyebrow mt-4 text-rust">{p.name}</figcaption>
+                      </figure>
                     )}
 
                     {p.recognition && (

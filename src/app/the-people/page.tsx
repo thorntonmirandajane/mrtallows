@@ -135,7 +135,7 @@ export default function ThePeople() {
                     {/* quote card tucked over the bottom of the portrait */}
                     {p.quote && (
                       <div className="relative -mt-[18%] mx-[3%] rounded-xl md:-mx-[9%] border border-walnut/15 bg-[#ece2d4] px-[clamp(1.1rem,2.2vw,1.6rem)] py-[clamp(1.1rem,2vw,1.5rem)] shadow-[0_14px_34px_-16px_rgba(58,42,32,0.45)]" data-reveal style={d(350)}>
-                        <blockquote className="display [text-wrap:balance] text-[clamp(1.2rem,1.75vw,1.5rem)] font-[480] leading-[1.25] tracking-[-0.01em] text-ink">{p.quote}</blockquote>
+                        <blockquote className="display [text-wrap:balance] text-[min(0.95rem,4vw)] md:text-[clamp(1.2rem,1.75vw,1.5rem)] font-[480] leading-[1.25] tracking-[-0.01em] text-ink">{p.quote}</blockquote>
                         <p className="eyebrow mt-3 text-rust">{p.name}</p>
                       </div>
                     )}
@@ -160,7 +160,7 @@ export default function ThePeople() {
                     {p.journey && (
                       <ol aria-label={`${p.name}\u2019s path`} className="relative mt-[clamp(1rem,2vw,1.5rem)] grid max-w-[42rem] grid-cols-3 items-start gap-x-[6%]">
                         {/* both arrows on one overlay; the sketches, gaps and stagger are all sized off the row width, so the arrows stay pinned to the sketches */}
-                        <svg viewBox="0 0 1000 400" aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-auto w-full overflow-visible text-[#5a3420]">
+                        <svg viewBox="0 0 1000 400" aria-hidden="true" data-reveal className="pointer-events-none absolute inset-x-0 top-0 h-auto w-full overflow-visible text-[#5a3420]">
                           <path d="M274 100 Q332 96 370 160" pathLength={1} className="draw-path" style={{ "--len": 1, "--d": "900ms" } as React.CSSProperties} fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
                           <path d="M374 133 L370 160 L347 147" pathLength={1} className="draw-path" style={{ "--len": 1, "--d": "1500ms" } as React.CSSProperties} fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
                           <path d="M628 176 Q692 180 728 110" pathLength={1} className="draw-path" style={{ "--len": 1, "--d": "1200ms" } as React.CSSProperties} fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" vectorEffect="non-scaling-stroke" />

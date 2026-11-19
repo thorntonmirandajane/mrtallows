@@ -188,44 +188,15 @@ export default function ThePeople() {
                       <div className={card} data-reveal style={d(260)}>
                         <figure>
                           <blockquote className="display [text-wrap:balance] text-[min(0.95rem,4vw)] font-[480] leading-[1.3] tracking-[-0.01em] text-ink md:text-[clamp(1.2rem,1.75vw,1.5rem)]">{p.quote}</blockquote>
-                          <figcaption className="eyebrow mt-3 text-rust">{p.name}</figcaption>
-                        </figure>
-                        {/* same layout as Paul's card: small labelled groups of round buttons */}
-                        {(p.links || p.press) && (
-                          <div className="mt-6 grid justify-start gap-x-[clamp(1.5rem,5vw,3.5rem)] gap-y-5 border-t border-walnut/20 pt-5 sm:grid-cols-[auto_auto]" data-reveal style={d(480)}>
-                            {p.links?.map((g) => (
-                              <div key={g.group}>
-                                <p className="eyebrow text-rust">{g.group}</p>
-                                <ul className="mt-3 flex items-center gap-2">
-                                  {g.items.map((l) => (
-                                    <li key={l.label}>
-                                      <a href={l.href} target="_blank" rel="noopener noreferrer" aria-label={`${p.name} on ${l.label}`} title={l.handle ?? l.label} className={pill + " w-10"}>
-                                        {socialIcons[l.label]}
-                                      </a>
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
+                          <figcaption className="mt-3 flex items-center gap-3">
+                            <span className="eyebrow text-rust">{p.name}</span>
+                            {p.links?.flatMap((g) => g.items).map((l) => (
+                              <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer" aria-label={`${p.name} on ${l.label}`} title={l.handle ?? l.label} className={pill + " h-8 w-8 [&>svg]:h-4 [&>svg]:w-4"}>
+                                {socialIcons[l.label]}
+                              </a>
                             ))}
-                            {p.press && (
-                              <div>
-                                <p className="eyebrow text-rust">In the press</p>
-                                <ul className="mt-3 flex flex-wrap items-center gap-2">
-                                  {p.press.map((a) => (
-                                    <li key={a.href}>
-                                      <a href={a.href} target="_blank" rel="noopener noreferrer" aria-label={`${a.outlet}: ${a.title}`} title={a.title} className={pill + " gap-1.5 px-4 text-[0.8rem] font-medium"}>
-                                        {a.outlet}
-                                        <svg viewBox="0 0 16 16" aria-hidden="true" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-                                          <path d="M5 11 11 5M6 5h5v5" />
-                                        </svg>
-                                      </a>
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-                            )}
-                          </div>
-                        )}
+                          </figcaption>
+                        </figure>
                       </div>
                     )}
 
@@ -280,6 +251,28 @@ export default function ThePeople() {
                     )}
                   </div>
                 </div>
+                {/* press coverage as preview cards across the full width */}
+                {p.press && (
+                  <div className="mt-[clamp(2.5rem,4.5vw,3.5rem)]">
+                    <p className="eyebrow text-rust" data-reveal>In the press</p>
+                    <ul className="mt-4 grid gap-4 md:grid-cols-3 md:gap-[clamp(1rem,2vw,1.5rem)]">
+                      {p.press.map((a, i) => (
+                        <li key={a.href} data-reveal style={d(150 + i * 120)}>
+                          <a href={a.href} target="_blank" rel="noopener noreferrer" className="group flex h-full flex-col rounded-xl border border-walnut/15 bg-cream/45 p-[clamp(1.1rem,2vw,1.5rem)] shadow-[0_10px_30px_-18px_rgba(58,42,32,0.35)] transition-[transform,box-shadow] duration-500 hover:-translate-y-1 hover:shadow-[0_18px_36px_-18px_rgba(58,42,32,0.45)]">
+                            <span className="text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-muted">{a.outlet}</span>
+                            <span className="display mt-3 block text-[clamp(1.05rem,1.5vw,1.25rem)] font-[600] leading-[1.25] text-ink">{a.title}</span>
+                            <span className="eyebrow mt-auto inline-flex items-center gap-1.5 pt-5 text-rust">
+                              Read article
+                              <svg viewBox="0 0 16 16" aria-hidden="true" className="h-3 w-3 transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M5 11 11 5M6 5h5v5" />
+                              </svg>
+                            </span>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </article>
               );
             })}

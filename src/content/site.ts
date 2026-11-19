@@ -7,7 +7,7 @@ export const site = {
   name: "Mr. Tallows",
   tagline: "Real ingredients. Beef tallow. A better kind of fast food.",
   description:
-    "Mr. Tallows is a new fast-casual restaurant opening in Austin, Texas. Familiar favorites cooked in beef tallow with real, recognizable ingredients, served in a warm, beautifully designed space.",
+    "Mr. Tallows is a new fast casual restaurant opening in Austin, Texas. Familiar favorites cooked in beef tallow with real, recognizable ingredients, served in a warm, beautifully designed space.",
   url: "https://therealmrtallows.com",
 };
 
@@ -36,31 +36,31 @@ export const hero = {
   copy: "Burgers, fries and shakes the way they should be made.",
   primary: { label: "Explore the Menu", href: "#menu" },
   secondary: { label: "Our Difference", href: "#difference" },
-  imageAlt: "A cheeseburger in a paper wrap beside hand-cut fries on a walnut board, with faint sketches of a grazing cow, potatoes and a jar of tallow on the wall",
+  imageAlt: "A cheeseburger in a paper wrap beside hand cut fries on a walnut board, with faint sketches of a grazing cow, potatoes and a jar of tallow on the wall",
 };
 
 /** Our Difference header, above the three features. */
 export const difference = {
   eyebrow: "Our Difference",
   headline: "Fast Food Raised Right",
-  copy: "Great food starts long before it reaches the kitchen. We believe in supporting ranchers and farmers who raise and grow food with care. From 100% grass-fed, grass-finished beef to carefully sourced ingredients, we're bringing quality, transparency and integrity back to American fast food.",
+  copy: "Great food starts long before it reaches the kitchen. We believe in supporting ranchers and farmers who raise and grow food with care. From 100% grass fed, grass finished beef to carefully sourced ingredients, we're bringing quality, transparency and integrity back to American fast food.",
 };
 
 export const features = [
   {
     icon: "/brand/icon-cow.webp",
     title: "Cooked in Beef Tallow",
-    copy: "100% grass-fed, organic beef tallow: the traditional cooking fat, for exceptional flavor.",
+    copy: "100% grass fed, organic beef tallow: the traditional cooking fat, for exceptional flavor.",
   },
   {
     icon: "/brand/icon-onion.webp",
     title: "Real Ingredients",
-    copy: "House-made ketchup, mustard and pickles. Honey in place of refined sugar.",
+    copy: "House made ketchup, mustard and pickles. Honey in place of refined sugar.",
   },
   {
     icon: "/brand/icon-leaf.webp",
     title: "Intentional Sourcing",
-    copy: "100% grass-fed, grass-finished US beef and organic potatoes, cooked in beef tallow.",
+    copy: "100% grass fed, grass finished US beef and organic potatoes, cooked in beef tallow.",
   },
 ];
 
@@ -71,29 +71,29 @@ export const features = [
  */
 export const burgerNotes = [
   { text: ["Toasted bun"], at: [1338, 200], from: [1321, 188], to: [1164, 255], bend: -30 },
-  { text: ["100% grass-fed", "US beef"], at: [1386, 340], from: [1369, 345], to: [1227, 442], bend: -26 },
+  { text: ["100% grass fed", "US beef"], at: [1386, 340], from: [1369, 345], to: [1227, 442], bend: -26 },
   { text: ["Seared in", "beef tallow"], at: [1410, 478], from: [1394, 505], to: [1234, 509], bend: -10 },
   { text: ["Simple, real", "ingredients"], at: [1386, 629], from: [1369, 617], to: [1220, 605], bend: 10 },
-  { text: ["Crispy hand-cut", "fries in tallow"], at: [370, 190], from: [450, 252], to: [405, 465], bend: 14 },
+  { text: ["Crispy hand cut", "fries in tallow"], at: [370, 190], from: [450, 252], to: [405, 465], bend: 14 },
 ];
 
 /** Mobile callouts, in the 1290 x 894 space of /images/slider-*-mobile.webp (copy sits in the top 380). */
 export const burgerNotesMobile = [
   { text: ["Toasted bun"], at: [1020, 330], from: [1010, 322], to: [890, 420], bend: -28 },
-  { text: ["100% grass-fed", "US beef"], at: [985, 480], from: [1045, 552], to: [935, 655], bend: -14 },
+  { text: ["100% grass fed", "US beef"], at: [985, 480], from: [1045, 552], to: [935, 655], bend: -14 },
   { text: ["Seared in", "beef tallow"], at: [1050, 640], from: [1040, 676], to: [968, 735], bend: -10 },
   { text: ["Simple, real", "ingredients"], at: [1050, 790], from: [1040, 790], to: [968, 800], bend: 6 },
-  { text: ["Crispy hand-cut", "fries in tallow"], at: [30, 420], from: [150, 500], to: [180, 690], bend: 12 },
+  { text: ["Crispy hand cut", "fries in tallow"], at: [30, 420], from: [150, 500], to: [180, 690], bend: 12 },
 ];
 
 export const signature = {
   eyebrow: "The Signature Burger",
   headline: ["Craveable", "Fast Food"],
   sub: "Made From Real Ingredients",
-  copy: "100% grass-fed, grass-finished US beef, with golden tallow-cooked fries, honey-sweetened drinks and house-made mustard, ketchup and pickles.",
+  copy: "100% grass fed, grass finished US beef, with golden tallow cooked fries, honey sweetened drinks and house made mustard, ketchup and pickles.",
   cta: { label: "Explore the Menu", href: "#menu" },
-  photoAlt: "Photograph of a cheeseburger with melted cheese on a toasted bun beside hand-cut fries",
-  sketchAlt: "Matching hand-drawn sepia illustration of the same cheeseburger and fries",
+  photoAlt: "Photograph of a cheeseburger with melted cheese on a toasted bun beside hand cut fries",
+  sketchAlt: "Matching hand drawn sepia illustration of the same cheeseburger and fries",
 };
 
 /**
@@ -104,14 +104,14 @@ export const hotspots = [
   {
     id: "lighting",
     title: "Amber Lighting",
-    copy: "Warm, incandescent-rich lighting in place of harsh blue-toned LEDs, for a softer, calmer space.",
+    copy: "Warm, incandescent rich lighting in place of harsh blue toned LEDs, for a softer, calmer space.",
     wide: { x: 53.2, y: 25.8 },
     tall: { x: 53.2, y: 25.8 },
   },
   {
     id: "materials",
     title: "Natural Materials",
-    copy: "Real wood, sealed concrete and organic finishes, with non-toxic paint throughout. Bamboo trays in place of plastic, and no aerosol sprays.",
+    copy: "Real wood, sealed concrete and organic finishes, with non toxic paint throughout. Bamboo trays in place of plastic, and no aerosol sprays.",
     wide: { x: 21.5, y: 68 },
     tall: { x: 21.5, y: 68 },
   },
@@ -134,7 +134,7 @@ export const hotspots = [
 export const experience = {
   eyebrow: "The Experience",
   headline: ["A Space", "That Feels Good"],
-  copy: "From clean ingredients and organic finishes to warm, incandescent-rich lighting, every detail at Mr. Tallows is intentional. We've created a space that feels as good as the food tastes.",
+  copy: "From clean ingredients and organic finishes to warm, incandescent rich lighting, every detail at Mr. Tallows is intentional. We've created a space that feels as good as the food tastes.",
   imageAlt: "The Mr. Tallows dining room: menu boards above an open kitchen and tiled counter, cone pendant lights, a long walnut table, leather banquettes and an arched window",
 };
 
@@ -147,11 +147,11 @@ export const philosophy = {
     { title: "A Higher Standard", copy: "Better cooking, better ingredients, better for how you feel." },
     {
       title: "The Whole Experience",
-      copy: "Fast-casual, with the warmth and intention of a sit-down restaurant.",
+      copy: "Fast casual, with the warmth and intention of a sit down restaurant.",
     },
   ],
   imageAlt:
-    "Mr. Tallows packaging: a forest-green box, a kraft takeout bag, a burger wrapped in cream paper with a blush logo sticker, twine-tied cards and a potted olive sprig",
+    "Mr. Tallows packaging: a forest green box, a kraft takeout bag, a burger wrapped in cream paper with a blush logo sticker, twine tied cards and a potted olive sprig",
 };
 
 /** Provisional menu. Names, descriptions and prices are placeholders until the menu is final. */
@@ -167,25 +167,25 @@ export const menu = {
         {
           id: "original",
           name: "The Original",
-          copy: "100% grass-fed, grass-finished US beef cooked in tallow, on a local sourdough bun.",
+          copy: "100% grass fed, grass finished US beef cooked in tallow, on a local sourdough bun.",
           image: "/images/menu/original.webp",
-          alt: "Burger: a seared grass-fed beef patty on a toasted bun",
+          alt: "Burger: a seared grass fed beef patty on a toasted bun",
           price: "$14",
-          detail: "Finish it with house-made fermented pickles, ketchup, scratch mustard or special sauce.",
+          detail: "Finish it with house made fermented pickles, ketchup, scratch mustard or special sauce.",
         },
         {
           id: "cheese",
           name: "The Cheeseburger",
-          copy: "100% grass-fed, grass-finished US beef cooked in tallow, with melted organic white cheddar on a local sourdough bun.",
+          copy: "100% grass fed, grass finished US beef cooked in tallow, with melted organic white cheddar on a local sourdough bun.",
           image: "/images/menu/cheese.webp",
-          alt: "Cheeseburger: a seared grass-fed beef patty with melted cheddar on a toasted bun",
+          alt: "Cheeseburger: a seared grass fed beef patty with melted cheddar on a toasted bun",
           price: "$15",
-          detail: "Our signature, with grass-fed organic farmhouse white cheddar. Add house-made fermented pickles and special sauce.",
+          detail: "Our signature, with grass fed organic farmhouse white cheddar. Add house made fermented pickles and special sauce.",
         },
         {
           id: "double",
           name: "The Double",
-          copy: "Two 100% grass-fed, grass-finished US beef patties and melted organic white cheddar, on a local sourdough bun.",
+          copy: "Two 100% grass fed, grass finished US beef patties and melted organic white cheddar, on a local sourdough bun.",
           image: "/images/menu/double.webp",
           alt: "Double cheeseburger: two seared beef patties with melted cheddar on a toasted bun",
           price: "$17",
@@ -194,7 +194,7 @@ export const menu = {
         {
           id: "carnivore",
           name: "Saladino Style",
-          copy: "No bun. 100% grass-fed, grass-finished US beef and melted organic white cheddar, cooked in tallow.",
+          copy: "No bun. 100% grass fed, grass finished US beef and melted organic white cheddar, cooked in tallow.",
           image: "/images/menu/carnivore.webp",
           alt: "Two seared beef patties with melted cheddar and no bun",
           price: "$14",
@@ -203,9 +203,9 @@ export const menu = {
         {
           id: "chadwick",
           name: "The Chadwick",
-          copy: "100% grass-fed, grass-finished US beef cooked in tallow, topped with a sunny side up egg on a local sourdough bun.",
+          copy: "100% grass fed, grass finished US beef cooked in tallow, topped with a sunny side up egg on a local sourdough bun.",
           image: "/images/menu/chadwick.webp",
-          alt: "Burger: a seared grass-fed beef patty topped with a sunny side up egg on a toasted bun",
+          alt: "Burger: a seared grass fed beef patty topped with a sunny side up egg on a toasted bun",
           price: "$18",
           detail: "The beef, a runny yolk and house special sauce.",
         },
@@ -218,16 +218,16 @@ export const menu = {
         {
           id: "fries",
           name: "Kennebec Fries",
-          copy: "Golden, tallow-cooked fries: organic hand-cut potatoes, double-fried in grass-fed organic tallow, organic sea salt only.",
+          copy: "Golden, tallow cooked fries: organic hand cut potatoes, double fried in grass fed organic tallow, organic sea salt only.",
           image: "/images/menu/fries.webp",
-          alt: "Golden hand-cut fries in a kraft Mr. Tallows fry carton",
+          alt: "Golden hand cut fries in a kraft Mr. Tallows fry carton",
           price: "$5.50",
           detail: "Pair with fermented ketchup, scratch mustard or the house special sauce.",
         },
         {
           id: "lemonade",
           name: "Lemonade",
-          copy: "Fresh-squeezed and sweetened with honey.",
+          copy: "Fresh squeezed and sweetened with honey.",
           image: "/images/menu/lemonade.webp",
           alt: "Glass of iced lemonade with a lemon wheel",
           price: "$5",
@@ -247,7 +247,7 @@ export const menu = {
       ],
     },
     {
-      title: "House-Made Extras",
+      title: "House Made Extras",
       compact: true,
       items: [
         {
@@ -286,7 +286,7 @@ export const menu = {
           image: "/images/menu/pickles.webp",
           alt: "Glass dish of fermented pickle slices",
           price: "",
-          detail: "Fermented the old-fashioned way.",
+          detail: "Fermented the old fashioned way.",
         },
       ],
     },
@@ -296,11 +296,11 @@ export const menu = {
 /** Our Mission: each "No ___" is struck through as it scrolls into view. */
 export const mission = {
   eyebrow: "Our Mission",
-  headline: "Taking Ultra-Processed Food Out of Fast Food",
+  headline: "Taking Ultra Processed Food Out of Fast Food",
   nos: [
     { icon: "oil", label: "Seed Oils" },
     { icon: "sugar", label: "Refined Sugar" },
-    { icon: "grain", label: "Grain-Fed Beef" },
+    { icon: "grain", label: "Grain Fed Beef" },
     { icon: "dna", label: "GMOs" },
     { icon: "syringe", label: "Added Hormones" },
   ],
@@ -311,10 +311,10 @@ export const process = {
   stat: "About a third of Americans eat fast food on any given day.",
   close: ["Convenience should never mean compromising on what we eat.", "Same cravings. Better ingredients. A whole new standard."],
   steps: [
-    { image: "step-ingredients", title: "Real Ingredients", copy: "100% grass-fed, grass-finished US beef, organic potatoes and tallow.", alt: "Illustration of a steak, potatoes and fresh herbs" },
+    { image: "step-ingredients", title: "Real Ingredients", copy: "100% grass fed, grass finished US beef, organic potatoes and tallow.", alt: "Illustration of a steak, potatoes and fresh herbs" },
     { image: "step-cook", title: "Prepare & Cook", copy: "Cooked simply, the right way.", alt: "Illustration of a patty searing in a cast iron skillet" },
     { image: "step-meal", title: "A Better Classic", copy: "Familiar favorites, made with carefully sourced ingredients.", alt: "Illustration of a cheeseburger" },
-    { image: "step-to-go", title: "Packed To-Go", copy: "Quality food, ready when you are.", alt: "Illustration of a wrapped burger beside a Mr. Tallows paper bag" },
+    { image: "step-to-go", title: "Packed To Go", copy: "Quality food, ready when you are.", alt: "Illustration of a wrapped burger beside a Mr. Tallows paper bag" },
   ],
 };
 
@@ -386,17 +386,17 @@ export const people = {
   eyebrow: "Our Team",
   headline: ["The people behind", "Mr. Tallows."],
   intro: "Meet the people bringing real ingredients and thoughtful cooking to American fast food.",
-  imageAlt: "A patty searing in a cast iron skillet on the stove beside a cutting board of hand-cut potatoes and a chef's knife",
+  imageAlt: "A patty searing in a cast iron skillet on the stove beside a cutting board of hand cut potatoes and a chef's knife",
   team: [
     {
       id: "shon",
       name: "Shon Foster",
-      role: "Co-Founder & COO",
+      role: "Co Founder & COO",
       image: "/people/shon.webp",
       alt: "Chef Shon Foster in a black apron and cap, talking with guests at a long table",
       note: ["the man behind", "the menu"],
       bio: [
-        "As our Co-Founder and COO, Shon is the master chef bringing our vision and Dr. Paul Saladino’s philosophy to the table. Hailing from Kanab, Utah, his culinary roots run deep as a former executive chef at **Amangiri**, the crown jewel of the Aman resort portfolio. That elite fine dining background adds unmatched precision to our mission of delivering thoughtfully sourced, straightforward and healthy fast food. Alongside his work across Southern Utah restaurants like Sego, Anthera and Añu, Shon remains in high demand, continuing to cook privately for exclusive Amangiri guests.",
+        "As our Co Founder and COO, Shon is the master chef bringing our vision and Dr. Paul Saladino’s philosophy to the table. Hailing from Kanab, Utah, his culinary roots run deep as a former executive chef at **Amangiri**, the crown jewel of the Aman resort portfolio. That elite fine dining background adds unmatched precision to our mission of delivering thoughtfully sourced, straightforward and healthy fast food. Alongside his work across Southern Utah restaurants like Sego, Anthera and Añu, Shon remains in high demand, continuing to cook privately for exclusive Amangiri guests.",
       ],
       recognition: [
         { year: "2026", title: "Golden Spoon", from: "Utah Restaurant Association" },
@@ -408,12 +408,12 @@ export const people = {
     {
       id: "paul",
       name: "Dr. Paul Saladino",
-      role: "Co-Owner & Food Philosophy Partner",
+      role: "Co Owner & Food Philosophy Partner",
       image: "/people/paul.webp",
       alt: "Dr. Paul Saladino in a grey knit shirt, arms crossed, in a studio portrait",
       note: ["the voice behind", "the brand"],
       bio: [
-        "Co-owner Dr. Paul Saladino brings his revolutionary approach to health and nutrition to life. A globally recognized advocate for animal based nutrition and ancestral living, Dr. Saladino is dedicated to transforming the way the world thinks about food. His philosophy centers on radical transparency, nutrient density and returning to foods that humans have thrived on for generations. Through his leadership and outreach, he champions our mission to make clean, nourishing and thoughtfully sourced fast food accessible to everyone. Together, we’re bringing that philosophy to life through a new approach to American fast food.",
+        "Co owner Dr. Paul Saladino brings his revolutionary approach to health and nutrition to life. A globally recognized advocate for animal based nutrition and ancestral living, Dr. Saladino is dedicated to transforming the way the world thinks about food. His philosophy centers on radical transparency, nutrient density and returning to foods that humans have thrived on for generations. Through his leadership and outreach, he champions our mission to make clean, nourishing and thoughtfully sourced fast food accessible to everyone. Together, we’re bringing that philosophy to life through a new approach to American fast food.",
       ],
       stat: { value: "4.5M", label: "followers on Instagram, YouTube and TikTok" },
       facts: [
@@ -451,15 +451,15 @@ export const people = {
       id: "ceadda",
       name: "Ceadda Conover",
       title: "Chadwick “Ceadda” Conover",
-      role: "Co-Founder & Co-CEO",
+      role: "Co Founder & Co CEO",
       image: "/people/ceadda.webp",
-      alt: "Ceadda Conover in a cable-knit sweater, kneeling with his forehead pressed to a white horse on a frosty field",
+      alt: "Ceadda Conover in a cable knit sweater, kneeling with his forehead pressed to a white horse on a frosty field",
       note: ["the heart of", "Mr. Tallows"],
       bio: [
-        "Raised along northern California’s wild coast where the temperate rainforest meets the ocean, Ceadda is known for his deep connection with wildlife and the natural world. Shaped early on by redwoods, horses and the rugged Pacific, he was never one for conventional paths, leaving traditional schooling after ninth grade and spending his early adulthood navigating hard lessons and personal reinvention before forging an out-of-the-box life built on self-reliance, resilience and solution-oriented thinking.",
-        "When multi-generational organic dairy farms in Point Reyes faced displacement, Ceadda bypassed traditional political bottlenecks and bridged an unlikely alliance, connecting local organic ranchers directly with HHS Secretary Robert F. Kennedy Jr. and top leadership at the Department of the Interior to fight for regenerative agriculture and land stewardship. As the visionary and heart of Mr. Tallows, he channels that same unconventional conviction and belief that real food and healthy ecosystems go hand in hand into bringing uncompromising ingredient integrity and ancestral nutrition to everyday fast food.",
+        "Raised along northern California’s wild coast where the temperate rainforest meets the ocean, Ceadda is known for his deep connection with wildlife and the natural world. Shaped early on by redwoods, horses and the rugged Pacific, he was never one for conventional paths, leaving traditional schooling after ninth grade and spending his early adulthood navigating hard lessons and personal reinvention before forging an out of the box life built on self reliance, resilience and solution oriented thinking.",
+        "When multi generational organic dairy farms in Point Reyes faced displacement, Ceadda bypassed traditional political bottlenecks and bridged an unlikely alliance, connecting local organic ranchers directly with HHS Secretary Robert F. Kennedy Jr. and top leadership at the Department of the Interior to fight for regenerative agriculture and land stewardship. As the visionary and heart of Mr. Tallows, he channels that same unconventional conviction and belief that real food and healthy ecosystems go hand in hand into bringing uncompromising ingredient integrity and ancestral nutrition to everyday fast food.",
       ],
-      quote: "“Ultra-processed food is destroying our country. We’re doing something about it.”",
+      quote: "“Ultra processed food is destroying our country. We’re doing something about it.”",
       links: [{ group: "Follow Ceadda", items: [{ label: "Instagram", href: "https://www.instagram.com/the_wild_coast/", handle: "@the_wild_coast" }] }],
       press: [
         { outlet: "The Press Democrat", title: "The adventurer, the dairyman and the health secretary: Inside the unlikely campaign to save ranching at Point Reyes", href: "https://www.pressdemocrat.com/2025/05/29/the-adventurer-the-dairyman-and-the-health-secretary-inside-the-unlikely-campaign-to-save-ranching-at-point-reyes-2/" },

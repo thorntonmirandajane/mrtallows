@@ -39,7 +39,7 @@ export default function MissionSection() {
             <span className="pointer-events-none absolute bottom-[4%] left-[18%] h-[16%] w-[70%] rounded-[50%] bg-[radial-gradient(closest-side,rgba(90,64,42,0.22),transparent)] blur-md" aria-hidden="true" />
             <Image
               src="/images/mission-burger.webp"
-              alt="Cheeseburger with melted cheddar beside hand-cut fries and flaky salt on kraft paper"
+              alt="Cheeseburger with melted cheddar beside hand cut fries and flaky salt on kraft paper"
               width={1305}
               height={705}
               sizes="(min-width: 1024px) 100vw, 180vw"

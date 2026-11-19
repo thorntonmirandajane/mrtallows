@@ -8,7 +8,7 @@ import { people } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "The People",
-  description: "Meet the people behind Mr. Tallows: co-founder Shon Foster, co-owner Dr. Paul Saladino and co-founder Ceadda Conover.",
+  description: "Meet the people behind Mr. Tallows: co founder Shon Foster, co owner Dr. Paul Saladino and co founder Ceadda Conover.",
 };
 
 const d = (ms: number) => ({ "--d": `${ms}ms` }) as React.CSSProperties;
@@ -222,7 +222,7 @@ export default function ThePeople() {
                           <span aria-hidden="true" className="h-px w-6 bg-rust/60" />
                           <span className="eyebrow text-rust">{p.name}</span>
                           {p.links?.flatMap((g) => g.items).map((l) => (
-                            <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer" aria-label={`${p.name} on ${l.label}`} title={l.handle ?? l.label} className={pill + " !h-8 w-8 [&>svg]:h-4 [&>svg]:w-4"}>
+                            <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer" aria-label={`${p.name} on ${l.label}`} title={l.handle ?? l.label} className={pill + " !h-8 w-8 !border-blush !bg-blush !text-cream hover:!border-forest hover:!bg-forest [&>svg]:h-4 [&>svg]:w-4"}>
                               {socialIcons[l.label]}
                             </a>
                           ))}

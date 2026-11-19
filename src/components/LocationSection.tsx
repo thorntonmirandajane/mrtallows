@@ -94,7 +94,7 @@ export default function LocationSection() {
           <div className="group relative aspect-[16/9] overflow-hidden sm:aspect-auto sm:min-h-[220px]">
             <Image
               src="/images/map-concept.webp"
-              alt="Stylized map in muted sage and sand tones with a forest-green Mr. Tallows pin"
+              alt="Stylized map in muted sage and sand tones with a forest green Mr. Tallows pin"
               fill
               sizes="(min-width: 1024px) 30vw, (min-width: 640px) 50vw, 100vw"
               className="object-cover object-[55%_50%] transition-transform duration-[2000ms] ease-[var(--ease-luxe)] group-hover:scale-[1.04]"

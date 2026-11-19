@@ -212,6 +212,21 @@ export default function ThePeople() {
                         ))}
                       </div>
                     )}
+                    {/* quote card tucked over the bottom of the portrait, no wider than the photo */}
+                    {p.quote && (
+                      <figure className="relative -mt-[14%] mx-[5%] overflow-hidden rounded-xl border border-walnut/15 bg-[#e9dccb] px-[clamp(1.2rem,2.4vw,1.9rem)] py-[clamp(1.2rem,2.2vw,1.6rem)] shadow-[0_10px_30px_-18px_rgba(58,42,32,0.35)]" data-reveal style={d(260)}>
+                        <blockquote className="display relative [text-wrap:balance] text-[min(1rem,4.2vw)] font-[480] leading-[1.3] tracking-[-0.01em] text-ink md:text-[clamp(1.05rem,1.5vw,1.3rem)]">{p.quote}</blockquote>
+                        <figcaption className="relative mt-4 flex items-center gap-3">
+                          <span aria-hidden="true" className="h-px w-6 bg-rust/60" />
+                          <span className="eyebrow text-rust">{p.name}</span>
+                          {p.links?.flatMap((g) => g.items).map((l) => (
+                            <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer" aria-label={`${p.name} on ${l.label}`} title={l.handle ?? l.label} className={pill + " !h-8 w-8 [&>svg]:h-4 [&>svg]:w-4"}>
+                              {socialIcons[l.label]}
+                            </a>
+                          ))}
+                        </figcaption>
+                      </figure>
+                    )}
                   </figure>
 
                   <div>
@@ -232,25 +247,8 @@ export default function ThePeople() {
 
 
 
-                    {p.quote && (
-                      <figure className="relative mt-8 overflow-hidden rounded-xl border border-walnut/15 bg-[#e9dccb] px-[clamp(1.4rem,3vw,2.25rem)] pb-[clamp(1.3rem,2.4vw,1.75rem)] pt-[clamp(2rem,3.6vw,2.6rem)] shadow-[0_10px_30px_-18px_rgba(58,42,32,0.35)]" data-reveal style={d(260)}>
-                        {/* oversized quote marks as a watermark behind the words */}
-                        <span aria-hidden="true" className="display pointer-events-none absolute left-2 top-[0.02em] select-none text-[clamp(7rem,12vw,9.5rem)] font-[640] leading-none text-rust/[0.16]">&ldquo;</span>
-                        <span aria-hidden="true" className="display pointer-events-none absolute -bottom-[0.5em] right-3 select-none text-[clamp(7rem,12vw,9.5rem)] font-[640] leading-none text-rust/[0.16]">&rdquo;</span>
-                        <blockquote className="display relative [text-wrap:balance] text-[min(1rem,4.2vw)] font-[480] leading-[1.3] tracking-[-0.01em] text-ink md:text-[clamp(1.25rem,1.85vw,1.6rem)]">{p.quote.replace(/^[\u201c"]|[\u201d"]$/g, "")}</blockquote>
-                        <figcaption className="relative mt-4 flex items-center gap-3">
-                          <span aria-hidden="true" className="h-px w-6 bg-rust/60" />
-                          <span className="eyebrow text-rust">{p.name}</span>
-                          {p.links?.flatMap((g) => g.items).map((l) => (
-                            <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer" aria-label={`${p.name} on ${l.label}`} title={l.handle ?? l.label} className={pill + " !h-8 w-8 [&>svg]:h-4 [&>svg]:w-4"}>
-                              {socialIcons[l.label]}
-                            </a>
-                          ))}
-                        </figcaption>
-                      </figure>
-                    )}
                     {p.press && (
-                      <div className={card + " !mt-4 !py-[clamp(1rem,1.8vw,1.35rem)]"} data-reveal style={d(340)}>
+                      <div className={card + " !py-[clamp(1rem,1.8vw,1.35rem)]"} data-reveal style={d(340)}>
                         <PressAccordion p={p} />
                       </div>
                     )}

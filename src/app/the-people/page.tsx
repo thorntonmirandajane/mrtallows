@@ -212,9 +212,9 @@ export default function ThePeople() {
                         ))}
                       </div>
                     )}
-                    {/* quote card directly under the portrait, same width as the photo */}
+                    {/* quote set straight on the page under the portrait */}
                     {p.quote && (
-                      <figure className="relative mt-5 overflow-hidden rounded-xl border border-walnut/15 bg-[#e9dccb] px-[clamp(1.2rem,2.4vw,1.9rem)] py-[clamp(1.2rem,2.2vw,1.6rem)] shadow-[0_10px_30px_-18px_rgba(58,42,32,0.35)]" data-reveal style={d(260)}>
+                      <figure className="relative mt-[clamp(1.5rem,2.6vw,2rem)] px-1" data-reveal style={d(260)}>
                         <blockquote className="display relative [text-wrap:balance] text-[min(1rem,4.2vw)] font-[480] leading-[1.3] tracking-[-0.01em] text-ink md:text-[clamp(1.05rem,1.5vw,1.3rem)]">{p.quote}</blockquote>
                         <figcaption className="relative mt-4 flex items-center gap-3">
                           <span aria-hidden="true" className="h-px w-6 bg-rust/60" />

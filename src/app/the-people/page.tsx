@@ -132,25 +132,12 @@ export default function ThePeople() {
                         ))}
                       </div>
                     )}
-                    {/* story stops sketched straight onto the page under the portrait, linked by a dotted trail */}
-                    {p.journey && (
-                      <ol aria-label={`${p.name}\u2019s path`} className="mt-[clamp(1.75rem,3vw,2.5rem)] grid grid-cols-3 gap-4">
-                        {p.journey.map((j, i) => (
-                          <li key={j.place} data-reveal style={d(350 + i * 180)} className="relative text-center">
-                            <div className="relative mx-auto h-[clamp(4rem,7vw,5.25rem)] w-[78%]">
-                              <Image src={j.image} alt="" fill sizes="10rem" className="object-contain object-bottom" />
-                            </div>
-                            <p className="display mt-2.5 text-[clamp(0.85rem,1.25vw,1rem)] font-[640] leading-[1.1] text-ink">{j.place}</p>
-                            <p className="hand mt-0.5 [text-wrap:balance] text-[clamp(0.9rem,1.35vw,1.08rem)] leading-[1.1] text-[#5a3420]">{j.caption}</p>
-                            {i < p.journey!.length - 1 && (
-                              <svg viewBox="0 0 100 18" aria-hidden="true" className="pointer-events-none absolute left-[86%] top-[clamp(1.6rem,3vw,2.2rem)] w-[calc(28%+1rem)] overflow-visible text-rust">
-                                <path d={i % 2 ? "M2 6 Q50 20 92 8" : "M2 12 Q50 -4 92 10"} fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeDasharray="0.5 4.5" vectorEffect="non-scaling-stroke" />
-                                <path d={i % 2 ? "M85 4 L93 8 L86 14" : "M85 5 L93 10 L85 15"} fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
-                              </svg>
-                            )}
-                          </li>
-                        ))}
-                      </ol>
+                    {/* quote card tucked over the bottom of the portrait */}
+                    {p.quote && (
+                      <div className="relative -mt-[18%] mx-[5%] rounded-xl border border-walnut/15 bg-[#ece2d4] px-[clamp(1.1rem,2.2vw,1.6rem)] py-[clamp(1.1rem,2vw,1.5rem)] shadow-[0_14px_34px_-16px_rgba(58,42,32,0.45)]" data-reveal style={d(350)}>
+                        <blockquote className="hand [text-wrap:balance] text-[clamp(1.4rem,2.2vw,1.85rem)] leading-[1.25] text-[#5a3420]">{p.quote}</blockquote>
+                        <p className="eyebrow mt-3 text-rust">{p.name}</p>
+                      </div>
                     )}
                   </figure>
 
@@ -168,6 +155,34 @@ export default function ThePeople() {
                         </p>
                       ))}
                     </div>
+
+                    {/* story stops sketched under the bio, linked by a dotted trail */}
+                    {p.journey && (
+                      <ol aria-label={`${p.name}\u2019s path`} className="mt-[clamp(2rem,3.5vw,2.75rem)] grid max-w-[40rem] grid-cols-3 items-start gap-6">
+                        {p.journey.map((j, i) => (
+                          <li key={j.place} data-reveal style={d(350 + i * 180)} className={`relative text-center ${["", "mt-[2.25rem]", "mt-[0.8rem]"][i % 3]}`}>
+                            <div className="relative mx-auto h-[clamp(5.5rem,11vw,9rem)] w-[92%]">
+                              <Image src={j.image} alt="" fill sizes="14rem" className="object-contain object-bottom" />
+                            </div>
+                            <p className="display mt-2.5 text-[clamp(1rem,1.6vw,1.25rem)] font-[640] leading-[1.1] text-ink">{j.place}</p>
+                            <p className="eyebrow mt-1.5 [text-wrap:balance] !text-[clamp(0.56rem,0.85vw,0.68rem)] !tracking-[0.14em] leading-[1.5] text-rust">{j.caption}</p>
+                            {/* dotted arrow to the next stop: drops to the lower one, rises to the higher one */}
+                            {i === 0 && (
+                              <svg viewBox="0 0 60 40" preserveAspectRatio="none" aria-hidden="true" className="pointer-events-none absolute left-[91%] top-[clamp(2.6rem,4.6vw,3.6rem)] h-[2.9rem] w-[calc(18%+1.5rem)] overflow-visible text-rust">
+                                <path d="M2 4 Q36 4 54 34" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeDasharray="0.5 4.5" vectorEffect="non-scaling-stroke" />
+                                <path d="M46 32 L55 35 L55 26" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
+                              </svg>
+                            )}
+                            {i === 1 && (
+                              <svg viewBox="0 0 60 40" preserveAspectRatio="none" aria-hidden="true" className="pointer-events-none absolute left-[91%] top-[clamp(1.2rem,2.6vw,2rem)] h-[2.4rem] w-[calc(18%+1.5rem)] overflow-visible text-rust">
+                                <path d="M2 34 Q30 36 54 10" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeDasharray="0.5 4.5" vectorEffect="non-scaling-stroke" />
+                                <path d="M45 9 L55 9 L53 18" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
+                              </svg>
+                            )}
+                          </li>
+                        ))}
+                      </ol>
+                    )}
 
                     {p.stat && (
                       <div className={card}>
@@ -225,12 +240,6 @@ export default function ThePeople() {
                       </div>
                     )}
 
-                    {p.quote && (
-                      <figure className={card} data-reveal style={d(260)}>
-                        <blockquote className="hand text-[clamp(1.6rem,2.6vw,2.1rem)] leading-[1.25] text-[#5a3420]">{p.quote}</blockquote>
-                        <figcaption className="eyebrow mt-4 text-rust">{p.name}</figcaption>
-                      </figure>
-                    )}
 
                     {p.recognition && (
                     <div className={card} aria-label="Recognition">

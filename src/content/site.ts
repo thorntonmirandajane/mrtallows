@@ -371,7 +371,9 @@ type Person = {
   /** smaller numbers under the stat */
   facts?: { value: string; label: string }[];
   /** profile links shown in the card, with icon names from SocialIcons */
-  links?: { group: string; items: { label: string; href: string }[] }[];
+  links?: { group: string; items: { label: string; href: string; handle?: string }[] }[];
+  /** linked articles about them */
+  press?: { outlet: string; title: string; href: string }[];
   /** small tilted snapshots overlapping the main photo */
   snapshots?: { src: string; alt: string }[];
   /** company logos shown in the card */
@@ -455,6 +457,12 @@ export const people = {
         "When multi-generational organic dairy farms in Point Reyes faced displacement, Ceadda bypassed traditional political bottlenecks and bridged an unlikely alliance, connecting local organic ranchers directly with HHS Secretary Robert F. Kennedy Jr. and top leadership at the Department of the Interior to fight for regenerative agriculture and land stewardship. As the visionary and heart of Mr. Tallows, he channels that same unconventional conviction and belief that real food and healthy ecosystems go hand in hand into bringing uncompromising ingredient integrity and ancestral nutrition to everyday fast food.",
       ],
       quote: "“Ultra-processed food is destroying our country. We’re doing something about it.”",
+      links: [{ group: "Follow Ceadda", items: [{ label: "Instagram", href: "https://www.instagram.com/the_wild_coast/", handle: "@the_wild_coast" }] }],
+      press: [
+        { outlet: "The Press Democrat", title: "The adventurer, the dairyman and the health secretary: Inside the unlikely campaign to save ranching at Point Reyes", href: "https://www.pressdemocrat.com/2025/05/29/the-adventurer-the-dairyman-and-the-health-secretary-inside-the-unlikely-campaign-to-save-ranching-at-point-reyes-2/" },
+        { outlet: "E&E News", title: "Ranchers agreed to leave a national park. Then RFK Jr. got involved.", href: "https://www.eenews.net/articles/ranchers-agreed-to-leave-a-national-park-then-rfk-jr-got-involved/" },
+        { outlet: "Point Reyes Light", title: "Will MAHA upend Point Reyes deal?", href: "https://www.ptreyeslight.com/news/will-maha-upend-point-reyes-deal/" },
+      ],
     },
   ] as Person[],
 

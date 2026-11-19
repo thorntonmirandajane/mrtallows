@@ -13,6 +13,40 @@ export const metadata: Metadata = {
 
 const d = (ms: number) => ({ "--d": `${ms}ms` }) as React.CSSProperties;
 
+/** icon buttons for a person's profiles (socials, podcast), grouped under small labels */
+function LinkGroups({ p }: { p: (typeof people.team)[number] }) {
+  if (!p.links) return null;
+  return (
+    <div className="mt-6 grid justify-start gap-x-[clamp(1.5rem,5vw,3.5rem)] sm:grid-cols-[auto_auto] gap-y-5 border-t border-walnut/20 pt-5" data-reveal style={d(480)}>
+      {p.links.map((g) => (
+        <div key={g.group}>
+          <p className="eyebrow text-rust">{g.group}</p>
+          <ul className="mt-3 flex items-center gap-2">
+            {g.items.map((l) => (
+              <li key={l.label}>
+                <a
+                  href={l.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${p.name} on ${l.label}`}
+                  title={l.label}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-walnut/30 bg-cream/90 text-walnut-deep transition-colors duration-500 hover:border-forest hover:bg-forest hover:text-cream"
+                >
+                  {socialIcons[l.label]}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/** round outlined button used for profile and press links */
+const pill =
+  "flex h-10 items-center justify-center rounded-full border border-walnut/30 bg-cream/90 text-walnut-deep transition-colors duration-500 hover:border-forest hover:bg-forest hover:text-cream";
+
 const card =
   "mt-8 rounded-xl border border-walnut/15 bg-cream/45 px-[clamp(1.1rem,2.2vw,1.75rem)] py-[clamp(1.25rem,2.2vw,1.75rem)] shadow-[0_10px_30px_-18px_rgba(58,42,32,0.35)]";
 
@@ -151,10 +185,48 @@ export default function ThePeople() {
 
 
                     {p.quote && (
-                      <figure className={card} data-reveal style={d(260)}>
-                        <blockquote className="display [text-wrap:balance] text-[min(0.95rem,4vw)] font-[480] leading-[1.3] tracking-[-0.01em] text-ink md:text-[clamp(1.2rem,1.75vw,1.5rem)]">{p.quote}</blockquote>
-                        <figcaption className="eyebrow mt-3 text-rust">{p.name}</figcaption>
-                      </figure>
+                      <div className={card} data-reveal style={d(260)}>
+                        <figure>
+                          <blockquote className="display [text-wrap:balance] text-[min(0.95rem,4vw)] font-[480] leading-[1.3] tracking-[-0.01em] text-ink md:text-[clamp(1.2rem,1.75vw,1.5rem)]">{p.quote}</blockquote>
+                          <figcaption className="eyebrow mt-3 text-rust">{p.name}</figcaption>
+                        </figure>
+                        {/* same layout as Paul's card: small labelled groups of round buttons */}
+                        {(p.links || p.press) && (
+                          <div className="mt-6 grid justify-start gap-x-[clamp(1.5rem,5vw,3.5rem)] gap-y-5 border-t border-walnut/20 pt-5 sm:grid-cols-[auto_auto]" data-reveal style={d(480)}>
+                            {p.links?.map((g) => (
+                              <div key={g.group}>
+                                <p className="eyebrow text-rust">{g.group}</p>
+                                <ul className="mt-3 flex items-center gap-2">
+                                  {g.items.map((l) => (
+                                    <li key={l.label}>
+                                      <a href={l.href} target="_blank" rel="noopener noreferrer" aria-label={`${p.name} on ${l.label}`} title={l.handle ?? l.label} className={pill + " w-10"}>
+                                        {socialIcons[l.label]}
+                                      </a>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ))}
+                            {p.press && (
+                              <div>
+                                <p className="eyebrow text-rust">In the press</p>
+                                <ul className="mt-3 flex flex-wrap items-center gap-2">
+                                  {p.press.map((a) => (
+                                    <li key={a.href}>
+                                      <a href={a.href} target="_blank" rel="noopener noreferrer" aria-label={`${a.outlet}: ${a.title}`} title={a.title} className={pill + " gap-1.5 px-4 text-[0.8rem] font-medium"}>
+                                        {a.outlet}
+                                        <svg viewBox="0 0 16 16" aria-hidden="true" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+                                          <path d="M5 11 11 5M6 5h5v5" />
+                                        </svg>
+                                      </a>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
+                          </div>
+                        )}
+                      </div>
                     )}
 
                     {p.stat && (
@@ -171,31 +243,7 @@ export default function ThePeople() {
                             </div>
                           ))}
                         </div>
-                        {p.links && (
-                          <div className="mt-6 grid justify-start gap-x-[clamp(1.5rem,5vw,3.5rem)] sm:grid-cols-[auto_auto] gap-y-5 border-t border-walnut/20 pt-5" data-reveal style={d(480)}>
-                            {p.links.map((g) => (
-                              <div key={g.group}>
-                                <p className="eyebrow text-rust">{g.group}</p>
-                                <ul className="mt-3 flex items-center gap-2">
-                                  {g.items.map((l) => (
-                                    <li key={l.label}>
-                                      <a
-                                        href={l.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        aria-label={`${p.name} on ${l.label}`}
-                                        title={l.label}
-                                        className="flex h-10 w-10 items-center justify-center rounded-full border border-walnut/30 bg-cream/90 text-walnut-deep transition-colors duration-500 hover:border-forest hover:bg-forest hover:text-cream"
-                                      >
-                                        {socialIcons[l.label]}
-                                      </a>
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-                            ))}
-                          </div>
-                        )}
+                        <LinkGroups p={p} />
                         {p.brands && (
                           <div className="mt-6 border-t border-walnut/20 pt-5" data-reveal style={d(560)}>
                             <p className="eyebrow text-rust">Companies he built</p>

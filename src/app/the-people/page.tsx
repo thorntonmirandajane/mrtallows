@@ -162,32 +162,20 @@ export default function ThePeople() {
                         ))}
                       </div>
                     )}
-                    {/* story stops as small framed cards tucked over the bottom of the portrait, like Paul's photos */}
+                    {/* story stops sketched straight onto the page under the portrait, linked by a dotted trail */}
                     {p.journey && (
-                      <ol aria-label={`${p.name}\u2019s path`} className="relative -mt-[16%] grid grid-cols-3 items-start gap-[8%] px-[5%] pb-[9%]">
+                      <ol aria-label={`${p.name}\u2019s path`} className="mt-[clamp(1.75rem,3vw,2.5rem)] grid grid-cols-3 gap-4">
                         {p.journey.map((j, i) => (
-                          <li
-                            key={j.place}
-                            data-reveal
-                            style={d(350 + i * 160)}
-                            className={`relative border border-walnut/40 bg-[#efe5d8] px-[4%] pb-[11%] pt-[12%] text-center shadow-[0_12px_28px_-14px_rgba(58,42,32,0.45)] ${["-rotate-[3deg] md:-ml-[6%]", "mt-[18%] rotate-[2deg]", "mt-[4%] -rotate-[1.5deg] md:-mr-[6%]"][i % 3]}`}
-                          >
-                            <svg viewBox="0 0 48 48" aria-hidden="true" className="mx-auto h-[clamp(1.9rem,3.4vw,2.6rem)] w-auto text-rust" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                          <li key={j.place} data-reveal style={d(350 + i * 180)} className="relative text-center">
+                            <svg viewBox="0 0 48 48" aria-hidden="true" className="mx-auto h-[clamp(2.4rem,4vw,2.9rem)] w-auto text-rust" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
                               {journeyIcons[j.icon]}
                             </svg>
-                            <p className="display mt-2 text-[clamp(0.8rem,1.2vw,0.95rem)] font-[640] leading-[1.1] text-ink">{j.place}</p>
-                            <p className="hand mt-1 [text-wrap:balance] text-[clamp(0.82rem,1.25vw,1rem)] leading-[1.1] text-[#5a3420]">{j.caption}</p>
-                            {/* dotted arrow from under this card to the next one */}
-                            {i === 0 && (
-                              <svg viewBox="0 0 80 40" aria-hidden="true" className="pointer-events-none absolute left-[52%] top-[calc(100%+4px)] w-[75%] overflow-visible text-rust">
-                                <path d="M2 2 Q20 34 74 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeDasharray="0.5 4.5" />
-                                <path d="M65 19 L74 24 L66 31" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                              </svg>
-                            )}
-                            {i === 1 && (
-                              <svg viewBox="0 0 80 40" aria-hidden="true" className="pointer-events-none absolute left-[62%] top-[calc(100%+4px)] w-[85%] overflow-visible text-rust">
-                                <path d="M2 4 Q40 40 74 8" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeDasharray="0.5 4.5" />
-                                <path d="M64 9 L74 8 L73 18" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                            <p className="display mt-2.5 text-[clamp(0.85rem,1.25vw,1rem)] font-[640] leading-[1.1] text-ink">{j.place}</p>
+                            <p className="hand mt-0.5 [text-wrap:balance] text-[clamp(0.9rem,1.35vw,1.08rem)] leading-[1.1] text-[#5a3420]">{j.caption}</p>
+                            {i < p.journey!.length - 1 && (
+                              <svg viewBox="0 0 100 18" aria-hidden="true" className="pointer-events-none absolute left-[calc(50%+1.9rem)] top-[0.35rem] w-[calc(100%+1rem-3.8rem)] overflow-visible text-rust">
+                                <path d={i % 2 ? "M2 6 Q50 20 92 8" : "M2 12 Q50 -4 92 10"} fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeDasharray="0.5 4.5" vectorEffect="non-scaling-stroke" />
+                                <path d={i % 2 ? "M85 4 L93 8 L86 14" : "M85 5 L93 10 L85 15"} fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
                               </svg>
                             )}
                           </li>

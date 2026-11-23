@@ -8,7 +8,7 @@ import { people } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "The People",
-  description: "Meet the people behind Mr. Tallows: co founder Shon Foster, co owner Dr. Paul Saladino and co founder Ceadda Conover.",
+  description: "Meet the people behind Mr. Tallows: co-founder Shon Foster, co-owner Dr. Paul Saladino and co-founder Ceadda Conover.",
 };
 
 const d = (ms: number) => ({ "--d": `${ms}ms` }) as React.CSSProperties;

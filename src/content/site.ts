@@ -391,12 +391,12 @@ export const people = {
     {
       id: "shon",
       name: "Shon Foster",
-      role: "Co Founder & COO",
+      role: "Co-Founder & COO",
       image: "/people/shon.webp",
       alt: "Chef Shon Foster in a black apron and cap, talking with guests at a long table",
       note: ["the man behind", "the menu"],
       bio: [
-        "As our Co Founder and COO, Shon is the master chef bringing our vision and Dr. Paul Saladino’s philosophy to the table. Hailing from Kanab, Utah, his culinary roots run deep as a former executive chef at **Amangiri**, the crown jewel of the Aman resort portfolio. That elite fine dining background adds unmatched precision to our mission of delivering thoughtfully sourced, straightforward and healthy fast food. Alongside his work across Southern Utah restaurants like Sego, Anthera and Añu, Shon remains in high demand, continuing to cook privately for exclusive Amangiri guests.",
+        "As our Co-Founder and COO, Shon is the master chef bringing our vision and Dr. Paul Saladino’s philosophy to the table. Hailing from Kanab, Utah, his culinary roots run deep as a former executive chef at **Amangiri**, the crown jewel of the Aman resort portfolio. His elite fine dining background adds unmatched precision to Mr. Tallows’ mission of delivering thoughtfully sourced, straightforward and healthy fast food. Alongside his work across Southern Utah with restaurants like Sego, Anthera and Añu, Shon remains in high demand and continues to cook privately for exclusive Amangiri guests.",
       ],
       recognition: [
         { year: "2026", title: "Golden Spoon", from: "Utah Restaurant Association" },
@@ -408,12 +408,12 @@ export const people = {
     {
       id: "paul",
       name: "Dr. Paul Saladino",
-      role: "Co Owner & Food Philosophy Partner",
+      role: "Co-Owner & Food Philosophy Partner",
       image: "/people/paul.webp",
       alt: "Dr. Paul Saladino in a grey knit shirt, arms crossed, in a studio portrait",
       note: ["the voice behind", "the brand"],
       bio: [
-        "Co owner Dr. Paul Saladino brings his revolutionary approach to health and nutrition to life. A globally recognized advocate for animal based nutrition and ancestral living, Dr. Saladino is dedicated to transforming the way the world thinks about food. His philosophy centers on radical transparency, nutrient density and returning to foods that humans have thrived on for generations. Through his leadership and outreach, he champions our mission to make clean, nourishing and thoughtfully sourced fast food accessible to everyone. Together, we’re bringing that philosophy to life through a new approach to American fast food.",
+        "Co-owner Dr. Paul Saladino brings his revolutionary approach to health and nutrition to life. A globally recognized advocate for animal-based nutrition and ancestral living, Dr. Saladino is dedicated to transforming the way the world thinks about food. His philosophy centers on radical transparency, nutrient density and returning to foods that humans have thrived on for generations. Through his leadership and outreach, he champions our mission to make clean, nourishing and thoughtfully sourced fast food accessible to everyone. Together, we’re bringing that philosophy to life through a new approach to American fast food.",
       ],
       stat: { value: "4.5M", label: "followers on Instagram, YouTube and TikTok" },
       facts: [
@@ -451,13 +451,13 @@ export const people = {
       id: "ceadda",
       name: "Ceadda Conover",
       title: "Chadwick “Ceadda” Conover",
-      role: "Co Founder & Co CEO",
+      role: "Co-Founder & Co-CEO",
       image: "/people/ceadda.webp",
       alt: "Ceadda Conover in a cable knit sweater, kneeling with his forehead pressed to a white horse on a frosty field",
       note: ["the heart of", "Mr. Tallows"],
       bio: [
-        "Raised along northern California’s wild coast where the temperate rainforest meets the ocean, Ceadda is known for his deep connection with wildlife and the natural world. Shaped early on by redwoods, horses and the rugged Pacific, he was never one for conventional paths, leaving traditional schooling after ninth grade and spending his early adulthood navigating hard lessons and personal reinvention before forging an out of the box life built on self reliance, resilience and solution oriented thinking.",
-        "When multi generational organic dairy farms in Point Reyes faced displacement, Ceadda bypassed traditional political bottlenecks and bridged an unlikely alliance, connecting local organic ranchers directly with HHS Secretary Robert F. Kennedy Jr. and top leadership at the Department of the Interior to fight for regenerative agriculture and land stewardship. As the visionary and heart of Mr. Tallows, he channels that same unconventional conviction and belief that real food and healthy ecosystems go hand in hand into bringing uncompromising ingredient integrity and ancestral nutrition to everyday fast food.",
+        "Raised along northern California’s wild coast where the temperate rainforest meets the ocean, co-owner Ceadda is known for his deep connection with wildlife and the natural world. Shaped early on by redwoods, horses and the rugged Pacific, he was never one for conventional paths, leaving traditional schooling after ninth grade and spending his early adulthood navigating hard lessons and personal reinvention before forging an out of the box life built on self reliance, resilience and solution oriented thinking.",
+        "When multi-generational organic dairy farms in Point Reyes faced displacement, Ceadda bypassed traditional politics and bridged an unlikely alliance to fight for regenerative agriculture and land stewardship. As the visionary and heart of Mr. Tallows, he channels that same unconventional conviction to bring healthy ecosystems, uncompromising ingredient integrity and ancestral nutrition to everyday fast food.",
       ],
       quote: "“Ultra processed food is destroying our country. We’re doing something about it.”",
       links: [{ group: "Follow Ceadda", items: [{ label: "Instagram", href: "https://www.instagram.com/the_wild_coast/", handle: "@the_wild_coast" }] }],

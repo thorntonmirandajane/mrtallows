@@ -384,7 +384,7 @@ type Person = {
 
 export const people = {
   eyebrow: "Our Team",
-  headline: ["The people behind", "Mr. Tallows."],
+  headline: ["The people behind", "Mr. Tallows"],
   intro: "Meet the people bringing real ingredients and thoughtful cooking to American fast food.",
   imageAlt: "A patty searing in a cast iron skillet on the stove beside a cutting board of hand cut potatoes and a chef's knife",
   team: [
@@ -396,7 +396,7 @@ export const people = {
       alt: "Chef Shon Foster in a black apron and cap, talking with guests at a long table",
       note: ["the man behind", "the menu"],
       bio: [
-        "As our Co-Founder and COO, Shon is the master chef bringing our vision and Dr. Paul Saladino’s philosophy to the table. Hailing from Kanab, Utah, his culinary roots run deep as a former executive chef at **Amangiri**, the crown jewel of the Aman resort portfolio. His elite fine dining background adds unmatched precision to Mr. Tallows’ mission of delivering thoughtfully sourced, straightforward and healthy fast food. Alongside his work across Southern Utah with restaurants like Sego, Anthera and Añu, Shon remains in high demand and continues to cook privately for exclusive Amangiri guests.",
+        "As our Co-Founder and COO, Shon is the master chef bringing our vision and Dr. Paul Saladino’s philosophy to the table. Hailing from Kanab, Utah, his culinary roots run deep as a former executive chef at Amangiri, the crown jewel of the Aman resort portfolio. His elite fine dining background adds unmatched precision to Mr. Tallows mission of delivering thoughtfully sourced, straightforward and healthy fast food. Alongside his work across Southern Utah with restaurants like Sego, Anthera and Añu, Shon remains in high demand and continues to cook privately for exclusive Amangiri guests.",
       ],
       recognition: [
         { year: "2026", title: "Golden Spoon", from: "Utah Restaurant Association" },
@@ -456,8 +456,8 @@ export const people = {
       alt: "Ceadda Conover in a cable knit sweater, kneeling with his forehead pressed to a white horse on a frosty field",
       note: ["the heart of", "Mr. Tallows"],
       bio: [
-        "Raised along northern California’s wild coast where the temperate rainforest meets the ocean, Ceadda is known for his deep connection with wildlife and the natural world. Shaped early on by redwoods, horses and the rugged Pacific, he was never one for conventional paths, leaving traditional schooling after ninth grade and spending his early adulthood navigating hard lessons while forging an enigmatic life built on self‑reliance, resilience and solution-oriented thinking.",
-        "When multi-generational organic dairy farms in Point Reyes faced unjust displacement, Ceadda bypassed traditional politics and bridged an unlikely alliance to fight an uphill battle for regenerative agriculture and land stewardship (see articles below). As the visionary and heart of Mr. Tallows, he channels that same unconventional conviction to bring healthy ranching, ethical animal welfare and uncompromising ingredient integrity to rewrite American fast food.",
+        "Raised along northern California’s wild coast where the temperate rainforest meets the ocean, Ceadda is known for his deep connection with wildlife and the natural world. Shaped early on by redwoods, horses and the rugged Pacific, he was never one for conventional paths, leaving traditional schooling after ninth grade and spending his early adulthood navigating hard lessons while forging an unorthodox life built on self‑reliance, resilience and solution-oriented thinking.",
+        "When multi-generational organic dairy farms in Point Reyes faced unjust displacement, Ceadda bypassed traditional politics and bridged an unlikely alliance to fight an uphill battle for regenerative agriculture and land stewardship (see featured articles). As the visionary and heart of Mr. Tallows, he channels that same conviction into healthy ranching, ethical animal welfare and uncompromising ingredients, reimagining what American fast food can be.",
       ],
       quote: "“Ultra processed food is destroying our country. We’re doing something about it.”",
       links: [{ group: "Follow Ceadda", items: [{ label: "Instagram", href: "https://www.instagram.com/the_wild_coast/", handle: "@the_wild_coast" }] }],
